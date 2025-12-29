@@ -1,0 +1,67 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Statistics for Oncology"
+  subtitle: "A Course for Scottish Specialty Trainees"
+  author: "Oncology Statistics – Edinburgh Cancer Informatics"
+  date: today
+  date-format: "D MMMM YYYY"
+  
+  sidebar:
+    style: docked
+    search: true
+    
+  chapters:
+    - index.qmd
+    - part: "Foundations"
+      chapters:
+        - 01-what-is-statistics.qmd
+        - 02-populations-samples.qmd
+        - 03-types-of-data.qmd
+    - part: "Describing Data"
+      chapters:
+        - 04-presenting-data.qmd
+        - 05-descriptive-measures.qmd
+        - 06-normal-distribution.qmd
+    - part: "Statistical Inference"
+      chapters:
+        - 07-statistical-inference.qmd
+        - 08-correlation-regression.qmd
+    - part: "Clinical Applications"
+      chapters:
+        - 09-screening-diagnostic.qmd
+        - 10-survival-analysis.qmd
+        - 11-epidemiological-studies.qmd
+        - 12-clinical-trials.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    number-sections: true
+    code-fold: true
+    code-summary: "Show R code"
+    code-tools: true
+    highlight-style: github
+    fig-width: 8
+    fig-height: 5
+    fig-align: center
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  freeze: auto
+
+editor: visual
+
+lang: en-GB

@@ -1,0 +1,51 @@
+---
+title: "References"
+---
+
+# References {.unnumbered}
+
+## Recommended Textbooks
+
+**Introductory Statistics:**
+
+- Kirkwood BR, Sterne JAC. *Essential Medical Statistics*. 2nd ed. Blackwell Science; 2003.
+- Bland M. *An Introduction to Medical Statistics*. 4th ed. Oxford University Press; 2015.
+- Altman DG. *Practical Statistics for Medical Research*. Chapman & Hall; 1991.
+
+**Survival Analysis:**
+
+- Machin D, Cheung YB, Parmar MKB. *Survival Analysis: A Practical Approach*. 2nd ed. Wiley; 2006.
+- Collett D. *Modelling Survival Data in Medical Research*. 3rd ed. Chapman & Hall/CRC; 2014.
+
+**Clinical Trials:**
+
+- Matthews JNS. *An Introduction to Randomized Controlled Clinical Trials*. 2nd ed. Chapman & Hall/CRC; 2006.
+- Friedman LM, Furberg CD, DeMets DL. *Fundamentals of Clinical Trials*. 5th ed. Springer; 2015.
+
+## Online Resources
+
+**Statistics:**
+
+- BMJ Statistics Notes: [https://www.bmj.com/specialties/statistics-notes](https://www.bmj.com/specialties/statistics-notes)
+- STHDA Statistical Tools for High-throughput Data Analysis: [http://www.sthda.com/](http://www.sthda.com/)
+
+**R Programming:**
+
+- R for Data Science: [https://r4ds.hadley.nz/](https://r4ds.hadley.nz/)
+- Tidyverse: [https://www.tidyverse.org/](https://www.tidyverse.org/)
+
+**Reporting Guidelines:**
+
+- CONSORT Statement: [http://www.consort-statement.org/](http://www.consort-statement.org/)
+- STROBE Statement: [https://www.strobe-statement.org/](https://www.strobe-statement.org/)
+- EQUATOR Network: [https://www.equator-network.org/](https://www.equator-network.org/)
+
+## Examination Resources
+
+**FRCR Part 1:**
+
+- Royal College of Radiologists: [https://www.rcr.ac.uk/](https://www.rcr.ac.uk/)
+
+**SCE Medical Oncology:**
+
+- Royal College of Physicians: [https://www.mrcpuk.org/](https://www.mrcpuk.org/)

@@ -1,0 +1,225 @@
+---
+title: "The Normal Distribution"
+---
+
+# The Normal Distribution {#sec-normal-distribution}
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "patchwork", "knitr"), ask = FALSE)
+
+library(tidyverse)
+library(patchwork)
+library(knitr)
+```
+
+## Introduction
+
+The "normal distribution" is referred to frequently in statistics. It's a symmetrical, bell-shaped distribution of data. The Normal distribution is a cornerstone of statistics as many statistical methods are built around it. If it did not exist statisticians would have had to invent it.
+
+```{r}
+#| label: fig-normal-curve
+#| fig-cap: "The characteristic bell-shaped curve of the Normal distribution"
+#| fig-width: 8
+#| fig-height: 5
+
+# Generate normal curve
+x <- seq(-4, 4, length.out = 1000)
+y <- dnorm(x)
+
+normal_curve <- tibble(x = x, y = y)
+
+ggplot(normal_curve, aes(x = x, y = y)) +
+  geom_line(colour = "#3498db", linewidth = 1.5) +
+  geom_area(alpha = 0.3, fill = "#3498db") +
+  labs(x = "Standard deviations from mean", y = "Density") +
+  scale_x_continuous(breaks = -4:4) +
+  theme_minimal(base_size = 14) +
+  annotate("text", x = 0, y = 0.2, label = "Mean (μ)", size = 4)
+```
+
+It is often the case that the histogram of a continuous variable will display the characteristic bell-shaped distribution of the Normal distribution. The height of women shows a Normal distribution; the box plot shows a symmetric distribution of values above and below the median line.
+
+## Parameters of the Normal Distribution
+
+The Normal distribution is completely described by two population parameters **μ** and **σ**, where:
+
+- **μ** (mu) represents the **population mean** (the centre of the distribution)
+- **σ** (sigma) represents the **population standard deviation**
+
+```{r}
+#| label: fig-normal-params
+#| fig-cap: "Normal distributions with different means and standard deviations"
+#| fig-width: 10
+#| fig-height: 5
+
+x <- seq(-10, 20, length.out = 1000)
+
+params_data <- tibble(
+  x = rep(x, 3),
+  y = c(dnorm(x, mean = 5, sd = 2),
+        dnorm(x, mean = 5, sd = 4),
+        dnorm(x, mean = 10, sd = 2)),
+  Distribution = rep(c("μ=5, σ=2", "μ=5, σ=4", "μ=10, σ=2"), each = length(x))
+)
+
+ggplot(params_data, aes(x = x, y = y, colour = Distribution)) +
+  geom_line(linewidth = 1.2) +
+  scale_colour_manual(values = c("#3498db", "#e74c3c", "#27ae60")) +
+  labs(x = "Value", y = "Density") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "top")
+```
+
+## The 95% Reference Range
+
+One property of the Normal distribution is that exactly **95% of the distribution** lies between:
+
+$$\mu - 1.96\sigma \quad \text{and} \quad \mu + 1.96\sigma$$
+
+This is called a **reference range**. In this example, it is the range in which 95% of the population lie.
+
+```{r}
+#| label: fig-95-rule
+#| fig-cap: "95% of values in a Normal distribution lie within 1.96 standard deviations of the mean"
+#| fig-width: 8
+#| fig-height: 5
+
+x <- seq(-4, 4, length.out = 1000)
+y <- dnorm(x)
+
+normal_95 <- tibble(x = x, y = y)
+
+ggplot(normal_95, aes(x = x, y = y)) +
+  geom_line(colour = "#2c3e50", linewidth = 1) +
+  geom_area(data = filter(normal_95, x >= -1.96 & x <= 1.96),
+            fill = "#3498db", alpha = 0.5) +
+  geom_vline(xintercept = c(-1.96, 1.96), linetype = "dashed", colour = "#e74c3c") +
+  annotate("text", x = 0, y = 0.15, label = "95%", size = 6, fontface = "bold") +
+  annotate("text", x = -2.5, y = 0.05, label = "2.5%", size = 4) +
+  annotate("text", x = 2.5, y = 0.05, label = "2.5%", size = 4) +
+  labs(x = "Standard deviations from mean (μ ± 1.96σ)", y = "Density") +
+  scale_x_continuous(breaks = c(-4, -1.96, 0, 1.96, 4),
+                     labels = c("-4", "-1.96", "0", "1.96", "4")) +
+  theme_minimal(base_size = 14)
+```
+
+## Estimating from Sample Data
+
+In practice the two parameters of the Normal distribution are estimated from the sample data: the **sample mean** ($\bar{x}$) and the **sample standard deviation** (SD).
+
+If a sample is taken from a Normal distribution, and provided that the sample is not too small, then approximately 95% of the sample will be covered by:
+
+$$\bar{x} - 1.96 \times SD \quad \text{and} \quad \bar{x} + 1.96 \times SD$$
+
+### Example: Height of Women
+
+```{r}
+#| label: height-example
+
+# Example data
+mean_height <- 1.61  # metres
+sd_height <- 0.07    # metres
+
+lower_95 <- mean_height - 1.96 * sd_height
+upper_95 <- mean_height + 1.96 * sd_height
+```
+
+In an example where the mean height ($\bar{x}$) of women was 1.61 m and the standard deviation (SD) was 0.07 m (i.e. 7 cm):
+
+Approximately 95% of the sample will be covered in the range:
+
+- Lower: 1.61 - 1.96 × 0.07 = **`r round(lower_95, 2)` m**
+- Upper: 1.61 + 1.96 × 0.07 = **`r round(upper_95, 2)` m**
+
+## The Standard Error
+
+Imagine another random sample of women was selected to investigate their height. The values in this second sample will vary from woman to woman and we would expect the mean value for this new group to be different but not too different from that obtained in the first sample.
+
+The precision with which the sample mean is estimated can be measured by the standard deviation of the mean. This is called the **standard error** (SE):
+
+$$SE = \frac{SD}{\sqrt{n}}$$
+
+### Example: Standard Error of Height
+
+```{r}
+#| label: tbl-se-example
+#| tbl-cap: "Effect of sample size on standard error"
+
+n_large <- 5628
+n_small <- 20
+
+se_large <- sd_height / sqrt(n_large)
+se_small <- sd_height / sqrt(n_small)
+
+tibble(
+  `Sample size (n)` = c(n_large, n_small),
+  `Standard deviation` = c(sd_height, sd_height),
+  `Standard error` = c(round(se_large, 4), round(se_small, 4))
+) |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+In the example of 5,628 women the standard error of the mean would be 0.07/√5628 = 0.07/75 = **0.0009 m**. Because the sample size is very large the standard error of the mean is very small.
+
+If the sample size was smaller, say 20 women, the standard error of the mean would have been larger: **0.0156 m**.
+
+::: {.callout-important}
+## Key Point
+Sample size does not influence the size of the sample standard deviation, it influences the **precision of the estimated parameters**.
+:::
+
+## Confidence Intervals
+
+**Confidence intervals** define the range of values within which the population mean μ is likely to lie. A 95% confidence interval for the population mean is defined by:
+
+$$\bar{x} - 1.96 \times SE \quad \text{and} \quad \bar{x} + 1.96 \times SE$$
+
+### Example: 95% Confidence Interval for Height
+
+In the case of height among the sample of 5,628 women:
+
+- SE = 0.0009 m
+- 95% CI = 1.61 ± (1.96 × 0.0009) = **(1.608 m to 1.612 m)**
+
+The interpretation of the confidence interval is that **95% of intervals will contain the true population mean**. This is interpreted as a 95% chance that the population mean will be contained in the interval.
+
+The interval in this example is very narrow due to the large sample size. If the sample size had been 20, the interval would have been wider at **(1.58 m to 1.64 m)**.
+
+## Skewed Distributions
+
+Many statistical tests require data to be Normally distributed. In practice distributions are sometimes not symmetric and can be skewed. Often they display a long right-hand tail (**positive skew**) or long left-hand skew (**negative skew**).
+
+Skewed distributions can be made approximately Normal by **transforming** the original data:
+
+- In the case of **positively skewed** data, taking the **log** of the data can transform the data into an approximate Normal distribution
+- In the case of **negatively skewed** data (long left tail), **squaring** the data may help
+
+If data are not Normally distributed, then **non-parametric methods** which do not make assumptions that the data come from a Normal distribution may need to be used.
+
+## The Central Limit Theorem
+
+The distribution of sample means will be nearly Normally distributed (whatever the distribution of measurements among individuals). It will get closer to a Normal distribution as the sample size increases.
+
+This feature of mean values comes from the **Central Limit Theorem** and is very useful in the analysis of proportions.
+
+::: {.callout-tip}
+## Practical Implication
+Even if the underlying data are not Normally distributed, the distribution of sample means will approach a Normal distribution as sample size increases. This is why many statistical tests work well even with non-Normal data, provided the sample size is large enough.
+:::
+
+## Summary
+
+| Concept | Description |
+|---------|-------------|
+| Normal distribution | Symmetric, bell-shaped distribution |
+| Population mean (μ) | Centre of the distribution |
+| Population SD (σ) | Spread of the distribution |
+| 95% reference range | μ ± 1.96σ contains 95% of population |
+| Standard error (SE) | SD/√n - precision of estimated mean |
+| 95% confidence interval | $\bar{x}$ ± 1.96×SE - range likely to contain population mean |
+| Central Limit Theorem | Sample means are approximately Normal regardless of underlying distribution |
