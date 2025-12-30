@@ -11,7 +11,7 @@ This repository contains comprehensive statistical tutorials and practical exerc
 
 The course assumes **no prior knowledge** of statistics or programming and builds practical data analysis skills using R alongside core statistical concepts.
 
-🔗 **Main course page**: [Oncology Statistics – Edinburgh Cancer Informatics](https://oncology-statistics.github.io/)
+🔗 **Main course page**: [Oncology Statistics – Edinburgh Cancer Informatics](https://edin.ac/oncology-statistics/)
 
 ## Course Structure
 
