@@ -1,0 +1,1223 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistics for Oncology",
+    "section": "",
+    "text": "Statistics for Oncology\nA Course for Scottish Specialty Trainees",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "Statistics for Oncology",
+    "section": "0.1 About This Course",
+    "text": "0.1 About This Course\nThis handbook provides an introduction to medical statistics for oncology trainees in Scotland. It is designed for Clinical Oncology trainees preparing for the FRCR Part 1 examination and Medical Oncology trainees taking the Specialty Certificate Examination (SCE).\nNo prior statistics or programming knowledge is required.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#what-you-will-learn",
+    "href": "index.html#what-you-will-learn",
+    "title": "Statistics for Oncology",
+    "section": "0.2 What You Will Learn",
+    "text": "0.2 What You Will Learn\nBy the end of this course, you will be able to:\n\nUnderstand and interpret common statistical measures\nRead and critically appraise clinical research papers\nCommunicate statistical findings to patients and colleagues\nApply appropriate statistical thinking to clinical decisions",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-this-handbook",
+    "href": "index.html#how-to-use-this-handbook",
+    "title": "Statistics for Oncology",
+    "section": "0.3 How to Use This Handbook",
+    "text": "0.3 How to Use This Handbook\nThe content is organised into four parts:\n\n\n\n\n\n\n\n\nPart\nTopics\nFocus\n\n\n\n\nFoundations\nStatistics basics, populations, data types\nCore concepts\n\n\nDescribing Data\nGraphs, summaries, distributions\nExploratory analysis\n\n\nStatistical Inference\nHypothesis testing, regression\nDrawing conclusions\n\n\nClinical Applications\nSurvival, trials, epidemiology\nReal-world oncology\n\n\n\n\n\n\n\n\n\nNavigation\n\n\n\nUse the sidebar on the left to navigate between chapters. Each chapter builds on previous material, but you can jump to specific topics as needed.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "Statistics for Oncology",
+    "section": "0.4 Getting Started",
+    "text": "0.4 Getting Started\nBegin with ?sec-what-is-statistics to understand the fundamental role of statistics in evidence-based oncology practice.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Statistics for Oncology",
+    "section": "0.5 Acknowledgements",
+    "text": "0.5 Acknowledgements\nThis material is adapted for Scottish oncology trainees and is provided as an open educational resource under the MIT License.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#feedback",
+    "href": "index.html#feedback",
+    "title": "Statistics for Oncology",
+    "section": "0.6 Feedback",
+    "text": "0.6 Feedback\nIf you have questions or suggestions for improving this handbook, please contact the course organisers.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Welcome</span>"
+    ]
+  },
+  {
+    "objectID": "02-what-is-statistics.html",
+    "href": "02-what-is-statistics.html",
+    "title": "2  What is Statistics?",
+    "section": "",
+    "text": "2.1 Descriptive Statistics\nDescriptive statistics is concerned with summarising and presenting data. It is an essential step before further analysis is conducted.\nIt helps form subjective impressions of answers to research questions.\nTo produce appropriate descriptive statistics requires knowledge of different data types. Broadly, data are either numerical or categorical.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "02-what-is-statistics.html#inferential-statistics",
+    "href": "02-what-is-statistics.html#inferential-statistics",
+    "title": "2  What is Statistics?",
+    "section": "2.2 Inferential Statistics",
+    "text": "2.2 Inferential Statistics\nInferential statistics provides a framework to make subjective impressions more objective by quantifying uncertainty. Through estimation and testing it quantifies the magnitude of associations and indicates the strength of evidence that these are “real”.\nStatistics is the core science of evidence-based medicine.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "02-what-is-statistics.html#types-of-statistical-analysis",
+    "href": "02-what-is-statistics.html#types-of-statistical-analysis",
+    "title": "2  What is Statistics?",
+    "section": "2.3 Types of Statistical Analysis",
+    "text": "2.3 Types of Statistical Analysis\nStatistical analysis can be classified into three main types, each answering different research questions:\n\nDescriptive Analysis\nDescriptive analysis answers the question: “What happened?”\nThis involves summarising and characterising data to understand patterns and trends:\n\nWhat is the average age of lung cancer patients in our clinic?\nWhat proportion of breast cancer patients have Stage III disease?\nHow has cancer incidence changed over the past decade?\n\nDescriptive analysis does not make predictions or establish causation—it simply describes the data at hand.\nExample: “Among 500 prostate cancer patients, the median age at diagnosis was 68 years, and 45% had Gleason score ≥7.”\n\n\nPredictive Analysis\nPredictive analysis answers the question: “What will happen?”\nThis uses patterns in historical data to make predictions about future or unknown outcomes:\n\nGiven a patient’s age, tumour size, and grade, what is their probability of 5-year survival?\nWhich patients are most likely to respond to immunotherapy based on biomarkers?\nCan we predict treatment toxicity from baseline characteristics?\n\nPredictive analysis focuses on accuracy of prediction, not on understanding why relationships exist. A predictive model may include variables that have no causal relationship with the outcome, as long as they improve prediction.\nExample: “A machine learning model using 20 clinical and genomic features predicts complete response to chemotherapy with 82% accuracy.”\n\n\n\n\n\n\nPrediction vs Causation\n\n\n\nA predictive model can be highly accurate without any of the predictors being causally related to the outcome. For instance, ice cream sales predict drowning deaths (both increase in summer), but ice cream does not cause drowning.\n\n\n\n\nCausal Analysis\nCausal analysis answers the question: “What will happen if we intervene?”\nThis aims to understand cause-and-effect relationships—what happens when we actively change one variable:\n\nDoes radiotherapy cause improved survival in early-stage lung cancer?\nDoes smoking cause an increased risk of bladder cancer?\nWould lowering blood pressure reduce the risk of stroke?\n\nCausal analysis requires more than just observing associations. It demands careful study design and analysis to rule out alternative explanations like confounding and reverse causation.\nExample: “In a randomised controlled trial, adding immunotherapy to chemotherapy caused a 35% reduction in the risk of death compared to chemotherapy alone (hazard ratio 0.65, 95% CI 0.52-0.81).”",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "02-what-is-statistics.html#causal-inference",
+    "href": "02-what-is-statistics.html#causal-inference",
+    "title": "2  What is Statistics?",
+    "section": "2.4 Causal Inference",
+    "text": "2.4 Causal Inference\nCausal inference is the process of determining whether an observed association represents a true cause-and-effect relationship.\n\nAssociation vs Causation\nA fundamental principle in statistics is that correlation does not imply causation. Two variables may be associated (correlated) for several reasons:\n\nA causes B: Smoking causes lung cancer\nB causes A (reverse causation): Lung cancer causes weight loss (not the other way around)\nC causes both A and B (confounding): Age causes both grey hair and increased cancer risk\nCoincidence: Ice cream sales and drowning deaths both increase in summer\n\n\n\nRequirements for Causal Inference\nTo establish causation, we need more than just an association. The Bradford Hill criteria provide a framework:\n\n\n\n\n\n\n\nCriterion\nDescription\n\n\n\n\nStrength of association\nStronger associations are more likely to be causal\n\n\nConsistency\nThe association is repeatedly observed in different populations and settings\n\n\nTemporality\nThe cause must precede the effect in time\n\n\nBiological gradient\nDose-response relationship (e.g., more smoking → higher cancer risk)\n\n\nPlausibility\nThere is a plausible biological mechanism\n\n\nExperimental evidence\nIntervention studies (e.g., RCTs) demonstrate the effect\n\n\n\n\n\nStudy Designs for Causal Inference\nDifferent study designs provide different levels of evidence for causation:\nRandomised Controlled Trials (RCTs): - Gold standard for causal inference - Random assignment breaks the link between confounders and treatment - Allows us to say treatment caused the outcome difference\nObservational Studies: - Case-control and cohort studies can suggest causation but cannot prove it - Require careful control for confounding variables - Multiple studies showing consistent associations strengthen causal claims\n\n\n\n\n\n\nClinical Application\n\n\n\nIn oncology, RCTs establish that treatments cause improved outcomes (e.g., “chemotherapy causes a 20% reduction in mortality”). Observational studies may identify risk factors associated with cancer (e.g., “obesity is associated with increased breast cancer risk”) but cannot always prove causation without supporting evidence from other sources.\n\n\n\n\nExample: Causal vs Non-Causal Associations\nNon-causal association: - Observation: Patients who drink coffee have lower rates of liver cancer - This could be confounded by many factors (e.g., coffee drinkers may be healthier overall) - We cannot conclude coffee causes reduced liver cancer from observational data alone\nCausal relationship (established through RCT): - Question: Does radiotherapy cause improved survival in early-stage lung cancer? - RCT: Patients randomised to radiotherapy vs observation - Result: Radiotherapy group had 15% better 5-year survival - Conclusion: Radiotherapy causes improved survival (because randomisation eliminates confounding)\n\n\n\n\n\n\nCommon Pitfall\n\n\n\nMany research papers incorrectly use causal language (“X reduces Y”, “X improves Y”) when describing observational associations. Be cautious when interpreting such claims—unless the study is an RCT or provides strong evidence using causal inference methods, the relationship may not be causal.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "02-what-is-statistics.html#terminology-probability",
+    "href": "02-what-is-statistics.html#terminology-probability",
+    "title": "2  What is Statistics?",
+    "section": "2.5 Terminology: Probability",
+    "text": "2.5 Terminology: Probability\nIn layman terms probability is often regarded as the degree of belief that an event will happen.\nFor the most part when statisticians refer to probability (denoted as P or p), they are referring to the long-term frequency of an event occurring. This provides a measure of the chance that an event will happen, usually under a set of specific assumptions. The probability of the event not occurring is 1-p.\nBy definition probability can take any value between 0 (the event will definitely not occur) and 1 (the event will definitely occur).\nProbability is sometimes expressed as a percentage 0-100%.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "02-what-is-statistics.html#summary",
+    "href": "02-what-is-statistics.html#summary",
+    "title": "2  What is Statistics?",
+    "section": "2.6 Summary",
+    "text": "2.6 Summary\n\n\n\n\n\n\n\n\nConcept\nDescription\nKey Question\n\n\n\n\nStatistics\nThe science of collecting, summarising, presenting and interpreting data\n—\n\n\nDescriptive analysis\nSummarising and characterising observed data\n“What happened?”\n\n\nPredictive analysis\nUsing patterns to forecast future outcomes\n“What will happen?”\n\n\nCausal analysis\nUnderstanding cause-and-effect relationships\n“What if we intervene?”\n\n\nInferential statistics\nQuantifying uncertainty through estimation and testing\n—\n\n\nCausal inference\nDetermining if associations represent true causation\n—\n\n\nAssociation\nTwo variables are correlated (may or may not be causal)\n—\n\n\nCausation\nOne variable directly causes changes in another\n—\n\n\nProbability\nThe long-term frequency of an event occurring (0 to 1)\n—",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>What is Statistics?</span>"
+    ]
+  },
+  {
+    "objectID": "03-populations-samples.html",
+    "href": "03-populations-samples.html",
+    "title": "3  Populations and Samples",
+    "section": "",
+    "text": "3.1 Populations and Samples\nStatistics describes and makes inferences about ‘populations’. A population is the entire group of individuals whose characteristics we are interested in.\nThis is achieved by using a ‘sample’ of individuals from the entire population.\nUsing the sample, we measure a characteristic whose value can vary from individual to individual (a ‘variable’) – age, tumour stage, blood pressure, performance status, weight, sex, occupation, and length of survival following radiotherapy are all examples of variables.\nThe values observed among individuals within the sample are called observations or data.\nWe summarise the values of the characteristic in the sample (the summary is called the sample statistic – for example ‘average’ age). We then make an inference about the corresponding summary value (called the population parameter) in the entire population.\nAn important assumption is that the sample is representative of the entire population. To achieve this, individuals in the sample must be selected randomly from the entire population. Random selection means that every person in the population has the same probability of being selected to the sample.\ncode\n# Create a visual representation of the inference process\nset.seed(42)\npop_data &lt;- tibble(\n  x = runif(200, 0, 4),\n  y = runif(200, 0, 4)\n)\n\nsample_indices &lt;- sample(1:200, 15)\nsample_data &lt;- pop_data[sample_indices, ]\n\nggplot() +\n  geom_point(data = pop_data, aes(x = x, y = y), \n             colour = \"#2c3e50\", size = 2, alpha = 0.6) +\n  geom_point(data = sample_data, aes(x = x + 6, y = y), \n             colour = \"#e74c3c\", size = 3) +\n  annotate(\"text\", x = 2, y = 4.5, label = \"Population\", \n           size = 5, fontface = \"bold\", colour = \"#2c3e50\") +\n  annotate(\"text\", x = 8, y = 4.5, label = \"Sample\", \n           size = 5, fontface = \"bold\", colour = \"#e74c3c\") +\n  annotate(\"segment\", x = 4.3, xend = 5.7, y = 2.5, yend = 2.5,\n           arrow = arrow(length = unit(0.3, \"cm\")), \n           colour = \"#3498db\", linewidth = 1) +\n  annotate(\"text\", x = 5, y = 3, label = \"select random sample\", \n           size = 3.5, colour = \"#3498db\", fontface = \"italic\") +\n  annotate(\"segment\", x = 5.7, xend = 4.3, y = 1.5, yend = 1.5,\n           arrow = arrow(length = unit(0.3, \"cm\")), \n           colour = \"#27ae60\", linewidth = 1) +\n  annotate(\"text\", x = 5, y = 1, label = \"Use sample to make an\\ninference about the population\", \n           size = 3, colour = \"#27ae60\", fontface = \"italic\") +\n  theme_void() +\n  coord_cartesian(xlim = c(-0.5, 10), ylim = c(-0.5, 5))\n\n\n\n\n\n\n\n\nFigure 3.1: Using a sample to make inferences about the population",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Populations and Samples</span>"
+    ]
+  },
+  {
+    "objectID": "03-populations-samples.html#random-sampling",
+    "href": "03-populations-samples.html#random-sampling",
+    "title": "3  Populations and Samples",
+    "section": "3.2 Random Sampling",
+    "text": "3.2 Random Sampling\nThe above strategy is called simple random sampling. There are other selection strategies, including stratified random sampling and cluster sampling. At their core is random selection, and the notion that we cannot predict which individual will be included in the sample.\n\n\n\n\n\n\n\nSampling Method\nDescription\n\n\n\n\nSimple random sampling\nEvery individual has an equal chance of selection\n\n\nStratified random sampling\nPopulation divided into subgroups, then random samples from each\n\n\nCluster sampling\nRandom selection of groups, then study all individuals within selected groups",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Populations and Samples</span>"
+    ]
+  },
+  {
+    "objectID": "03-populations-samples.html#selection-bias",
+    "href": "03-populations-samples.html#selection-bias",
+    "title": "3  Populations and Samples",
+    "section": "3.3 Selection Bias",
+    "text": "3.3 Selection Bias\nBias is a type of error that systematically skews results in a certain direction. Selection bias is a common type of error. The decision about who to include in a study can throw findings into doubt.\nSelection bias can occur when the researcher decides who is going to be studied. It is usually associated with research where the selection of participants isn’t random (i.e. with observational studies such as cohort, case-control and cross-sectional studies). Random selection helps reduce selection bias by ensuring each individual has an equal chance of being selected.\nEven then selection bias occurs when people agree or decline to participate in a study. Those who choose to join (i.e. who self-select into the study) may share a characteristic that makes them different from non-participants.\nOften, selection bias is unavoidable. That’s why it’s important for researchers to examine their study design for this type of bias and find ways to adjust for it, and to acknowledge it in their study report.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Populations and Samples</span>"
+    ]
+  },
+  {
+    "objectID": "03-populations-samples.html#summary",
+    "href": "03-populations-samples.html#summary",
+    "title": "3  Populations and Samples",
+    "section": "3.4 Summary",
+    "text": "3.4 Summary\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nPopulation\nThe entire group of individuals whose characteristics we are interested in\n\n\nSample\nA subset of individuals selected from the population\n\n\nVariable\nA characteristic that varies from individual to individual\n\n\nSample statistic\nA summary calculated from sample data (e.g. mean age)\n\n\nPopulation parameter\nThe true value in the whole population (usually unknown)\n\n\nRandom selection\nEvery person has the same probability of being selected\n\n\nSelection bias\nSystematic error from non-representative sample selection",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Populations and Samples</span>"
+    ]
+  },
+  {
+    "objectID": "04-types-of-data.html",
+    "href": "04-types-of-data.html",
+    "title": "4  Types of Data",
+    "section": "",
+    "text": "4.1 Overview\nBroadly, data are either numerical or categorical. Other terms to describe this are quantitative or qualitative.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Types of Data</span>"
+    ]
+  },
+  {
+    "objectID": "04-types-of-data.html#categorical-qualitative-data",
+    "href": "04-types-of-data.html#categorical-qualitative-data",
+    "title": "4  Types of Data",
+    "section": "4.2 Categorical (Qualitative) Data",
+    "text": "4.2 Categorical (Qualitative) Data\nCategorical data tells us which category an individual belongs to.\n\nNominal Scale\nCategories are distinguished by a name, with no intrinsic ordering.\nExamples: sex, histology, cancer type, postcode\n\n\nOrdinal Scale\nCategories are distinguished by name, with intrinsic ordering.\nExamples: performance status, toxicity grade, tumour stage\n\n\nDichotomous Variables\nA categorical measure with only two categories (for example alive or dead) is called dichotomous. Sometimes the categories of a dichotomous variable are labelled 0 and 1, and are called a binary variable.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Types of Data</span>"
+    ]
+  },
+  {
+    "objectID": "04-types-of-data.html#numerical-quantitative-data",
+    "href": "04-types-of-data.html#numerical-quantitative-data",
+    "title": "4  Types of Data",
+    "section": "4.3 Numerical (Quantitative) Data",
+    "text": "4.3 Numerical (Quantitative) Data\nNumerical data consists of values that are counts or measurements.\n\nDiscrete Data\nValues arise from a counting process.\nExamples: number of tumours, number of metastases, number of hospital admissions\n\n\nContinuous Data\nValues arise from a measuring process.\nExamples: height, tumour size, planning treatment volume, age, overall survival, weight, FEV1\n\n\ncode\n# Create diagram using ggplot\nggplot() +\n  # Main categorical box\n  annotate(\"rect\", xmin = 0, xmax = 4, ymin = 4, ymax = 5, \n           fill = \"#3498db\", alpha = 0.3, colour = \"#2980b9\") +\n  annotate(\"text\", x = 2, y = 4.7, label = \"Categorical (qualitative)\", \n           fontface = \"bold\", size = 4) +\n  annotate(\"text\", x = 2, y = 4.3, label = \"tells us which category an\\nindividual belongs to\", \n           size = 3) +\n  \n  # Nominal box\n  annotate(\"rect\", xmin = 0, xmax = 1.9, ymin = 2, ymax = 3.5, \n           fill = \"#3498db\", alpha = 0.2, colour = \"#2980b9\") +\n  annotate(\"text\", x = 0.95, y = 3.2, label = \"Nominal scale\", \n           fontface = \"bold\", size = 3.5) +\n  annotate(\"text\", x = 0.95, y = 2.8, label = \"Categories distinguished\\nby name, with no\\nintrinsic ordering\", \n           size = 2.5) +\n  annotate(\"text\", x = 0.95, y = 2.2, label = \"(e.g. sex, histology,\\ncancer type)\", \n           size = 2.5, fontface = \"italic\") +\n  \n  # Ordinal box\n  annotate(\"rect\", xmin = 2.1, xmax = 4, ymin = 2, ymax = 3.5, \n           fill = \"#3498db\", alpha = 0.2, colour = \"#2980b9\") +\n  annotate(\"text\", x = 3.05, y = 3.2, label = \"Ordinal scale\", \n           fontface = \"bold\", size = 3.5) +\n  annotate(\"text\", x = 3.05, y = 2.8, label = \"Categories distinguished\\nby name, with\\nintrinsic ordering\", \n           size = 2.5) +\n  annotate(\"text\", x = 3.05, y = 2.2, label = \"(e.g. performance status,\\ntoxicity grade)\", \n           size = 2.5, fontface = \"italic\") +\n  \n  # Main numerical box\n  annotate(\"rect\", xmin = 5, xmax = 9, ymin = 4, ymax = 5, \n           fill = \"#e74c3c\", alpha = 0.3, colour = \"#c0392b\") +\n  annotate(\"text\", x = 7, y = 4.7, label = \"Numerical (quantitative)\", \n           fontface = \"bold\", size = 4) +\n  annotate(\"text\", x = 7, y = 4.3, label = \"values are counts or\\nmeasurements\", \n           size = 3) +\n  \n  # Discrete box\n  annotate(\"rect\", xmin = 5, xmax = 6.9, ymin = 2, ymax = 3.5, \n           fill = \"#e74c3c\", alpha = 0.2, colour = \"#c0392b\") +\n  annotate(\"text\", x = 5.95, y = 3.2, label = \"Discrete\", \n           fontface = \"bold\", size = 3.5) +\n  annotate(\"text\", x = 5.95, y = 2.8, label = \"Values arise from\\ncounting process\", \n           size = 2.5) +\n  annotate(\"text\", x = 5.95, y = 2.2, label = \"(e.g. number of\\ntumours)\", \n           size = 2.5, fontface = \"italic\") +\n  \n  # Continuous box\n  annotate(\"rect\", xmin = 7.1, xmax = 9, ymin = 2, ymax = 3.5, \n           fill = \"#e74c3c\", alpha = 0.2, colour = \"#c0392b\") +\n  annotate(\"text\", x = 8.05, y = 3.2, label = \"Continuous\", \n           fontface = \"bold\", size = 3.5) +\n  annotate(\"text\", x = 8.05, y = 2.8, label = \"Values arise from\\nmeasuring process\", \n           size = 2.5) +\n  annotate(\"text\", x = 8.05, y = 2.2, label = \"(e.g. height, tumour size,\\nage, survival)\", \n           size = 2.5, fontface = \"italic\") +\n  \n  # Connecting lines\n  annotate(\"segment\", x = 1, y = 4, xend = 1, yend = 3.5) +\n  annotate(\"segment\", x = 3, y = 4, xend = 3, yend = 3.5) +\n  annotate(\"segment\", x = 1, y = 4, xend = 3, yend = 4) +\n  annotate(\"segment\", x = 2, y = 4.0, xend = 2, yend = 4) +\n  \n  annotate(\"segment\", x = 6, y = 4, xend = 6, yend = 3.5) +\n  annotate(\"segment\", x = 8, y = 4, xend = 8, yend = 3.5) +\n  annotate(\"segment\", x = 6, y = 4, xend = 8, yend = 4) +\n  annotate(\"segment\", x = 7, y = 4.0, xend = 7, yend = 4) +\n  \n  theme_void() +\n  coord_cartesian(xlim = c(-0.5, 9.5), ylim = c(1.5, 5.5))\n\n\n\n\n\n\n\n\nFigure 4.1: Classification of data types",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Types of Data</span>"
+    ]
+  },
+  {
+    "objectID": "04-types-of-data.html#paired-data",
+    "href": "04-types-of-data.html#paired-data",
+    "title": "4  Types of Data",
+    "section": "4.4 Paired Data",
+    "text": "4.4 Paired Data\nThe majority of statistical analyses compare characteristics measured in two separate groups of individuals. In some circumstances, however, data may consist of pairs of outcome measurements.\nWhen the same variable is measured on two occasions in the same individual, this is called paired data. If measurements are only made once on each individual they are unpaired.\n\nExamples of Paired Data\nBefore and after treatment: We might wish, for example, to carry out a study where the assessment of tumour response to radiotherapy is based on comparing tumour size measurements in a group of lung cancer patients, before and after they received treatment. For each person, we therefore have a pair of measures: tumour size after treatment and tumour size before treatment.\nComparing two sites: When two measurements are taken on the same patient (e.g., comparing left and right eyes, or two different anatomical sites).\n\n\n\n\n\n\nWhy Pairing Matters\n\n\n\nIt is important to take this pairing in the data into account when assessing how much on average the treatment has affected tumour size. Paired analyses account for within-person variability and are typically more powerful than unpaired analyses.\n\n\n\n\ncode\ntibble(\n  Patient = 1:8,\n  `Tumour Size Before (cm)` = c(4.2, 3.8, 5.1, 4.5, 3.2, 6.0, 4.8, 3.5),\n  `Tumour Size After (cm)` = c(2.1, 2.5, 3.2, 2.8, 1.8, 4.2, 3.1, 2.0),\n  `Change (cm)` = c(-2.1, -1.3, -1.9, -1.7, -1.4, -1.8, -1.7, -1.5)\n) |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 4.1: Example of paired data: tumour size before and after radiotherapy in lung cancer patients\n\n\n\n\n\n\nPatient\nTumour Size Before (cm)\nTumour Size After (cm)\nChange (cm)\n\n\n\n\n1\n4.2\n2.1\n-2.1\n\n\n2\n3.8\n2.5\n-1.3\n\n\n3\n5.1\n3.2\n-1.9\n\n\n4\n4.5\n2.8\n-1.7\n\n\n5\n3.2\n1.8\n-1.4\n\n\n6\n6.0\n4.2\n-1.8\n\n\n7\n4.8\n3.1\n-1.7\n\n\n8\n3.5\n2.0\n-1.5",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Types of Data</span>"
+    ]
+  },
+  {
+    "objectID": "04-types-of-data.html#summary",
+    "href": "04-types-of-data.html#summary",
+    "title": "4  Types of Data",
+    "section": "4.5 Summary",
+    "text": "4.5 Summary\n\n\n\n\n\n\n\n\n\nData Type\nSubtype\nDescription\nExamples\n\n\n\n\nCategorical\nNominal\nCategories with no ordering\nSex, histology, cancer type\n\n\nCategorical\nOrdinal\nCategories with ordering\nPerformance status, toxicity grade\n\n\nCategorical\nDichotomous\nOnly two categories\nAlive/dead, yes/no\n\n\nNumerical\nDiscrete\nCounting process\nNumber of tumours\n\n\nNumerical\nContinuous\nMeasuring process\nHeight, tumour size, survival time",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Types of Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-presenting-data.html",
+    "href": "05-presenting-data.html",
+    "title": "5  Presenting Data",
+    "section": "",
+    "text": "5.1 Introduction\nThe use of graphics and descriptive statistics is an important step to identifying the main features of data, for detecting outliers, and identifying data which has been recorded incorrectly.\nOutliers are extreme observations which are not consistent with the rest of the data. The presence of outliers can distort statistical techniques.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Presenting Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-presenting-data.html#frequency-distribution-tables",
+    "href": "05-presenting-data.html#frequency-distribution-tables",
+    "title": "5  Presenting Data",
+    "section": "5.2 Frequency Distribution Tables",
+    "text": "5.2 Frequency Distribution Tables\nA count of the number of times something occurs is called a frequency count.\nWithin a data set we may list the data values and count how many times each value occurs. A table with the set of data values and frequency of each value is called a frequency distribution table.\n\n\ncode\n# Create the brain metastases data\nbrain_mets &lt;- tibble(\n  `Number of brain metastases` = c(\"1\", \"2\", \"3 or more\", \"Total\"),\n  `Number of patients (n)` = c(19, 4, 9, 32),\n  `Percent of patients (%)` = c(59.4, 12.5, 28.1, 100)\n)\n\nbrain_mets |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 5.1: Number of brain metastases among renal cancer patients treated with cranial radiotherapy\n\n\n\n\n\n\nNumber of brain metastases\nNumber of patients (n)\nPercent of patients (%)\n\n\n\n\n1\n19\n59.4\n\n\n2\n4\n12.5\n\n\n3 or more\n9\n28.1\n\n\nTotal\n32\n100.0\n\n\n\n\n\n\n\n\nThe most frequent category is called the mode. In the above table the mode would be 1 metastasis, which occurred in a total of 19 renal cancer patients.\nThe percentages in a frequency distribution table are sometimes expressed as relative frequencies or proportions. In the above table, the proportions would be 0.594, 0.125, 0.281.\n\nGrouped Frequency Tables\nWhen the set of potential data values is large the data are organised in groups (examples – age groups 20-29, 30-39, 40-49, 50-59, 60-69 etc). A count of the number of data values in each group (group frequency) is made. The frequency distribution table will then include the data groupings and the frequency of each group.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Presenting Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-presenting-data.html#graphs-for-numeric-data",
+    "href": "05-presenting-data.html#graphs-for-numeric-data",
+    "title": "5  Presenting Data",
+    "section": "5.3 Graphs for Numeric Data",
+    "text": "5.3 Graphs for Numeric Data\n\nHistograms\nA histogram consists of a set of rectangles which present the frequency distribution of a variable. It allows a visualisation of the shape of the data.\n\n\ncode\n# Create simple histogram anatomy diagram\nset.seed(100)\nsample_data &lt;- tibble(x = c(2.5, 3.5, 4.5, 5.5, 6.5))\nsample_freq &lt;- c(3, 7, 12, 8, 4)\n\nggplot() +\n  geom_col(aes(x = sample_data$x, y = sample_freq),\n           width = 0.9, fill = \"#3498db\", colour = \"#2980b9\", alpha = 0.7) +\n  # Y-axis label annotation\n  annotate(\"segment\", x = 1.5, xend = 1.5, y = 0, yend = 12,\n           arrow = arrow(length = unit(0.3, \"cm\"), ends = \"both\"), colour = \"#e74c3c\", linewidth = 1) +\n  annotate(\"text\", x = 0.8, y = 6, label = \"Frequency\\n(y-axis)\", colour = \"#e74c3c\", size = 3.5, fontface = \"bold\") +\n  # X-axis label annotation\n  annotate(\"segment\", x = 2, xend = 7, y = -1.5, yend = -1.5,\n           arrow = arrow(length = unit(0.3, \"cm\"), ends = \"both\"), colour = \"#27ae60\", linewidth = 1) +\n  annotate(\"text\", x = 4.5, y = -2.5, label = \"Variable values (x-axis)\", colour = \"#27ae60\", size = 3.5, fontface = \"bold\") +\n  # Bar width annotation\n  annotate(\"segment\", x = 4.05, xend = 4.95, y = 13, yend = 13,\n           arrow = arrow(length = unit(0.2, \"cm\"), ends = \"both\"), colour = \"#8e44ad\", linewidth = 0.8) +\n  annotate(\"text\", x = 4.5, y = 13.8, label = \"Group width\", colour = \"#8e44ad\", size = 3, fontface = \"bold\") +\n  # Midpoint annotation\n  annotate(\"point\", x = 4.5, y = 0, colour = \"#e67e22\", size = 3) +\n  annotate(\"segment\", x = 4.5, xend = 4.5, y = 0, yend = -0.8,\n           colour = \"#e67e22\", linewidth = 0.8, linetype = \"dashed\") +\n  annotate(\"text\", x = 5.8, y = 0.5, label = \"Midpoint\", colour = \"#e67e22\", size = 3, fontface = \"bold\") +\n  annotate(\"segment\", x = 5.3, xend = 4.6, y = 0.5, yend = 0.1,\n           arrow = arrow(length = unit(0.15, \"cm\")), colour = \"#e67e22\", linewidth = 0.6) +\n  labs(x = \"\", y = \"\") +\n  scale_y_continuous(limits = c(-3, 15), breaks = seq(0, 12, 3)) +\n  scale_x_continuous(limits = c(0.5, 8), breaks = sample_data$x) +\n  theme_minimal(base_size = 12) +\n  theme(panel.grid.minor = element_blank())\n\n\n\n\n\n\n\n\nFigure 5.1: Anatomy of a histogram showing key components\n\n\n\n\n\n\n\ncode\n# Generate synthetic height data (women, approximately normal)\nset.seed(123)\nheights &lt;- tibble(\n  height = rnorm(5682, mean = 1.61, sd = 0.07)\n)\n\nggplot(heights, aes(x = height)) +\n  geom_histogram(binwidth = 0.05, fill = \"#3498db\", colour = \"white\", alpha = 0.8) +\n  labs(x = \"Height (m)\", y = \"Frequency (n)\") +\n  scale_x_continuous(breaks = seq(1.2, 2.0, 0.2)) +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 5.2: Histogram of the heights of 5,682 women aged 25-64\n\n\n\n\n\nThe histogram above shows that the most frequent grouping of heights occurs at 1.6-1.65 m. There is a tendency for the bars of the histogram to cluster around this central modal group in a symmetric fashion. This is a classic example of a Normal distribution which displays a symmetric bell shape.\nNot all histograms are symmetric; skewness can exist in the distribution of values.\n\n\ncode\nset.seed(42)\n\n# Symmetric\nsymmetric &lt;- tibble(x = rnorm(1000, 50, 10), type = \"Symmetric (bell shaped)\")\n\n# Positively skewed (long right tail)\npositive_skew &lt;- tibble(x = rgamma(1000, shape = 2, scale = 10), type = \"Positively skewed\\n(long tail to the right)\")\n\n# Negatively skewed (long left tail)\nnegative_skew &lt;- tibble(x = 100 - rgamma(1000, shape = 2, scale = 10), type = \"Negatively skewed\\n(long tail to the left)\")\n\nall_data &lt;- bind_rows(symmetric, positive_skew, negative_skew)\nall_data$type &lt;- factor(all_data$type, levels = c(\"Symmetric (bell shaped)\", \n                                                   \"Positively skewed\\n(long tail to the right)\",\n                                                   \"Negatively skewed\\n(long tail to the left)\"))\n\nggplot(all_data, aes(x = x)) +\n  geom_histogram(bins = 25, fill = \"#3498db\", colour = \"white\", alpha = 0.8) +\n  facet_wrap(~type, scales = \"free\") +\n  labs(x = \"Variable\", y = \"Frequency\") +\n  theme_minimal(base_size = 12)\n\n\n\n\n\n\n\n\nFigure 5.3: Examples of symmetric, positively skewed, and negatively skewed distributions\n\n\n\n\n\n\n\nDot Plots\nDot plots are a simple method of conveying as much information as possible by showing all of the data. It retains individual subject values and clearly demonstrates differences between groups. An additional advantage is that outliers will be detected.\n\n\ncode\nset.seed(456)\npsa_data &lt;- tibble(\n  patient = rep(1:41, 2),\n  timepoint = rep(c(\"Initial\", \"Week 18\"), each = 41),\n  psa = c(\n    rlnorm(41, meanlog = 2, sdlog = 0.8),  # Initial - higher values\n    rlnorm(41, meanlog = 0.5, sdlog = 0.6)  # Week 18 - lower values\n  )\n)\n\npsa_data$timepoint &lt;- factor(psa_data$timepoint, levels = c(\"Initial\", \"Week 18\"))\n\nggplot(psa_data, aes(x = timepoint, y = psa)) +\n  geom_jitter(width = 0.1, alpha = 0.7, colour = \"#2c3e50\", size = 2) +\n  labs(x = \"\", y = \"PSA (ng/mL)\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 5.4: PSA levels before treatment and at week 18 among men who received SABR for prostate cancer\n\n\n\n\n\n\n\nBox Plots\nA boxplot is used for discrete and continuous data. It indicates 5 important statistics which describe the distribution of observations:\n\nMinimum value\nLower quartile (Q1) - 25% of data values below this line\nMedian (Q2) - 50% of data values below this line\nUpper quartile (Q3) - 75% of data values below this line\nMaximum value\n\nThe median is the middle observation in a set of data. 50% of the sample lie below, and 50% lie above the median. It can be seen from the figure that 50% of the data sample lie between the lower quartile (Q1) and the upper quartile (Q3).\n\n\ncode\nset.seed(789)\nnlr_data &lt;- tibble(\n  sex = rep(c(\"Women\", \"Men\"), c(50, 60)),\n  nlr = c(\n    rlnorm(50, meanlog = 1.0, sdlog = 0.5),\n    rlnorm(60, meanlog = 1.1, sdlog = 0.6)\n  )\n)\n\nggplot(nlr_data, aes(x = sex, y = nlr)) +\n  geom_boxplot(fill = \"#3498db\", alpha = 0.6, outlier.colour = \"#e74c3c\") +\n  labs(x = \"\", y = \"Neutrophil-lymphocyte ratio\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 5.5: Pre-treatment neutrophil-lymphocyte ratio in men and women who received SABR for lung cancer",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Presenting Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-presenting-data.html#graphs-for-bivariate-continuous-data",
+    "href": "05-presenting-data.html#graphs-for-bivariate-continuous-data",
+    "title": "5  Presenting Data",
+    "section": "5.4 Graphs for Bivariate Continuous Data",
+    "text": "5.4 Graphs for Bivariate Continuous Data\n\nScatterplots\nScatterplots show the relationship between two numeric variables measured on the same individuals. The values of one variable appear on the horizontal axis, and the values of the other variable appear on the vertical axis. Each individual in the data appears as a point in the plot.\nTwo variables are positively associated when higher values of one variable tend to accompany higher values of the other, and lower values tend to occur together.\nTwo variables are negatively associated when higher values of one variable tend to accompany lower values of the other.\n\n\ncode\nset.seed(321)\nn &lt;- 80\nblood_data &lt;- tibble(\n  platelets = runif(n, 100, 450),\n  wbc = 5 + 0.015 * platelets + rnorm(n, 0, 2.5)\n)\n\nggplot(blood_data, aes(x = platelets, y = wbc)) +\n  geom_point(colour = \"#2c3e50\", alpha = 0.7, size = 2) +\n  labs(x = \"Platelets\", y = \"White blood cells\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 5.6: Scatterplot showing relationship between platelets and white blood cell counts\n\n\n\n\n\nThe scatterplot above shows a positive association between platelets and white blood cell counts. Here’s another example showing the relationship between neutrophils and white blood cells:\n\n\ncode\nset.seed(987)\nn &lt;- 80\nneutrophil_data &lt;- tibble(\n  neutrophils = runif(n, 2, 8),\n  wbc = 3 + 0.8 * neutrophils + rnorm(n, 0, 1.5)\n)\n\nggplot(neutrophil_data, aes(x = neutrophils, y = wbc)) +\n  geom_point(colour = \"#e74c3c\", alpha = 0.7, size = 2) +\n  geom_smooth(method = \"lm\", se = FALSE, colour = \"#2c3e50\", linetype = \"dashed\", linewidth = 0.8) +\n  labs(x = \"Neutrophils (10⁹/L)\", y = \"White blood cells (10⁹/L)\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 5.7: Scatterplot showing relationship between neutrophils and white blood cell counts\n\n\n\n\n\nThis scatterplot demonstrates a strong positive association - as neutrophil counts increase, white blood cell counts tend to increase as well. The dashed line shows the linear trend in the data.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Presenting Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-presenting-data.html#graphs-for-categorical-data",
+    "href": "05-presenting-data.html#graphs-for-categorical-data",
+    "title": "5  Presenting Data",
+    "section": "5.5 Graphs for Categorical Data",
+    "text": "5.5 Graphs for Categorical Data\n\nBar Charts\nBar charts are typically used for categorical data (but can be employed for discrete numerical data). Data can be nominal or ordinal.\n\n\ncode\n# Create bar chart anatomy diagram\ncategory_data &lt;- tibble(\n  category = factor(c(\"A\", \"B\", \"C\", \"D\"), levels = c(\"A\", \"B\", \"C\", \"D\")),\n  frequency = c(5, 12, 8, 15)\n)\n\nggplot(category_data, aes(x = category, y = frequency)) +\n  geom_col(fill = \"#3498db\", colour = \"#2980b9\", alpha = 0.7, width = 0.7) +\n  # Y-axis annotation\n  annotate(\"segment\", x = 0.3, xend = 0.3, y = 0, yend = 15,\n           arrow = arrow(length = unit(0.3, \"cm\"), ends = \"both\"), colour = \"#e74c3c\", linewidth = 1) +\n  annotate(\"text\", x = 0.1, y = 7.5, label = \"Frequency\\n(y-axis)\", colour = \"#e74c3c\", size = 3.5, fontface = \"bold\", hjust = 0.5) +\n  # X-axis annotation\n  annotate(\"segment\", x = 0.5, xend = 4.5, y = -2, yend = -2,\n           arrow = arrow(length = unit(0.3, \"cm\"), ends = \"both\"), colour = \"#27ae60\", linewidth = 1) +\n  annotate(\"text\", x = 2.5, y = -3.2, label = \"Categories (x-axis)\", colour = \"#27ae60\", size = 3.5, fontface = \"bold\") +\n  # Gap annotation\n  annotate(\"segment\", x = 1.35, xend = 1.65, y = 16.5, yend = 16.5,\n           arrow = arrow(length = unit(0.2, \"cm\"), ends = \"both\"), colour = \"#8e44ad\", linewidth = 0.8) +\n  annotate(\"text\", x = 1.5, y = 17.5, label = \"Gap between bars\\n(categorical data)\", colour = \"#8e44ad\", size = 3, fontface = \"bold\") +\n  # Bar label annotation\n  annotate(\"text\", x = 4, y = 15/2, label = \"Bar height =\\nfrequency\", colour = \"#e67e22\", size = 3, fontface = \"bold\") +\n  annotate(\"segment\", x = 3.5, xend = 4, y = 15/2, yend = 15,\n           arrow = arrow(length = unit(0.15, \"cm\")), colour = \"#e67e22\", linewidth = 0.6) +\n  annotate(\"segment\", x = 3.5, xend = 4, y = 15/2, yend = 0,\n           arrow = arrow(length = unit(0.15, \"cm\")), colour = \"#e67e22\", linewidth = 0.6) +\n  labs(x = \"\", y = \"\") +\n  scale_y_continuous(limits = c(-4, 19), breaks = seq(0, 15, 5)) +\n  theme_minimal(base_size = 12) +\n  theme(panel.grid.minor = element_blank())\n\n\n\n\n\n\n\n\nFigure 5.8: Anatomy of a bar chart showing key components\n\n\n\n\n\n\n\ncode\nstage_data &lt;- tibble(\n  stage = factor(c(\"Ia\", \"Ib\", \"IIa\", \"IIb\", \"IIIa\", \"IIIb\"), \n                 levels = c(\"Ia\", \"Ib\", \"IIa\", \"IIb\", \"IIIa\", \"IIIb\")),\n  frequency = c(7, 4, 11, 5, 46, 20)\n)\n\nggplot(stage_data, aes(x = stage, y = frequency)) +\n  geom_col(fill = \"#3498db\", alpha = 0.8) +\n  labs(x = \"Clinical stage\", y = \"Frequency\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 5.9: Clinical stage among 93 radical radiotherapy NSCLC patients\n\n\n\n\n\n\n\nPie Charts\nPie charts illustrate nominal data. Each slice of the pie represents a category. The size of the slice is proportional to the relative frequency of that category. It is best utilised with 3-5 categories.\n\n\ncode\nlocation_data &lt;- tibble(\n  location = c(\"Left upper lobe\", \"Left lower lobe\", \"Right upper lobe\", \n               \"Right lower lobe\", \"Right middle lobe\"),\n  percent = c(38, 11, 30, 20, 1)\n)\n\nggplot(location_data, aes(x = \"\", y = percent, fill = location)) +\n  geom_col(width = 1) +\n  coord_polar(theta = \"y\") +\n  scale_fill_brewer(palette = \"Set2\") +\n  labs(fill = \"Tumour location\") +\n  theme_void(base_size = 12) +\n  theme(legend.position = \"right\")\n\n\n\n\n\n\n\n\nFigure 5.10: Tumour location among 93 patients who received radical radiotherapy for lung cancer",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Presenting Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-presenting-data.html#tables-and-graphs-for-bivariate-categorical-data",
+    "href": "05-presenting-data.html#tables-and-graphs-for-bivariate-categorical-data",
+    "title": "5  Presenting Data",
+    "section": "5.6 Tables and Graphs for Bivariate Categorical Data",
+    "text": "5.6 Tables and Graphs for Bivariate Categorical Data\n\nContingency Tables\nWhen the interest is in the relationship between two qualitative variables a contingency table (a cross-tabulation) is created. This has the categories for one variable as rows and the categories of the other variable as columns. Each cell of the table has a count of the number of individuals in both categories.\nThe following example concerns the two-year follow-up of 42 men and 60 women following stereotactic radiotherapy for lung cancer. In total 25 patients had died and 77 were still alive at the two-year follow-up.\n\n\ncode\ncontingency &lt;- tibble(\n  `Status at two years` = c(\"Alive\", \"Died\", \"Total\"),\n  `Women (n)` = c(48, 12, 60),\n  `Men (n)` = c(29, 13, 42),\n  `Total (n)` = c(77, 25, 102)\n)\n\ncontingency |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 5.2: Cross-tabulation of status at two years by sex\n\n\n\n\n\n\nStatus at two years\nWomen (n)\nMen (n)\nTotal (n)\n\n\n\n\nAlive\n48\n29\n77\n\n\nDied\n12\n13\n25\n\n\nTotal\n60\n42\n102\n\n\n\n\n\n\n\n\n\n\nGrouped Bar Charts\nGrouped bar charts are useful for displaying contingency table data visually.\n\n\ncode\ngrouped_data &lt;- tibble(\n  sex = rep(c(\"Women\", \"Men\"), each = 2),\n  status = rep(c(\"Alive\", \"Died\"), 2),\n  count = c(48, 12, 29, 13)\n)\n\nggplot(grouped_data, aes(x = sex, y = count, fill = status)) +\n  geom_col(position = \"dodge\", alpha = 0.8) +\n  scale_fill_manual(values = c(\"Alive\" = \"#27ae60\", \"Died\" = \"#e74c3c\")) +\n  labs(x = \"\", y = \"Number of patients\", fill = \"Status at 2 years\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 5.11: Status at two years by sex following stereotactic radiotherapy for lung cancer",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Presenting Data</span>"
+    ]
+  },
+  {
+    "objectID": "05-presenting-data.html#summary",
+    "href": "05-presenting-data.html#summary",
+    "title": "5  Presenting Data",
+    "section": "5.7 Summary",
+    "text": "5.7 Summary\n\n\n\n\n\n\n\n\nGraph Type\nData Type\nPurpose\n\n\n\n\nHistogram\nContinuous numeric\nShow distribution shape\n\n\nDot plot\nNumeric\nShow all individual values\n\n\nBox plot\nNumeric\nShow median, quartiles, range\n\n\nScatter plot\nTwo numeric variables\nShow relationship between variables\n\n\nBar chart\nCategorical\nShow frequencies of categories\n\n\nPie chart\nNominal (3-5 categories)\nShow proportions\n\n\nContingency table\nTwo categorical variables\nShow joint frequencies",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Presenting Data</span>"
+    ]
+  },
+  {
+    "objectID": "06-descriptive-measures.html",
+    "href": "06-descriptive-measures.html",
+    "title": "6  Descriptive Measures",
+    "section": "",
+    "text": "6.1 Introduction\nA descriptive measure is a numerical value which summarises a set of data. We represent the number of patients in a sample by the letter n. We often represent the individual values of a variable with a small letter x. The value for patient 1 would be x1, the value for patient 2 would be x2. In a sample of n patients, the value for patient n would be xn.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Descriptive Measures</span>"
+    ]
+  },
+  {
+    "objectID": "06-descriptive-measures.html#measures-of-location-or-central-tendency",
+    "href": "06-descriptive-measures.html#measures-of-location-or-central-tendency",
+    "title": "6  Descriptive Measures",
+    "section": "6.2 Measures of Location or Central Tendency",
+    "text": "6.2 Measures of Location or Central Tendency\nThese give the location of the centre of the data. Representative measures are mean, median, and mode. They are referred to as ‘average’ values – i.e. ‘something in the middle’.\n\nSample Mean\nThe sample mean (\\(\\bar{x}\\)) is calculated as:\n\\[\\text{mean} = \\frac{\\sum x}{n}\\]\nWhere Σx = x1 + x2 + x3 + … + xn is the sum of all values across the subjects, and n is the total number of subjects.\n\n\nSample Median\nThe sample median is the middle value when the observations are ranked from lowest to highest. If n is even, it is the mean of the middle two values.\nIts interpretation is that 50% of data values are above the median; 50% are below the median.\n\n\nQuartiles\nQuartiles (Q1, Q2, and Q3) – when the observations are ranked from lowest to highest the quartiles divide a set of data into four parts of equal frequency:\n\n25% of the data values are smaller than Q1 (lower quartile)\n50% of the data values are smaller than Q2 (median)\n25% of the data values are larger than Q3 (upper quartile)\n\n\n\nSample Mode\nThe sample mode is the most frequently occurring value. This term is seldom used.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Descriptive Measures</span>"
+    ]
+  },
+  {
+    "objectID": "06-descriptive-measures.html#measures-of-dispersion",
+    "href": "06-descriptive-measures.html#measures-of-dispersion",
+    "title": "6  Descriptive Measures",
+    "section": "6.3 Measures of Dispersion",
+    "text": "6.3 Measures of Dispersion\nKnowing the “average” value of data is not very informative by itself. We also need to know how “concentrated” or “spread out” the data are. That is, we need to know something about the “variability” of the data.\nMeasures of dispersion are ways of quantifying this numerically. They describe the degree to which the data vary about their average value, their scatter or spread. Representative measures: range, standard deviation, and interquartile range.\n\nRange\nRange is simply the difference between the smallest (minimum) and largest (maximum) values in the sample.\n\n\nStandard Deviation\nStandard deviation (SD or sd) is a measure of how far away observations are from the sample mean.\nIt is calculated as:\n\\[SD = \\sqrt{\\frac{\\sum(x - \\text{mean})^2}{n-1}}\\]\nWhich is the square root of the sum of squared differences from the sample mean divided by (n-1).\n\n\nInterquartile Range\nInterquartile range (IQR) is simply the lower quartile and upper quartile (Q1, Q3). Sometimes it is expressed as the value of Q3 - Q1.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Descriptive Measures</span>"
+    ]
+  },
+  {
+    "objectID": "06-descriptive-measures.html#worked-example-suvmax-in-lung-cancer-patients",
+    "href": "06-descriptive-measures.html#worked-example-suvmax-in-lung-cancer-patients",
+    "title": "6  Descriptive Measures",
+    "section": "6.4 Worked Example: SUVmax in Lung Cancer Patients",
+    "text": "6.4 Worked Example: SUVmax in Lung Cancer Patients\n10 patients with lung cancer had a pretreatment PET scan and SUVmax was measured.\n\nThe Data\n\n\ncode\n# Original data\nsuv_data &lt;- c(1.8, 8.9, 2.7, 9.4, 5.4, 16.0, 5.8, 17.9, 13.1, 6.6)\n\ntibble(\n  Patient = 1:10,\n  `SUVmax` = suv_data\n) |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\n\nPatient\nSUVmax\n\n\n\n\n1\n1.8\n\n\n2\n8.9\n\n\n3\n2.7\n\n\n4\n9.4\n\n\n5\n5.4\n\n\n6\n16.0\n\n\n7\n5.8\n\n\n8\n17.9\n\n\n9\n13.1\n\n\n10\n6.6\n\n\n\n\n\n\n\nCalculating the Mean\n\n\ncode\n# Calculate mean\nsum_values &lt;- sum(suv_data)\nn &lt;- length(suv_data)\nmean_suv &lt;- sum_values / n\n\n\nThe mean SUVmax = (1.8 + 8.9 + 2.7 + 9.4 + 5.4 + 16.0 + 5.8 + 17.9 + 13.1 + 6.6) / 10 = 8.76\n\n\nCalculating the Standard Deviation\nThe calculation of the standard deviation involves:\nStep 1: Subtracting the mean SUVmax from each observation:\n\n\ncode\ndeviations &lt;- suv_data - mean_suv\ntibble(\n  Patient = 1:10,\n  SUVmax = suv_data,\n  `Deviation (x - mean)` = round(deviations, 1)\n) |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\n\nPatient\nSUVmax\nDeviation (x - mean)\n\n\n\n\n1\n1.8\n-7.0\n\n\n2\n8.9\n0.1\n\n\n3\n2.7\n-6.1\n\n\n4\n9.4\n0.6\n\n\n5\n5.4\n-3.4\n\n\n6\n16.0\n7.2\n\n\n7\n5.8\n-3.0\n\n\n8\n17.9\n9.1\n\n\n9\n13.1\n4.3\n\n\n10\n6.6\n-2.2\n\n\n\n\n\nStep 2: Squaring these values:\n\n\ncode\nsquared_deviations &lt;- deviations^2\nsum_squared &lt;- sum(squared_deviations)\n\n\nSquared deviations: 48.44, 0.02, 36.72, 0.41, 11.29, 52.42, 8.76, 83.54, 18.84, 4.67\nStep 3: Summing these values together: 265.1\nStep 4: Dividing by the number of observations minus 1:\n\\[\\frac{265.1}{(10-1)} = 29.46\\]\nStep 5: Taking the square root:\n\\[\\text{standard deviation} = \\sqrt{29.46} = 5.43\\]\n\n\nCalculating the Median and Interquartile Range\nOrdering the data from lowest to highest allows identification of the median and quartiles.\nOrdered data: 1.8, 2.7, 5.4, 5.8, 6.6, 8.9, 9.4, 13.1, 16.0, 17.9\n\n\ncode\nordered_data &lt;- sort(suv_data)\nmedian_suv &lt;- median(suv_data)\nq1 &lt;- quantile(suv_data, 0.25)\nq3 &lt;- quantile(suv_data, 0.75)\nmin_val &lt;- min(suv_data)\nmax_val &lt;- max(suv_data)\nrange_val &lt;- max_val - min_val\niqr_val &lt;- q3 - q1\n\n\n\nThe median SUVmax = (6.6 + 8.9)/2 = 7.75\nQ1 = 5.5 and Q3 = 12.175\nThe minimum value is 1.8, and the maximum value is 17.9\nThe range = 17.9 - 1.8 = 16.1\nThe interquartile range (IQR) is (5.5, 12.175) or 12.175 - 5.5 = 6.675\n\n\n\nSummary Table\n\n\ncode\ntibble(\n  Measure = c(\"Mean (SD)\", \"Median (IQR)\", \"Range\"),\n  Value = c(\n    paste0(round(mean_suv, 2), \" (\", round(sd(suv_data), 2), \")\"),\n    paste0(median_suv, \" (\", q1, \"-\", q3, \")\"),\n    paste0(min_val, \" to \", max_val)\n  )\n) |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 6.1: Summary statistics for SUVmax in 10 lung cancer patients\n\n\n\n\n\n\nMeasure\nValue\n\n\n\n\nMean (SD)\n8.76 (5.43)\n\n\nMedian (IQR)\n7.75 (5.5-12.175)\n\n\nRange\n1.8 to 17.9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReporting Convention\n\n\n\nRemember to report means with standard deviations (8.76 (SD 5.43)), and medians with interquartile ranges (7.75 (IQR 5.4-13.1)).\nDo not mix means with the interquartile range or medians with standard deviations.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Descriptive Measures</span>"
+    ]
+  },
+  {
+    "objectID": "06-descriptive-measures.html#which-measures-to-choose",
+    "href": "06-descriptive-measures.html#which-measures-to-choose",
+    "title": "6  Descriptive Measures",
+    "section": "6.5 Which Measures to Choose?",
+    "text": "6.5 Which Measures to Choose?\n\n\ncode\nset.seed(42)\n# Normal data\nnormal_data &lt;- tibble(\n  value = rnorm(100, mean = 50, sd = 10),\n  type = \"Symmetric distribution\"\n)\n\n# Skewed data with outlier\nskewed_data &lt;- tibble(\n  value = c(rnorm(95, mean = 50, sd = 10), 120, 130, 140, 150, 160),\n  type = \"With outliers\"\n)\n\ncombined &lt;- bind_rows(normal_data, skewed_data)\n\nggplot(combined, aes(x = value)) +\n  geom_histogram(bins = 20, fill = \"#3498db\", alpha = 0.7) +\n  geom_vline(data = combined |&gt; group_by(type) |&gt; summarise(m = mean(value)),\n             aes(xintercept = m), colour = \"#e74c3c\", linewidth = 1, linetype = \"dashed\") +\n  geom_vline(data = combined |&gt; group_by(type) |&gt; summarise(m = median(value)),\n             aes(xintercept = m), colour = \"#27ae60\", linewidth = 1) +\n  facet_wrap(~type, scales = \"free_x\") +\n  labs(x = \"Value\", y = \"Frequency\",\n       caption = \"Red dashed = mean, Green solid = median\") +\n  theme_minimal(base_size = 12)\n\n\n\n\n\n\n\n\nFigure 6.1: The median is less influenced by outliers than the mean\n\n\n\n\n\n\nThe mode should be used when calculating a measure of centre for nominal categorical variables\nWhen the variable is numeric with a symmetric distribution, then the mean is the proper measure of centre\nIn the case of numeric variables with skewed distribution, the median is a good choice for the measure of centre. The median is less influenced by outlier (extreme) values\n\nThe sample mode, the sample median and the sample mean have corresponding population measures. That is, we assume that the variable in question has a population mode, population median, population mean, which are all unknown. The sample mode, the sample median and the sample mean are used to estimate the values of these corresponding unknown population parameters.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Descriptive Measures</span>"
+    ]
+  },
+  {
+    "objectID": "06-descriptive-measures.html#summary",
+    "href": "06-descriptive-measures.html#summary",
+    "title": "6  Descriptive Measures",
+    "section": "6.6 Summary",
+    "text": "6.6 Summary\n\n\n\n\n\n\n\n\nMeasure\nDescription\nWhen to Use\n\n\n\n\nMean\nSum of values divided by n\nSymmetric numeric data\n\n\nMedian\nMiddle value when ordered\nSkewed numeric data\n\n\nMode\nMost frequent value\nCategorical data\n\n\nRange\nMaximum minus minimum\nQuick measure of spread\n\n\nStandard deviation\nAverage distance from mean\nSymmetric numeric data\n\n\nInterquartile range\nQ3 minus Q1\nSkewed numeric data",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Descriptive Measures</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html",
+    "href": "07-normal-distribution.html",
+    "title": "7  The Normal Distribution",
+    "section": "",
+    "text": "7.1 Introduction\nThe “normal distribution” is referred to frequently in statistics. It’s a symmetrical, bell-shaped distribution of data. The Normal distribution is a cornerstone of statistics as many statistical methods are built around it. If it did not exist statisticians would have had to invent it.\ncode\n# Generate normal curve\nx &lt;- seq(-4, 4, length.out = 1000)\ny &lt;- dnorm(x)\n\nnormal_curve &lt;- tibble(x = x, y = y)\n\nggplot(normal_curve, aes(x = x, y = y)) +\n  geom_line(colour = \"#3498db\", linewidth = 1.5) +\n  geom_area(alpha = 0.3, fill = \"#3498db\") +\n  labs(x = \"Standard deviations from mean\", y = \"Density\") +\n  scale_x_continuous(breaks = -4:4) +\n  theme_minimal(base_size = 14) +\n  annotate(\"text\", x = 0, y = 0.2, label = \"Mean (μ)\", size = 4)\n\n\n\n\n\n\n\n\nFigure 7.1: The characteristic bell-shaped curve of the Normal distribution\nIt is often the case that the histogram of a continuous variable will display the characteristic bell-shaped distribution of the Normal distribution. The height of women shows a Normal distribution; the box plot shows a symmetric distribution of values above and below the median line.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#parameters-of-the-normal-distribution",
+    "href": "07-normal-distribution.html#parameters-of-the-normal-distribution",
+    "title": "7  The Normal Distribution",
+    "section": "7.2 Parameters of the Normal Distribution",
+    "text": "7.2 Parameters of the Normal Distribution\nThe Normal distribution is completely described by two population parameters μ and σ, where:\n\nμ (mu) represents the population mean (the centre of the distribution)\nσ (sigma) represents the population standard deviation\n\n\n\ncode\nx_vals &lt;- seq(-10, 20, length.out = 1000)\n\nparams_data &lt;- tibble(\n  x = rep(x_vals, 3),\n  y = c(dnorm(x_vals, mean = 5, sd = 2),\n        dnorm(x_vals, mean = 5, sd = 4),\n        dnorm(x_vals, mean = 10, sd = 2)),\n  Distribution = rep(c(\"μ=5, σ=2\", \"μ=5, σ=4\", \"μ=10, σ=2\"), each = length(x_vals))\n)\n\nggplot(params_data, aes(x = x, y = y, colour = Distribution)) +\n  geom_line(linewidth = 1.2) +\n  scale_colour_manual(values = c(\"#3498db\", \"#e74c3c\", \"#27ae60\")) +\n  labs(x = \"Value\", y = \"Density\") +\n  theme_minimal(base_size = 14) +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\n\nFigure 7.2: Normal distributions with different means and standard deviations",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#the-95-reference-range",
+    "href": "07-normal-distribution.html#the-95-reference-range",
+    "title": "7  The Normal Distribution",
+    "section": "7.3 The 95% Reference Range",
+    "text": "7.3 The 95% Reference Range\nOne property of the Normal distribution is that exactly 95% of the distribution lies between:\n\\[\\mu - 1.96\\sigma \\quad \\text{and} \\quad \\mu + 1.96\\sigma\\]\nThis is called a reference range. In this example, it is the range in which 95% of the population lie.\n\n\ncode\nx &lt;- seq(-4, 4, length.out = 1000)\ny &lt;- dnorm(x)\n\nnormal_95 &lt;- tibble(x = x, y = y)\n\nggplot(normal_95, aes(x = x, y = y)) +\n  geom_line(colour = \"#2c3e50\", linewidth = 1) +\n  geom_area(data = filter(normal_95, x &gt;= -1.96 & x &lt;= 1.96),\n            fill = \"#3498db\", alpha = 0.5) +\n  geom_vline(xintercept = c(-1.96, 1.96), linetype = \"dashed\", colour = \"#e74c3c\") +\n  annotate(\"text\", x = 0, y = 0.15, label = \"95%\", size = 6, fontface = \"bold\") +\n  annotate(\"text\", x = -2.5, y = 0.05, label = \"2.5%\", size = 4) +\n  annotate(\"text\", x = 2.5, y = 0.05, label = \"2.5%\", size = 4) +\n  labs(x = \"Standard deviations from mean (μ ± 1.96σ)\", y = \"Density\") +\n  scale_x_continuous(breaks = c(-4, -1.96, 0, 1.96, 4),\n                     labels = c(\"-4\", \"-1.96\", \"0\", \"1.96\", \"4\")) +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 7.3: 95% of values in a Normal distribution lie within 1.96 standard deviations of the mean",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#estimating-from-sample-data",
+    "href": "07-normal-distribution.html#estimating-from-sample-data",
+    "title": "7  The Normal Distribution",
+    "section": "7.4 Estimating from Sample Data",
+    "text": "7.4 Estimating from Sample Data\nIn practice the two parameters of the Normal distribution are estimated from the sample data: the sample mean (\\(\\bar{x}\\)) and the sample standard deviation (SD).\nIf a sample is taken from a Normal distribution, and provided that the sample is not too small, then approximately 95% of the sample will be covered by:\n\\[\\bar{x} - 1.96 \\times SD \\quad \\text{and} \\quad \\bar{x} + 1.96 \\times SD\\]\n\nExample: Height of Women\n\n\ncode\n# Example data\nmean_height &lt;- 1.61  # metres\nsd_height &lt;- 0.07    # metres\n\nlower_95 &lt;- mean_height - 1.96 * sd_height\nupper_95 &lt;- mean_height + 1.96 * sd_height\n\n\nIn an example where the mean height (\\(\\bar{x}\\)) of women was 1.61 m and the standard deviation (SD) was 0.07 m (i.e. 7 cm):\nApproximately 95% of the sample will be covered in the range:\n\nLower: 1.61 - 1.96 × 0.07 = 1.47 m\nUpper: 1.61 + 1.96 × 0.07 = 1.75 m",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#the-standard-error",
+    "href": "07-normal-distribution.html#the-standard-error",
+    "title": "7  The Normal Distribution",
+    "section": "7.5 The Standard Error",
+    "text": "7.5 The Standard Error\nImagine another random sample of women was selected to investigate their height. The values in this second sample will vary from woman to woman and we would expect the mean value for this new group to be different but not too different from that obtained in the first sample.\nThe precision with which the sample mean is estimated can be measured by the standard deviation of the mean. This is called the standard error (SE):\n\\[SE = \\frac{SD}{\\sqrt{n}}\\]\n\nExample: Standard Error of Height\n\n\ncode\nn_large &lt;- 5628\nn_small &lt;- 20\n\nse_large &lt;- sd_height / sqrt(n_large)\nse_small &lt;- sd_height / sqrt(n_small)\n\ntibble(\n  `Sample size (n)` = c(n_large, n_small),\n  `Standard deviation` = c(sd_height, sd_height),\n  `Standard error` = c(round(se_large, 4), round(se_small, 4))\n) |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 7.1: Effect of sample size on standard error\n\n\n\n\n\n\nSample size (n)\nStandard deviation\nStandard error\n\n\n\n\n5628\n0.07\n0.0009\n\n\n20\n0.07\n0.0157\n\n\n\n\n\n\n\n\nIn the example of 5,628 women the standard error of the mean would be 0.07/√5628 = 0.07/75 = 0.0009 m. Because the sample size is very large the standard error of the mean is very small.\nIf the sample size was smaller, say 20 women, the standard error of the mean would have been larger: 0.0156 m.\n\n\n\n\n\n\nKey Point\n\n\n\nSample size does not influence the size of the sample standard deviation, it influences the precision of the estimated parameters.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#confidence-intervals",
+    "href": "07-normal-distribution.html#confidence-intervals",
+    "title": "7  The Normal Distribution",
+    "section": "7.6 Confidence Intervals",
+    "text": "7.6 Confidence Intervals\nConfidence intervals define the range of values within which the population mean μ is likely to lie. A 95% confidence interval for the population mean is defined by:\n\\[\\bar{x} - 1.96 \\times SE \\quad \\text{and} \\quad \\bar{x} + 1.96 \\times SE\\]\n\nExample: 95% Confidence Interval for Height\nIn the case of height among the sample of 5,628 women:\n\nSE = 0.0009 m\n95% CI = 1.61 ± (1.96 × 0.0009) = (1.608 m to 1.612 m)\n\nThe interpretation of the confidence interval is that 95% of intervals will contain the true population mean. This is interpreted as a 95% chance that the population mean will be contained in the interval.\nThe interval in this example is very narrow due to the large sample size. If the sample size had been 20, the interval would have been wider at (1.58 m to 1.64 m).",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#skewed-distributions",
+    "href": "07-normal-distribution.html#skewed-distributions",
+    "title": "7  The Normal Distribution",
+    "section": "7.7 Skewed Distributions",
+    "text": "7.7 Skewed Distributions\nMany statistical tests require data to be Normally distributed. In practice distributions are sometimes not symmetric and can be skewed. Often they display a long right-hand tail (positive skew) or long left-hand skew (negative skew).\nSkewed distributions can be made approximately Normal by transforming the original data:\n\nIn the case of positively skewed data, taking the log of the data can transform the data into an approximate Normal distribution\nIn the case of negatively skewed data (long left tail), squaring the data may help\n\nIf data are not Normally distributed, then non-parametric methods which do not make assumptions that the data come from a Normal distribution may need to be used.\n\nExample: Log Transformation of Tumour Volume\nA common example of positively skewed data in oncology is tumour volume measurements. The following figure shows the distribution of tumour volumes before and after log transformation:\n\n\ncode\nset.seed(246)\n# Generate positively skewed tumor volume data (in cm³)\ntumor_volumes &lt;- rlnorm(200, meanlog = 3, sdlog = 0.8)\n\ntransformation_data &lt;- tibble(\n  original = tumor_volumes,\n  log_transformed = log(tumor_volumes)\n)\n\n# Create side-by-side histograms\np1 &lt;- ggplot(transformation_data, aes(x = original)) +\n  geom_histogram(bins = 30, fill = \"#e74c3c\", colour = \"white\", alpha = 0.8) +\n  labs(title = \"Original data (positively skewed)\",\n       x = \"Tumour volume (cm³)\",\n       y = \"Frequency\") +\n  theme_minimal(base_size = 12) +\n  theme(plot.title = element_text(size = 11, face = \"bold\"))\n\np2 &lt;- ggplot(transformation_data, aes(x = log_transformed)) +\n  geom_histogram(bins = 30, fill = \"#3498db\", colour = \"white\", alpha = 0.8) +\n  labs(title = \"Log-transformed data (approximately Normal)\",\n       x = \"Log(tumour volume)\",\n       y = \"Frequency\") +\n  theme_minimal(base_size = 12) +\n  theme(plot.title = element_text(size = 11, face = \"bold\"))\n\np1 + p2\n\n\n\n\n\n\n\n\nFigure 7.4: Effect of log transformation on positively skewed tumour volume data\n\n\n\n\n\nThe original tumour volume data (left panel) shows a clear positive skew with a long right tail. After log transformation (right panel), the data displays an approximately Normal, symmetric distribution. This transformation allows us to use statistical methods that assume Normality.\n\n\n\n\n\n\nWhen to Transform Data\n\n\n\nConsider transforming data when:\n\nThe distribution is clearly skewed (not symmetric)\nOutliers are present on one side\nStatistical tests require Normality assumptions\nThe transformed data will be easier to interpret in context",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#the-central-limit-theorem",
+    "href": "07-normal-distribution.html#the-central-limit-theorem",
+    "title": "7  The Normal Distribution",
+    "section": "7.8 The Central Limit Theorem",
+    "text": "7.8 The Central Limit Theorem\nThe distribution of sample means will be nearly Normally distributed (whatever the distribution of measurements among individuals). It will get closer to a Normal distribution as the sample size increases.\nThis feature of mean values comes from the Central Limit Theorem and is very useful in the analysis of proportions.\n\n\n\n\n\n\nPractical Implication\n\n\n\nEven if the underlying data are not Normally distributed, the distribution of sample means will approach a Normal distribution as sample size increases. This is why many statistical tests work well even with non-Normal data, provided the sample size is large enough.",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "07-normal-distribution.html#summary",
+    "href": "07-normal-distribution.html#summary",
+    "title": "7  The Normal Distribution",
+    "section": "7.9 Summary",
+    "text": "7.9 Summary\n\n\n\n\n\n\n\nConcept\nDescription\n\n\n\n\nNormal distribution\nSymmetric, bell-shaped distribution\n\n\nPopulation mean (μ)\nCentre of the distribution\n\n\nPopulation SD (σ)\nSpread of the distribution\n\n\n95% reference range\nμ ± 1.96σ contains 95% of population\n\n\nStandard error (SE)\nSD/√n - precision of estimated mean\n\n\n95% confidence interval\n\\(\\bar{x}\\) ± 1.96×SE - range likely to contain population mean\n\n\nCentral Limit Theorem\nSample means are approximately Normal regardless of underlying distribution",
+    "crumbs": [
+      "Describing Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>The Normal Distribution</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html",
+    "href": "08-statistical-inference.html",
+    "title": "8  Statistical Inference",
+    "section": "",
+    "text": "8.1 The Logic of Statistical Inference\nUntil the end of the 17th Century Europeans assumed that all swans were white. The hypothesis that “All swans are white” was assumed to be true but was rejected by the sighting of a black swan by Willem de Vlamingh in 1697. The black swan resulted in a rejection of the original null hypothesis (H0): “All swans are white” in favour of the alternative hypothesis (H1): “All swans are not white”.\nStatistical inference follows a similar logical process. Having come up with a research question, the procedure is to:",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#the-logic-of-statistical-inference",
+    "href": "08-statistical-inference.html#the-logic-of-statistical-inference",
+    "title": "8  Statistical Inference",
+    "section": "",
+    "text": "Collect data from a sample of individuals\nFormulate an appropriate null hypothesis\nAssume it to be true\nSeek evidence to refute it",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#the-null-hypothesis",
+    "href": "08-statistical-inference.html#the-null-hypothesis",
+    "title": "8  Statistical Inference",
+    "section": "8.2 The Null Hypothesis",
+    "text": "8.2 The Null Hypothesis\nThe null hypothesis, H0, is a statement of ‘no difference’ or ‘no effect’ which is assumed to be true.\nFor example, in a clinical trial of a new drug for hypertension, the null hypothesis might be that the new drug has a similar average effect on blood pressure as another drug in current use – i.e. that there is no difference between the drugs.\n\nH0: there is no difference in the effect on blood pressure between the two drugs",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#the-alternative-hypothesis",
+    "href": "08-statistical-inference.html#the-alternative-hypothesis",
+    "title": "8  Statistical Inference",
+    "section": "8.3 The Alternative Hypothesis",
+    "text": "8.3 The Alternative Hypothesis\nThe alternative hypothesis (H1 or HA) is the negation of the null hypothesis. It holds if the null hypothesis is not true. The alternative hypothesis relates more directly to the theory we are interested in.\nIn the anti-hypertensive example, we might have:\n\nH1: the effects of the two anti-hypertensive drugs are not equal",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#the-test-statistic-and-p-values",
+    "href": "08-statistical-inference.html#the-test-statistic-and-p-values",
+    "title": "8  Statistical Inference",
+    "section": "8.4 The Test Statistic and P-values",
+    "text": "8.4 The Test Statistic and P-values\nHaving set up the null hypothesis, the probability that the observed data (or more extreme data) would be obtained if the null hypothesis were true is evaluated. This is done by calculating a numerical summary called a test statistic (calculated from the sample data) which is known to have a specific probability distribution.\nThe test statistic is used to test the null hypothesis. The value of the test statistic is related to the specific probability distribution to obtain a P-value. The smaller the P-value, the greater the evidence against the null hypothesis.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#using-the-p-value",
+    "href": "08-statistical-inference.html#using-the-p-value",
+    "title": "8  Statistical Inference",
+    "section": "8.5 Using the P-value",
+    "text": "8.5 Using the P-value\nA P-value less than 0.05 (p&lt;0.05), is conventionally considered enough evidence to reject the null hypothesis. P&lt;0.05 suggests only a small chance that the observed results (or more extreme results) would have occurred if the null hypothesis were true.\nThe null hypothesis is then rejected in favour of the alternative hypothesis and the results described as statistically significant at the 5% level.\nIn contrast, a P-value equal to or greater than 0.05, suggests insufficient evidence to reject the null hypothesis. The null hypothesis is not rejected, and the results are described as not statistically significant at the 5% level.\n\n\n\n\n\n\nKey Point\n\n\n\nThis does not mean that the null hypothesis is true - just that it cannot be rejected.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#one-or-two-tailed-test",
+    "href": "08-statistical-inference.html#one-or-two-tailed-test",
+    "title": "8  Statistical Inference",
+    "section": "8.6 One or Two-tailed Test?",
+    "text": "8.6 One or Two-tailed Test?\nIn the above example the alternative hypothesis did not specify the direction for the difference in the effects of the two anti-hypertensive medications, i.e. it did not state whether the new drug provides better blood pressure control than the current drug or vice versa.\nThis is known as a two-tailed test because it allows for either eventuality.\nIn some circumstances, a one-tailed test in which the direction of the difference is specified in H1 may be carried out. In general, one-tailed tests are discouraged as it is unlikely that we can know beforehand which direction will occur.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#making-a-decision-type-i-and-type-ii-errors",
+    "href": "08-statistical-inference.html#making-a-decision-type-i-and-type-ii-errors",
+    "title": "8  Statistical Inference",
+    "section": "8.7 Making a Decision: Type I and Type II Errors",
+    "text": "8.7 Making a Decision: Type I and Type II Errors\nA Type I error leads to the conclusion that an effect or relationship exists when in fact it does not. Type I errors result from the incorrect rejection of a true null hypothesis (a “false positive”).\nA Type II error is a failure to detect an effect that is present. It results from incorrectly retaining a false null hypothesis (a “false negative”).\n\n\ncode\nerrors_table &lt;- tibble(\n  ` ` = c(\"H₀ true\", \"H₀ false\"),\n  `Reject H₀` = c(\"Type I error\", \"No error (correct)\"),\n  `Do not reject H₀` = c(\"No error (correct)\", \"Type II error\")\n)\n\nerrors_table |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\")) |&gt;\n  add_header_above(c(\" \" = 1, \"Decision\" = 2))\n\n\n\n\nTable 8.1: Type I and Type II errors in hypothesis testing\n\n\n\n\n\n\n\n\n\n\n\n\n\nDecision\n\n\n\n\nReject H₀\nDo not reject H₀\n\n\n\n\nH₀ true\nType I error\nNo error (correct)\n\n\nH₀ false\nNo error (correct)\nType II error\n\n\n\n\n\n\n\n\nIn the previous example of a clinical trial of a new drug for hypertension:\n\nH0: there is no difference in the effect on blood pressure between the two drugs\nH1: the effects of the two drugs on blood pressure are not equal\n\nA Type I error would occur if we concluded that the two drugs produced different effects when in fact there was no difference between them.\nA Type II error would occur if we failed to reject the null hypothesis when there was a real difference in effect of the two drugs.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#alpha-beta-and-power",
+    "href": "08-statistical-inference.html#alpha-beta-and-power",
+    "title": "8  Statistical Inference",
+    "section": "8.8 Alpha, Beta, and Power",
+    "text": "8.8 Alpha, Beta, and Power\nThe probability of making a Type I error (denoted by α (alpha)) is simply the chosen significance level (conventionally 5%).\n\\[\\text{Probability (Type I error)} = \\text{Probability (reject null when true)} = \\alpha\\]\nThe chance of making a Type II error is denoted by β (beta):\n\\[\\text{Probability (Type II error)} = \\text{Probability (fail to reject null when false)} = \\beta\\]\nThe complement of β is (1-β). This is the probability of not making a Type II error:\n\\[\\text{Probability (not Type II error)} = \\text{Probability (reject null when false)} = 1 - \\beta\\]\n(1 – β) is called the power of the test. The power, therefore, is the probability of rejecting the null hypothesis when it is false; i.e. it is the chance (usually expressed as a percentage) of detecting, as statistically significant, a real treatment effect.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#p-values-or-confidence-intervals",
+    "href": "08-statistical-inference.html#p-values-or-confidence-intervals",
+    "title": "8  Statistical Inference",
+    "section": "8.9 P-values or Confidence Intervals?",
+    "text": "8.9 P-values or Confidence Intervals?\nWe saw earlier that a confidence interval is a range of values that the parameter of interest is likely to lie in the population. The parameter might be the population mean or median, or the mean difference between two groups, or a proportion.\nPresenting study findings directly as confidence intervals provides information on the imprecision due to sampling variability and has advantages over just giving P-values which dichotomise results into significant or non-significant.\nWith a confidence interval, we can determine whether a parameter is or is not likely to be different from something:\n\nIf the confidence interval contains a specific number (i.e. the number is between the lower and upper values of the interval), then there is no evidence that the parameter is different from that number\nIf the number is not within the interval, then there is evidence that the parameter is different from that number",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#parametric-tests-for-numeric-data",
+    "href": "08-statistical-inference.html#parametric-tests-for-numeric-data",
+    "title": "8  Statistical Inference",
+    "section": "8.10 Parametric Tests for Numeric Data",
+    "text": "8.10 Parametric Tests for Numeric Data\nIf data are numeric and come from a Normal distribution we can use parametric tests to test whether the population mean equals a specific value, or whether the means from two samples are equal.\nParametric tests need the assumption that the data derive from a Normal distribution. If this assumption cannot be met (even after transformation) then non-parametric tests must be used.\n\n\ncode\nparametric_tests &lt;- tibble(\n  Situation = c(\"1 sample\", \"2 independent samples\", \"2 paired samples\"),\n  Test = c(\"Student's t-test\", \"Student's two-sample t-test\", \"Student's paired t-test\")\n)\n\nparametric_tests |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 8.2: Parametric tests for Normally distributed data\n\n\n\n\n\n\nSituation\nTest\n\n\n\n\n1 sample\nStudent's t-test\n\n\n2 independent samples\nStudent's two-sample t-test\n\n\n2 paired samples\nStudent's paired t-test",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#non-parametric-tests-for-numeric-data",
+    "href": "08-statistical-inference.html#non-parametric-tests-for-numeric-data",
+    "title": "8  Statistical Inference",
+    "section": "8.11 Non-parametric Tests for Numeric Data",
+    "text": "8.11 Non-parametric Tests for Numeric Data\nNon-parametric tests compare the median to a specific value, or test the medians between samples to see if they would be equal in the wider population.\nNon-parametric tests are not as powerful (i.e. the probability of rejecting the null hypothesis when it is false will be smaller) as parametric tests.\n\n\ncode\nnonparametric_tests &lt;- tibble(\n  Situation = c(\"1 sample\", \"2 independent samples\", \"2 paired samples\"),\n  Test = c(\"Wilcoxon signed rank test\", \"Wilcoxon Mann-Whitney test\", \"Wilcoxon signed rank test, or paired sign test\")\n)\n\nnonparametric_tests |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 8.3: Non-parametric tests for non-Normally distributed data\n\n\n\n\n\n\nSituation\nTest\n\n\n\n\n1 sample\nWilcoxon signed rank test\n\n\n2 independent samples\nWilcoxon Mann-Whitney test\n\n\n2 paired samples\nWilcoxon signed rank test, or paired sign test",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#tests-for-categorical-data",
+    "href": "08-statistical-inference.html#tests-for-categorical-data",
+    "title": "8  Statistical Inference",
+    "section": "8.12 Tests for Categorical Data",
+    "text": "8.12 Tests for Categorical Data\nTests for categorical data are concerned with the comparisons of proportions in each category of a variable. Just as for numeric data, a special analysis is required if paired data are involved.\n\n\ncode\ncategorical_tests &lt;- tibble(\n  Situation = c(\"Unpaired, large sample (expected counts &gt;5)\", \n                \"Unpaired, small sample (empty cells)\",\n                \"Paired data\"),\n  Test = c(\"Pearson χ² test\", \"Fisher's exact test\", \"McNemar's test\")\n)\n\ncategorical_tests |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 8.4: Tests for categorical data\n\n\n\n\n\n\nSituation\nTest\n\n\n\n\nUnpaired, large sample (expected counts &gt;5)\nPearson χ² test\n\n\nUnpaired, small sample (empty cells)\nFisher's exact test\n\n\nPaired data\nMcNemar's test",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#sample-size-and-power-considerations",
+    "href": "08-statistical-inference.html#sample-size-and-power-considerations",
+    "title": "8  Statistical Inference",
+    "section": "8.13 Sample Size and Power Considerations",
+    "text": "8.13 Sample Size and Power Considerations\nHow many subjects should be included in a study is a common consideration. If a study has too few people, the power to detect a statistically significant effect will be low. On the other hand, obtaining a sample size that is large or larger than required can be difficult to achieve and expensive.\nRecruiting patients to a study which will be too small to detect the minimum effect we are looking for or recruiting more patients than necessary (over-powered) can be considered unethical.\n\nFactors for Sample Size Calculation\nTo establish the sample size needed for a study the following factors should be considered:\n\nThe minimum size of the effect to be detected\nThe variability (standard deviation)\nThe power required\nThe significance level\n\nFor a chosen significance level, power, minimum size of effect to be detected and standard deviation, the sample size needed can be calculated.\n\n\nGeneral Principles\nPower is the probability of rejecting the null hypothesis when it is false. In general:\n\nAs the sample size increases, the power increases\nAs the variability (standard deviation) increases, the power decreases\nAs the minimum size of effect to be detected increases, the power increases (i.e. small effects are more difficult to detect)\n\nTo increase the power of a study:\n\nThe sample size can be increased\nThe minimum size of the effect you are trying to detect can be increased\n\nThe significance level is not affected by choice of power or sample size. It is the decision rule that you employ in the study.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "08-statistical-inference.html#summary",
+    "href": "08-statistical-inference.html#summary",
+    "title": "8  Statistical Inference",
+    "section": "8.14 Summary",
+    "text": "8.14 Summary\n\n\n\nConcept\nDefinition\n\n\n\n\nNull hypothesis (H0)\nStatement of ‘no difference’ or ‘no effect’\n\n\nAlternative hypothesis (H1)\nNegation of the null hypothesis\n\n\nP-value\nProbability of observed results if H0 is true\n\n\nStatistically significant\nP &lt; 0.05 (conventionally)\n\n\nType I error (α)\nRejecting true H0 (“false positive”)\n\n\nType II error (β)\nFailing to reject false H0 (“false negative”)\n\n\nPower (1-β)\nProbability of detecting a real effect\n\n\nConfidence interval\nRange likely to contain population parameter",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Statistical Inference</span>"
+    ]
+  },
+  {
+    "objectID": "09-correlation-regression.html",
+    "href": "09-correlation-regression.html",
+    "title": "9  Correlation and Regression",
+    "section": "",
+    "text": "9.1 Introduction\nCorrelation and linear regression are techniques for describing the relationships between variables.\nCorrelation looks for a linear association between two variables. The strength of the association is summarised by the correlation coefficient.\nRegression looks for the dependence of one variable (the dependent variable) on another (the independent variable). It quantifies the best linear relation between the variables and allows the prediction of the dependent variable when only the independent variable is known.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Correlation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "09-correlation-regression.html#correlation",
+    "href": "09-correlation-regression.html#correlation",
+    "title": "9  Correlation and Regression",
+    "section": "9.2 Correlation",
+    "text": "9.2 Correlation\nCorrelation is used to measure the degree of linear association between two continuous variables.\n\nTypes of Correlation Coefficients\nThere are two main types of correlation coefficients:\n\n\n\n\n\n\n\nCoefficient\nWhen to Use\n\n\n\n\nPearson’s correlation coefficient\nData are approximately Normally distributed\n\n\nSpearman’s rank correlation coefficient\nNon-parametric alternative - use if data are not approximately normally distributed, have extreme values (outliers), or the sample size is small\n\n\n\n\n\nInterpreting the Correlation Coefficient\nThe correlation coefficient (r) can take any value in the range -1 to +1.\nThe sign of the correlation coefficient indicates:\n\nPositive r: One variable increases as the other variable increases\nNegative r: One variable decreases as the other increases\n\nThe magnitude of the correlation coefficient indicates the strength of the linear association:\n\nr = +1 or −1: Perfect correlation. If both variables were plotted on a scatter graph all the points would lie on a straight line\nr = 0: No linear correlation\nThe closer r is to -1 or 1, the greater the degree of linear association\n\n\n\ncode\nset.seed(123)\n\n# Strong positive\nn &lt;- 50\nstrong_pos &lt;- tibble(\n  x = rnorm(n, 50, 10),\n  y = 0.9 * x + rnorm(n, 0, 3),\n  type = \"(a) Strong positive\\nr ≈ 0.95\"\n)\n\n# Weak positive\nweak_pos &lt;- tibble(\n  x = rnorm(n, 50, 10),\n  y = 0.3 * x + rnorm(n, 35, 8),\n  type = \"(b) Weak positive\\nr ≈ 0.35\"\n)\n\n# Uncorrelated\nuncorr &lt;- tibble(\n  x = rnorm(n, 50, 10),\n  y = rnorm(n, 50, 10),\n  type = \"(c) Uncorrelated\\nr ≈ 0\"\n)\n\n# Weak negative\nweak_neg &lt;- tibble(\n  x = rnorm(n, 50, 10),\n  y = -0.4 * x + rnorm(n, 70, 8),\n  type = \"(d) Weak negative\\nr ≈ -0.40\"\n)\n\nall_corr &lt;- bind_rows(strong_pos, weak_pos, uncorr, weak_neg)\n\nggplot(all_corr, aes(x = x, y = y)) +\n  geom_point(colour = \"#2c3e50\", alpha = 0.7) +\n  facet_wrap(~type, scales = \"free\") +\n  labs(x = \"x\", y = \"y\") +\n  theme_minimal(base_size = 12)\n\n\n\n\n\n\n\n\nFigure 9.1: Scatterplots showing datasets with different correlations\n\n\n\n\n\n\n\nImportant Cautions\n\n\n\n\n\n\nCorrelation Does Not Imply Causation\n\n\n\nIt is important to remember that a correlation between two variables does not necessarily imply a ‘cause and effect’ relationship.\n\n\nCorrelation refers only to linear relationships. A correlation of 0 means there is no linear relationship between the two variables. However, relationships between variables may still exist but be non-linear. It is always important to look at plots of data.\n\n\ncode\nset.seed(456)\nn &lt;- 50\n\n# Quadratic relationship\nquad &lt;- tibble(\n  x = seq(-3, 3, length.out = n),\n  y = x^2 + rnorm(n, 0, 0.5),\n  type = \"Quadratic (r ≈ 0)\"\n)\n\n# Sinusoidal\nsine &lt;- tibble(\n  x = seq(0, 2*pi, length.out = n),\n  y = sin(x) + rnorm(n, 0, 0.2),\n  type = \"Sinusoidal (r ≈ 0)\"\n)\n\n# Outlier effect\noutlier &lt;- tibble(\n  x = c(rnorm(n-1, 50, 5), 100),\n  y = c(rnorm(n-1, 50, 5), 100),\n  type = \"Outlier influence\"\n)\n\nnonlinear &lt;- bind_rows(quad, sine, outlier)\n\nggplot(nonlinear, aes(x = x, y = y)) +\n  geom_point(colour = \"#e74c3c\", alpha = 0.7) +\n  facet_wrap(~type, scales = \"free\") +\n  labs(x = \"x\", y = \"y\") +\n  theme_minimal(base_size = 12)\n\n\n\n\n\n\n\n\nFigure 9.2: Examples where the correlation coefficient is misleading - non-linear relationships\n\n\n\n\n\n\n\n\n\n\n\nWhen NOT to Use Correlation\n\n\n\nCorrelation analysis is inappropriate in these situations:\n\nNon-linear relationships: As shown above, quadratic or curved relationships will have r ≈ 0 even though a strong relationship exists.\nCategorical data: You cannot calculate a meaningful Pearson correlation between categorical variables (e.g., cancer type and treatment response categories). Use contingency tables and chi-squared tests instead.\nTime series data: Measurements taken over time often violate the independence assumption because consecutive observations are correlated.\nRestricted range: If you only observe a narrow range of values, the correlation may not reflect the true relationship across the full range.\nOutliers present: Single extreme values can dramatically inflate or deflate the correlation coefficient, making it unrepresentative of the overall pattern.\n\nAlways plot your data first before calculating correlation coefficients. Visual inspection will reveal patterns that a single number cannot capture.\n\n\n\n\nClinical Example: Inappropriate Use of Correlation\nConsider trying to correlate cancer stage (I, II, III, IV) with treatment type (surgery, chemotherapy, radiotherapy). This is inappropriate because:\n\nStage is ordinal categorical (not truly continuous)\nTreatment type is nominal categorical\nThe relationship is not linear\nBetter approaches: contingency tables, chi-squared test, or logistic regression",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Correlation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "09-correlation-regression.html#linear-regression",
+    "href": "09-correlation-regression.html#linear-regression",
+    "title": "9  Correlation and Regression",
+    "section": "9.3 Linear Regression",
+    "text": "9.3 Linear Regression\nLinear regression is used when we believe a variable y is linearly dependent on another variable x. This means that a change in x will lead to a change in y. We use linear regression to determine the linear line (the regression of y on x) that best describes the straight-line relationship between the two variables.\n\nThe Regression Equation\nThe equation which estimates the simple linear regression line is:\n\\[Y = a + bx\\]\nWhere:\n\nx is usually called the independent, predictor, or explanatory variable\nY is the value of y (usually called the dependent, outcome, or response variable) which lies on the estimated line. It is an estimate of the value we expect for y if the value of x is known. Y is called the fitted value of y\na and b are called the regression coefficients of the estimated line\na is the intercept of the estimated line; it is the average value of Y when x = 0\nb is the slope of the estimated line; it represents the average amount by which Y increases if we increase x by one unit\n\n\n\nResiduals and Least Squares\nThe residual is the difference between the actual response y and the predicted response Y from the regression line. The method of least squares regression works by minimising the sum of squared residuals.\nThe intercept and slope are determined by the method of least squares (often called ordinary least squares, OLS). This method determines the line of best fit so that the sum of the squared residuals is at a minimum.\n\n\ncode\nset.seed(789)\nn &lt;- 20\n\nreg_data &lt;- tibble(\n  age = runif(n, 20, 75),\n  hb = 8.24 + 0.13 * age + rnorm(n, 0, 1.5)\n)\n\nmodel &lt;- lm(hb ~ age, data = reg_data)\n\n# Add one point to highlight residual\nhighlight_point &lt;- tibble(age = 31, hb = 10.5)\npredicted_hb &lt;- predict(model, newdata = highlight_point)\n\nggplot(reg_data, aes(x = age, y = hb)) +\n  geom_point(colour = \"#2c3e50\", size = 2) +\n  geom_smooth(method = \"lm\", se = FALSE, colour = \"#3498db\", linewidth = 1) +\n  geom_point(data = highlight_point, colour = \"#e74c3c\", size = 3) +\n  geom_segment(aes(x = 31, xend = 31, y = 10.5, yend = predicted_hb),\n               colour = \"#e74c3c\", linetype = \"dashed\") +\n  annotate(\"text\", x = 60, y = 10, \n           label = paste0(\"Hb = \", round(coef(model)[1], 2), \" + \", \n                         round(coef(model)[2], 2), \" × Age\"),\n           size = 4, colour = \"#3498db\") +\n  annotate(\"text\", x = 38, y = 10.2, label = \"residual\", size = 3, colour = \"#e74c3c\") +\n  labs(x = \"Age (years)\", y = \"Haemoglobin (g/dL)\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 9.3: Scatterplot with fitted regression line showing residuals\n\n\n\n\n\n\n\nCoefficients, Confidence Intervals, P-values, and R-squared\nAs mentioned previously:\n\nThe intercept (a) is the average value of the response when the predictor is 0\nThe slope (b) is the average change in the response when the predictor increases by 1 unit\nIf the predictor was a binary variable (for example indicating men and women) the slope (b) would indicate the average difference in response between the two groups\n\nThe intercept (a) and the slope (b) are sample estimates of corresponding population parameters. These estimates have an inherent variability which is used to provide 95% confidence intervals for where the true population parameters may lie.\nThe interval for the slope indicates the range, for the wider population, that the change in the response is likely to lie between as the predictor increases by 1 unit. If this interval includes 0, the coefficient is not statistically different from 0.\nEach coefficient has a p-value. The p-value relates to a test of the null hypothesis that the coefficient equals 0, versus the alternative hypothesis that the coefficient does not equal 0:\n\nIf p&lt;0.05 the null hypothesis is rejected in favour of the alternative hypothesis\nIf p&gt;0.05 the null hypothesis cannot be discounted\n\n\n\nR-squared\nWe can assess how well the line fits the data by calculating the coefficient of determination R-squared (usually expressed as a percentage ranging from 0-100%), which is equal to the square of the correlation coefficient.\nThis represents the percentage of the variability of the response that can be explained by the predictor. The higher the R-squared, the better the model.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Correlation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "09-correlation-regression.html#assumptions-of-linear-regression",
+    "href": "09-correlation-regression.html#assumptions-of-linear-regression",
+    "title": "9  Correlation and Regression",
+    "section": "9.4 Assumptions of Linear Regression",
+    "text": "9.4 Assumptions of Linear Regression\nMany of the assumptions which underlie regression analysis relate to the distribution of the residuals. The assumptions are:\n\nThe relationship between the response and predictor is approximately linear\nThe observations in the sample are independent\nThe distribution of residuals is Normal\nThe residuals have constant variance (homoscedasticity)\n\n\nChecking Assumptions\nAssumptions can be checked by examining plots of the residuals. The most common method is to plot the residuals against the fitted values. This plot can show systematic deviations from a linear relationship and highlight non-constant variance. A Normal probability plot or histogram can be used to assess the Normality assumption of residuals.\n\nA linear relationship means that across the range of fitted values, the residuals are spread equally above and below 0\nConstant variance of the residuals means that in a plot of residuals against fitted values, the spread of the residuals doesn’t change\n\n\n\nDiagnostic Plots for Checking Assumptions\nHere are examples of diagnostic plots showing both good and problematic patterns:\n\n\ncode\nset.seed(654)\nn &lt;- 100\n\n# Good model - assumptions met\ngood_data &lt;- tibble(\n  x = runif(n, 10, 50),\n  y = 5 + 2*x + rnorm(n, 0, 5)\n)\ngood_model &lt;- lm(y ~ x, data = good_data)\ngood_data$residuals &lt;- residuals(good_model)\ngood_data$fitted &lt;- fitted(good_model)\n\n# Problematic model - non-constant variance (heteroscedasticity)\nbad_data &lt;- tibble(\n  x = runif(n, 10, 50),\n  y = 5 + 2*x + rnorm(n, 0, sd = 0.2*x)  # variance increases with x\n)\nbad_model &lt;- lm(y ~ x, data = bad_data)\nbad_data$residuals &lt;- residuals(bad_model)\nbad_data$fitted &lt;- fitted(bad_model)\n\n# Create diagnostic plots\np1 &lt;- ggplot(good_data, aes(x = fitted, y = residuals)) +\n  geom_point(colour = \"#2c3e50\", alpha = 0.6) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", colour = \"#e74c3c\") +\n  geom_smooth(se = FALSE, colour = \"#3498db\", linewidth = 0.8) +\n  labs(title = \"(a) Good: residuals randomly scattered\",\n       x = \"Fitted values\", y = \"Residuals\") +\n  theme_minimal(base_size = 11) +\n  theme(plot.title = element_text(size = 10))\n\np2 &lt;- ggplot(bad_data, aes(x = fitted, y = residuals)) +\n  geom_point(colour = \"#2c3e50\", alpha = 0.6) +\n  geom_hline(yintercept = 0, linetype = \"dashed\", colour = \"#e74c3c\") +\n  geom_smooth(se = FALSE, colour = \"#3498db\", linewidth = 0.8) +\n  labs(title = \"(b) Problem: increasing spread (non-constant variance)\",\n       x = \"Fitted values\", y = \"Residuals\") +\n  theme_minimal(base_size = 11) +\n  theme(plot.title = element_text(size = 10))\n\np3 &lt;- ggplot(good_data, aes(sample = residuals)) +\n  stat_qq(colour = \"#2c3e50\", alpha = 0.6) +\n  stat_qq_line(colour = \"#3498db\", linewidth = 1) +\n  labs(title = \"(c) Good: points follow diagonal line\",\n       x = \"Theoretical quantiles\", y = \"Sample quantiles\") +\n  theme_minimal(base_size = 11) +\n  theme(plot.title = element_text(size = 10))\n\np4 &lt;- ggplot(good_data, aes(x = residuals)) +\n  geom_histogram(bins = 20, fill = \"#3498db\", colour = \"white\", alpha = 0.7) +\n  labs(title = \"(d) Histogram of residuals (should be approximately Normal)\",\n       x = \"Residuals\", y = \"Frequency\") +\n  theme_minimal(base_size = 11) +\n  theme(plot.title = element_text(size = 10))\n\n(p1 + p2) / (p3 + p4)\n\n\n\n\n\n\n\n\nFigure 9.4: Diagnostic plots for checking regression assumptions\n\n\n\n\n\n\n\n\n\n\n\nInterpreting Diagnostic Plots\n\n\n\n\nResiduals vs Fitted (top left): Look for random scatter around zero with no pattern. A funnel shape indicates non-constant variance.\nResiduals vs Fitted (top right): Shows problematic pattern where spread increases with fitted values.\nQ-Q plot (bottom left): Points should follow the diagonal line closely. Deviations suggest non-Normal residuals.\nHistogram (bottom right): Should show approximately bell-shaped, symmetric distribution.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Correlation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "09-correlation-regression.html#worked-example-ctv-and-ptv-in-prostate-cancer",
+    "href": "09-correlation-regression.html#worked-example-ctv-and-ptv-in-prostate-cancer",
+    "title": "9  Correlation and Regression",
+    "section": "9.5 Worked Example: CTV and PTV in Prostate Cancer",
+    "text": "9.5 Worked Example: CTV and PTV in Prostate Cancer\nThe clinical target volume (cm³) (CTV) and planning target volume (PTV) were recorded for 29 patients receiving stereotactic radiotherapy for prostate cancer. The question of interest was what the relationship between PTV and CTV was, and could the average PTV be predicted when the CTV is known.\n\n\ncode\nset.seed(321)\nn &lt;- 29\n\nprostate_data &lt;- tibble(\n  ctv = runif(n, 15, 75),\n  ptv = 16.96 + 1.58 * ctv + rnorm(n, 0, 8)\n)\n\nmodel_prostate &lt;- lm(ptv ~ ctv, data = prostate_data)\n\nggplot(prostate_data, aes(x = ctv, y = ptv)) +\n  geom_point(colour = \"#2c3e50\", size = 2) +\n  geom_smooth(method = \"lm\", se = TRUE, colour = \"#3498db\", fill = \"#3498db\", alpha = 0.2) +\n  labs(x = \"CTV (cm³)\", y = \"PTV (cm³)\") +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 9.5: Relationship between CTV and PTV in prostate cancer patients\n\n\n\n\n\n\n\ncode\ntidy(model_prostate, conf.int = TRUE) |&gt;\n  mutate(\n    term = c(\"Intercept\", \"CTV\"),\n    across(where(is.numeric), ~round(., 3))\n  ) |&gt;\n  select(Term = term, Estimate = estimate, `Std. Error` = std.error,\n         `95% CI Lower` = conf.low, `95% CI Upper` = conf.high, \n         `P-value` = p.value) |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 9.1: Linear regression output for PTV vs CTV\n\n\n\n\n\n\nTerm\nEstimate\nStd. Error\n95% CI Lower\n95% CI Upper\nP-value\n\n\n\n\nIntercept\n18.043\n5.430\n6.901\n29.186\n0.003\n\n\nCTV\n1.550\n0.109\n1.326\n1.773\n0.000\n\n\n\n\n\n\n\n\nThe equation of the line is:\n\\[\\text{PTV} = 16.96 + 1.58 \\times \\text{CTV}\\]\nThis means that as the CTV increases by 1 cm³, the PTV increases by 1.58 cm³.\nThe 95% confidence interval for the slope is (1.32, 1.84). In a wider population of similar prostate cancer patients, as the CTV increases by 1 cm³, the PTV is likely to increase by between 1.32 and 1.84 cm³.\nThe R-squared for the model was 0.85. This means that 85% of the variation in PTV was explained by CTV alone. 15% remains unexplained.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Correlation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "09-correlation-regression.html#multiple-linear-regression",
+    "href": "09-correlation-regression.html#multiple-linear-regression",
+    "title": "9  Correlation and Regression",
+    "section": "9.6 Multiple Linear Regression",
+    "text": "9.6 Multiple Linear Regression\nMultiple linear regression is an extension of simple linear regression. We would use multiple linear regression when we want to predict a response using several predictor variables. For example, we may wish to predict respiratory muscle strength from weight, age, height and sex.\nThe assumptions of multiple linear regression are the same as those for simple linear regression.\n\nInterpretation of Coefficients in Multiple Regression\n\nThe intercept (a) is the average value of the response when all the predictors have values equal to zero\nIf a predictor is continuous, its slope (b) indicates the average change in the response when all the other predictors are held constant\nIf a predictor is binary (for example indicating men and women), the slope (b) represents the average difference in the response between the groups when all other predictors are held constant\n\nWhen multivariable regression is used, a variation of the R-squared called the adjusted R-squared is employed to assess the fit of the model. The adjusted R-squared takes account of the number of predictors used in the model, but its interpretation is the same as for R-squared.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Correlation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "09-correlation-regression.html#summary",
+    "href": "09-correlation-regression.html#summary",
+    "title": "9  Correlation and Regression",
+    "section": "9.7 Summary",
+    "text": "9.7 Summary\n\n\n\n\n\n\n\nConcept\nDescription\n\n\n\n\nCorrelation coefficient (r)\nMeasures strength of linear association (-1 to +1)\n\n\nPearson’s correlation\nFor Normally distributed data\n\n\nSpearman’s correlation\nNon-parametric alternative\n\n\nLinear regression\nPredicts response from predictor variable\n\n\nIntercept (a)\nAverage response when predictor = 0\n\n\nSlope (b)\nAverage change in response per unit increase in predictor\n\n\nR-squared\nProportion of variance explained by the model\n\n\nResiduals\nDifference between observed and predicted values",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Correlation and Regression</span>"
+    ]
+  },
+  {
+    "objectID": "10-odds-ratios-logistic-regression.html",
+    "href": "10-odds-ratios-logistic-regression.html",
+    "title": "10  Odds, Odds Ratios and Logistic Regression",
+    "section": "",
+    "text": "10.1 Odds vs Risk\nOdds are simply another way of describing probability. Odds are calculated by dividing the number of times an event happens by the number of times it does not happen.\nIf one in every 100 patients suffers a side-effect from a treatment, the odds are:\n\\[\\text{Odds} = 1:99 = \\frac{1}{99} = 0.0101\\]\nRisk, on the other hand, indicates the probability that an event will happen. It is calculated by dividing the number of events by the number of people at risk. In the example above the risk would be:\n\\[\\text{Risk} = \\frac{1}{100} = 0.01\\]",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Odds, Odds Ratios and Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "10-odds-ratios-logistic-regression.html#odds-vs-risk",
+    "href": "10-odds-ratios-logistic-regression.html#odds-vs-risk",
+    "title": "10  Odds, Odds Ratios and Logistic Regression",
+    "section": "",
+    "text": "Key Difference\n\n\n\n\nOdds = Number of events / Number of non-events\nRisk = Number of events / Total number at risk\n\nWhile similar for rare events, odds and risk diverge as events become more common.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Odds, Odds Ratios and Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "10-odds-ratios-logistic-regression.html#odds-ratios",
+    "href": "10-odds-ratios-logistic-regression.html#odds-ratios",
+    "title": "10  Odds, Odds Ratios and Logistic Regression",
+    "section": "10.2 Odds Ratios",
+    "text": "10.2 Odds Ratios\nOdds ratios are calculated by dividing the odds in one group of patients (e.g. experimental group) with the odds in a comparison group of patients (control group).\nAn odds ratio of 1 indicates no difference in risk between the groups, i.e. the odds in each group are the same.\n\n\n\nOdds Ratio\nInterpretation\n\n\n\n\n= 1\nNo difference in odds between groups\n\n\n&gt; 1\nIncreased odds in the exposed/treatment group\n\n\n&lt; 1\nReduced odds in the exposed/treatment group\n\n\n\nOdds ratios are frequently given with 95% confidence intervals – if the confidence interval for an odds ratio does not include 1 (no difference in odds), it is statistically significant.\n\nWorked Example: Calculating Odds Ratios\nA study investigated whether smoking was associated with developing lung cancer. The results from 200 patients are shown below:\n\n\ncode\nsmoking_data &lt;- tibble(\n  `Smoking Status` = c(\"Smoker\", \"Non-smoker\", \"**Total**\"),\n  `Lung Cancer` = c(\"70\", \"20\", \"**90**\"),\n  `No Lung Cancer` = c(\"45\", \"65\", \"**110**\"),\n  `Total` = c(\"**115**\", \"**85**\", \"**200**\")\n)\n\nsmoking_data |&gt;\n  kable(escape = FALSE) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 10.1: Association between smoking and lung cancer\n\n\n\n\n\n\nSmoking Status\nLung Cancer\nNo Lung Cancer\nTotal\n\n\n\n\nSmoker\n70\n45\n**115**\n\n\nNon-smoker\n20\n65\n**85**\n\n\n**Total**\n**90**\n**110**\n**200**\n\n\n\n\n\n\n\n\nCalculating the odds ratio:\n\n\ncode\na &lt;- 70  # Smokers with lung cancer\nb &lt;- 45  # Smokers without lung cancer\nc &lt;- 20  # Non-smokers with lung cancer\nd &lt;- 65  # Non-smokers without lung cancer\n\n# Odds of lung cancer in smokers\nodds_smokers &lt;- a / b\n\n# Odds of lung cancer in non-smokers\nodds_nonsmokers &lt;- c / d\n\n# Odds ratio\nor &lt;- odds_smokers / odds_nonsmokers\n# Alternatively: or &lt;- (a * d) / (b * c)\n\n\n\\[\\text{Odds ratio} = \\frac{70/45}{20/65} = \\frac{1.56}{0.31} = 5.06\\]\nInterpretation: The odds of developing lung cancer are 5.06 times higher in smokers compared to non-smokers. This represents a 406% increase in the odds of lung cancer among smokers.\n\n\n\n\n\n\nClinical Significance\n\n\n\nAn odds ratio of 5.06 indicates a strong positive association between smoking and lung cancer. If the 95% confidence interval for this OR excludes 1.0, we would conclude the association is statistically significant.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Odds, Odds Ratios and Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "10-odds-ratios-logistic-regression.html#logistic-regression",
+    "href": "10-odds-ratios-logistic-regression.html#logistic-regression",
+    "title": "10  Odds, Odds Ratios and Logistic Regression",
+    "section": "10.3 Logistic Regression",
+    "text": "10.3 Logistic Regression\nLogistic regression is similar to linear regression but is used when the outcome variable is binary (e.g. having a disease or not) as opposed to continuous.\nThe coefficients in a logistic regression are interpreted as odds ratios. The coefficients indicate the percent change in the odds of the event when a unit change in the explanatory variable occurs.\n\n\n\n\n\n\nPractical Application\n\n\n\nLogistic regression is commonly used in medical research to:\n\nPredict disease risk based on multiple factors\nIdentify risk factors for binary outcomes (e.g., death vs survival)\nAdjust for confounding variables when examining associations\n\n\n\n\nWorked Example: Logistic Regression for Treatment Response\nA study investigated factors predicting complete response to chemotherapy in 150 cancer patients. The outcome was binary (complete response: yes/no) and predictors included age, tumour size, and performance status.\n\n\ncode\n# Create example logistic regression output\nlogistic_results &lt;- tibble(\n  Predictor = c(\"Intercept\", \"Age (per year)\", \"Tumour size (per cm)\", \"Performance status (1 vs 0)\"),\n  `Coefficient (log OR)` = c(2.45, -0.03, -0.42, -1.15),\n  `Odds Ratio` = c(11.59, 0.97, 0.66, 0.32),\n  `95% CI Lower` = c(3.21, 0.95, 0.51, 0.15),\n  `95% CI Upper` = c(41.85, 0.99, 0.85, 0.67),\n  `P-value` = c(\"&lt;0.001\", \"0.041\", \"0.002\", \"0.003\")\n)\n\nlogistic_results |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 10.2: Logistic regression output for predicting complete response to chemotherapy\n\n\n\n\n\n\nPredictor\nCoefficient (log OR)\nOdds Ratio\n95% CI Lower\n95% CI Upper\nP-value\n\n\n\n\nIntercept\n2.45\n11.59\n3.21\n41.85\n&lt;0.001\n\n\nAge (per year)\n-0.03\n0.97\n0.95\n0.99\n0.041\n\n\nTumour size (per cm)\n-0.42\n0.66\n0.51\n0.85\n0.002\n\n\nPerformance status (1 vs 0)\n-1.15\n0.32\n0.15\n0.67\n0.003\n\n\n\n\n\n\n\n\nInterpretation:\n\nAge: OR = 0.97 (95% CI: 0.95-0.99, p = 0.041)\n\nFor each additional year of age, the odds of complete response decrease by 3% (1 - 0.97 = 0.03)\nOlder patients have slightly lower odds of complete response\n\nTumour size: OR = 0.66 (95% CI: 0.51-0.85, p = 0.002)\n\nFor each additional cm of tumour size, the odds of complete response decrease by 34% (1 - 0.66 = 0.34)\nLarger tumours have significantly lower odds of complete response\n\nPerformance status: OR = 0.32 (95% CI: 0.15-0.67, p = 0.003)\n\nPatients with performance status 1 have 68% lower odds (1 - 0.32 = 0.68) of complete response compared to those with performance status 0\nPoor performance status is a strong negative predictor\n\n\n\n\n\n\n\n\nStatistical Significance\n\n\n\nAll three predictors are statistically significant (p &lt; 0.05), and none of the 95% confidence intervals include 1.0. This indicates that age, tumour size, and performance status are all independently associated with complete response when adjusting for the other variables.",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Odds, Odds Ratios and Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "10-odds-ratios-logistic-regression.html#summary",
+    "href": "10-odds-ratios-logistic-regression.html#summary",
+    "title": "10  Odds, Odds Ratios and Logistic Regression",
+    "section": "10.4 Summary",
+    "text": "10.4 Summary\n\n\n\n\n\n\n\n\nConcept\nFormula\nUse\n\n\n\n\nOdds\nEvents / Non-events\nAlternative to probability\n\n\nRisk\nEvents / Total at risk\nProbability of event\n\n\nOdds Ratio\nOdds₁ / Odds₂\nCompare odds between groups\n\n\nLogistic Regression\nBinary outcome model\nPredict and explain binary outcomes",
+    "crumbs": [
+      "Statistical Inference",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Odds, Odds Ratios and Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html",
+    "href": "11-screening-diagnostic.html",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "",
+    "text": "11.1 Introduction\nIn clinical practice it is desirable to have a simple test which, depending on the presence or absence of an indicator (for example, faecal occult blood), provides a good prediction to whether or not a patient has a particular condition (for example, colorectal cancer).\nTo evaluate a potential diagnostic test, we apply the test to a group of individuals whose true disease status is known. We then draw up a 2 × 2 table of frequencies.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#the-2-2-table",
+    "href": "11-screening-diagnostic.html#the-2-2-table",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.2 The 2 × 2 Table",
+    "text": "11.2 The 2 × 2 Table\n\n\ncode\ntwo_by_two &lt;- tibble(\n  ` ` = c(\"Test positive\", \"Test negative\", \"**Total**\"),\n  `Disease` = c(\"a (true positive)\", \"c (false negative)\", \"**a + c**\"),\n  `No disease` = c(\"b (false positive)\", \"d (true negative)\", \"**b + d**\"),\n  `Total` = c(\"a + b\", \"c + d\", \"**n = a + b + c + d**\")\n)\n\ntwo_by_two |&gt;\n  kable(escape = FALSE) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\")) |&gt;\n  add_header_above(c(\" \" = 1, \"True Disease Status\" = 2, \" \" = 1))\n\n\n\n\nTable 11.1: Structure of a 2 × 2 table for evaluating diagnostic tests\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrue Disease Status\n\n\n\n\n\nDisease\nNo disease\nTotal\n\n\n\n\nTest positive\na (true positive)\nb (false positive)\na + b\n\n\nTest negative\nc (false negative)\nd (true negative)\nc + d\n\n\n**Total**\n**a + c**\n**b + d**\n**n = a + b + c + d**\n\n\n\n\n\n\n\n\nOf the n individuals studied:\n\na + c individuals have the disease\nb + d do not have the disease",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#sensitivity-and-specificity",
+    "href": "11-screening-diagnostic.html#sensitivity-and-specificity",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.3 Sensitivity and Specificity",
+    "text": "11.3 Sensitivity and Specificity\nSensitivity, specificity and predictive values are measures for assessing the effectiveness of the test.\n\nSensitivity\nSensitivity is the proportion of individuals with the disease who are correctly identified by the test.\n\\[\\text{Sensitivity} = \\frac{a}{a + c}\\]\nA highly sensitive test will detect most people with the disease (few false negatives).\n\n\nSpecificity\nSpecificity is the proportion of individuals without the disease who are correctly identified by the test.\n\\[\\text{Specificity} = \\frac{d}{b + d}\\]\nA highly specific test will correctly identify most people without the disease (few false positives).\n\n\n\n\n\n\nKey Point\n\n\n\nSensitivity and specificity quantify the diagnostic ability of the test. They are properties of the test itself and do not change with disease prevalence.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#predictive-values",
+    "href": "11-screening-diagnostic.html#predictive-values",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.4 Predictive Values",
+    "text": "11.4 Predictive Values\n\nPositive Predictive Value\nPositive predictive value (PPV) is the proportion of individuals with a positive test result who have the disease.\n\\[\\text{Positive predictive value} = \\frac{a}{a + b}\\]\n\n\nNegative Predictive Value\nNegative predictive value (NPV) is the proportion of individuals with a negative test result who do not have the disease.\n\\[\\text{Negative predictive value} = \\frac{d}{c + d}\\]\nThe predictive values indicate how likely it is that the individual has or does not have the disease, given the test result.\n\n\nEffect of Prevalence\n\n\n\n\n\n\nPrevalence and Predictive Values\n\n\n\nPredictive values are dependent on the prevalence of the disease in the population being studied. Prevalence is the proportion of the population who have the disease.\n\\[\\text{Prevalence} = \\frac{a + c}{n}\\]\nIn populations where the disease is common, the positive predictive value of a given test will be higher than in populations where the disease is rare.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#likelihood-ratios",
+    "href": "11-screening-diagnostic.html#likelihood-ratios",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.5 Likelihood Ratios",
+    "text": "11.5 Likelihood Ratios\nThe likelihood ratio (LR) for a positive test result is the ratio of the probability of a positive result if the patient has the disease (sensitivity) to the probability of a positive result if the patient does not have the disease (1-specificity).\n\\[\\text{Likelihood ratio} = \\frac{\\text{Sensitivity}}{1 - \\text{Specificity}}\\]\nFor example, a LR of 4 for a positive result indicates that a positive result is four times as likely to occur in an individual with the disease compared to one without it.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#cut-off-values",
+    "href": "11-screening-diagnostic.html#cut-off-values",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.6 Cut-off Values",
+    "text": "11.6 Cut-off Values\nSometimes a diagnostic test needs to be performed on the basis of a continuous numerical measurement. Often there is no threshold above (or below) which the disease definitely occurs. In this situation, a cut-off value is identified at which it is believed an individual has a very high chance of having the disease.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#roc-curves",
+    "href": "11-screening-diagnostic.html#roc-curves",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.7 ROC Curves",
+    "text": "11.7 ROC Curves\nThe receiver operating characteristic (ROC) curve provides a way of assessing an optimal cut-off value for a test. A ROC curve plots sensitivity against (1 - specificity) at all potential cut-off points. It essentially compares the probabilities of a positive test result in those with and without disease.\nThe overall accuracy can be assessed by the area under the curve (AUC):\n\nAUC = 0.5: No discrimination (test is no better than chance)\nAUC = 1.0: Perfect discrimination\nAUC &gt; 0.7: Generally considered acceptable\nAUC &gt; 0.8: Good discrimination\nAUC &gt; 0.9: Excellent discrimination\n\n\n\ncode\n# Create example ROC curve data\nset.seed(123)\nroc_data &lt;- tibble(\n  specificity = seq(1, 0, by = -0.01),\n  sensitivity = pbeta(1 - specificity, 2, 1)  # Creates a realistic ROC curve shape\n)\n\n# Calculate AUC (approximately)\nauc &lt;- round(mean(roc_data$sensitivity), 2)\n\nggplot(roc_data, aes(x = 1 - specificity, y = sensitivity)) +\n  geom_line(colour = \"#3498db\", linewidth = 1.2) +\n  geom_abline(intercept = 0, slope = 1, linetype = \"dashed\", colour = \"grey50\") +\n  geom_ribbon(aes(ymin = 1 - specificity, ymax = sensitivity), \n              fill = \"#3498db\", alpha = 0.2) +\n  annotate(\"text\", x = 0.6, y = 0.3, \n           label = paste(\"AUC =\", auc), size = 5) +\n  labs(x = \"1 - Specificity (False Positive Rate)\",\n       y = \"Sensitivity (True Positive Rate)\") +\n  coord_equal() +\n  theme_minimal(base_size = 14)\n\n\n\n\n\n\n\n\nFigure 11.1: Example ROC curve showing trade-off between sensitivity and specificity",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#worked-example-psa-testing-for-prostate-cancer",
+    "href": "11-screening-diagnostic.html#worked-example-psa-testing-for-prostate-cancer",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.8 Worked Example: PSA Testing for Prostate Cancer",
+    "text": "11.8 Worked Example: PSA Testing for Prostate Cancer\n\n\ncode\npsa_table &lt;- tibble(\n  ` ` = c(\"PSA ≥2.1 ng/ml (positive)\", \"PSA &lt;2.1 ng/ml (negative)\", \"**Total**\"),\n  `Prostate cancer` = c(\"167\", \"282\", \"**449**\"),\n  `No prostate cancer` = c(\"508\", \"1993\", \"**2501**\"),\n  `Total` = c(\"675\", \"2275\", \"**2950**\")\n)\n\npsa_table |&gt;\n  kable(escape = FALSE) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\")) |&gt;\n  add_header_above(c(\" \" = 1, \"True Disease Status\" = 2, \" \" = 1))\n\n\n\n\nTable 11.2: PSA test results for prostate cancer detection (threshold ≥2.1 ng/ml)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrue Disease Status\n\n\n\n\n\nProstate cancer\nNo prostate cancer\nTotal\n\n\n\n\nPSA ≥2.1 ng/ml (positive)\n167\n508\n675\n\n\nPSA &lt;2.1 ng/ml (negative)\n282\n1993\n2275\n\n\n**Total**\n**449**\n**2501**\n**2950**\n\n\n\n\n\n\n\n\n\nCalculating the Measures\n\n\ncode\n# Values from the table\na &lt;- 167  # True positive\nb &lt;- 508  # False positive\nc &lt;- 282  # False negative\nd &lt;- 1993 # True negative\nn &lt;- a + b + c + d\n\n# Calculate measures\nsensitivity &lt;- a / (a + c)\nspecificity &lt;- d / (b + d)\nppv &lt;- a / (a + b)\nnpv &lt;- d / (c + d)\nprevalence &lt;- (a + c) / n\nlr &lt;- sensitivity / (1 - specificity)\n\n\nSensitivity:\n\\[\\text{Sensitivity} = \\frac{167}{167 + 282} = 0.37\\]\nUsing this test, if prostate cancer is present there is a 37% chance of detecting it.\nSpecificity:\n\\[\\text{Specificity} = \\frac{1993}{508 + 1993} = 0.8\\]\nIf there is no prostate cancer, there is an 80% chance of a negative result. 20% of people will have a false positive result.\nPositive Predictive Value:\n\\[\\text{PPV} = \\frac{167}{167 + 508} = 0.25\\]\nThere is a 25% chance that if the test is positive the patient actually has prostate cancer.\nNegative Predictive Value:\n\\[\\text{NPV} = \\frac{1993}{282 + 1993} = 0.88\\]\nThere is an 88% chance, if the test is negative, that the patient does not have prostate cancer. This means there is a 12% chance of a false negative result.\nLikelihood Ratio:\n\\[\\text{LR} = \\frac{0.37}{1 - 0.8} = 1.83\\]\nIf the test is positive, the patient is 1.83 times (almost twice) as likely to have prostate cancer as not have it.\n\n\nSummary of Results\n\n\ncode\nsummary_table &lt;- tibble(\n  Measure = c(\"Sensitivity\", \"Specificity\", \"Positive Predictive Value\", \n              \"Negative Predictive Value\", \"Prevalence\", \"Likelihood Ratio\"),\n  Value = c(\n    paste0(round(sensitivity * 100, 1), \"%\"),\n    paste0(round(specificity * 100, 1), \"%\"),\n    paste0(round(ppv * 100, 1), \"%\"),\n    paste0(round(npv * 100, 1), \"%\"),\n    paste0(round(prevalence * 100, 1), \"%\"),\n    round(lr, 2)\n  ),\n  Interpretation = c(\n    \"37% of cancers detected\",\n    \"80% of non-cancers correctly identified\",\n    \"25% of positive tests are true cancers\",\n    \"88% of negative tests are truly cancer-free\",\n    \"15% of population has prostate cancer\",\n    \"Positive test ~2× more likely in cancer\"\n  )\n)\n\nsummary_table |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 11.3: Summary of diagnostic test measures for PSA ≥2.1 ng/ml\n\n\n\n\n\n\nMeasure\nValue\nInterpretation\n\n\n\n\nSensitivity\n37.2%\n37% of cancers detected\n\n\nSpecificity\n79.7%\n80% of non-cancers correctly identified\n\n\nPositive Predictive Value\n24.7%\n25% of positive tests are true cancers\n\n\nNegative Predictive Value\n87.6%\n88% of negative tests are truly cancer-free\n\n\nPrevalence\n15.2%\n15% of population has prostate cancer\n\n\nLikelihood Ratio\n1.83\nPositive test ~2× more likely in cancer",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "11-screening-diagnostic.html#summary",
+    "href": "11-screening-diagnostic.html#summary",
+    "title": "11  Screening and Diagnostic Tests",
+    "section": "11.9 Summary",
+    "text": "11.9 Summary\n\n\n\n\n\n\n\n\nMeasure\nFormula\nInterpretation\n\n\n\n\nSensitivity\na / (a + c)\nProportion of diseased correctly identified\n\n\nSpecificity\nd / (b + d)\nProportion of non-diseased correctly identified\n\n\nPPV\na / (a + b)\nProbability of disease given positive test\n\n\nNPV\nd / (c + d)\nProbability of no disease given negative test\n\n\nPrevalence\n(a + c) / n\nProportion of population with disease\n\n\nLikelihood ratio\nSens / (1 - Spec)\nHow much more likely is positive test in disease\n\n\nAUC\nArea under ROC\nOverall discriminative ability of test",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Screening and Diagnostic Tests</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html",
+    "href": "12-survival-analysis.html",
+    "title": "12  Survival Analysis",
+    "section": "",
+    "text": "12.1 Introduction\nSurvival analysis involves the use of data which measures the time to an ‘event’. In the context of cancer, the event could be death and the survival data might record time from cancer diagnosis to death.\nOther survival events of interest can include:\nSurvival data are concerned with recording the length of time for a patient to reach the specific endpoint, rather than simply recording whether the endpoint was reached. It therefore involves two variables – time to the event and whether the event occurred.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#introduction",
+    "href": "12-survival-analysis.html#introduction",
+    "title": "12  Survival Analysis",
+    "section": "",
+    "text": "Time until disease recurrence\nTime to re-hospitalisation following discharge\nProgression-free survival\nTime to treatment failure",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#censoring",
+    "href": "12-survival-analysis.html#censoring",
+    "title": "12  Survival Analysis",
+    "section": "12.2 Censoring",
+    "text": "12.2 Censoring\nOne problem with survival data is that there is often incomplete follow-up for patients. This is known as censoring.\nCensoring arises when:\n\nA study is finished before all patients experience the event (which could be death)\nPatients have to be excluded from the study due to other reasons (migration, lost to follow-up, other adverse event)\n\n\n\ncode\n# Create example survival data for visualization\nset.seed(123)\nsurvival_schematic &lt;- tibble(\n  patient = factor(1:8),\n  start = 0,\n  end = c(95, 78, 25, 100, 55, 30, 85, 70),\n  status = c(\"Censored\", \"Censored\", \"Event\", \"Censored\", \"Event\", \"Event\", \"Event\", \"Censored\")\n)\n\nggplot(survival_schematic, aes(y = patient)) +\n  geom_segment(aes(x = start, xend = end, yend = patient), linewidth = 1, colour = \"#3498db\") +\n  geom_point(aes(x = end, shape = status, colour = status), size = 4) +\n  scale_shape_manual(values = c(\"Censored\" = 1, \"Event\" = 4)) +\n  scale_colour_manual(values = c(\"Censored\" = \"#3498db\", \"Event\" = \"#e74c3c\")) +\n  labs(x = \"Survival time (months)\", y = \"Patient\", \n       shape = \"Status\", colour = \"Status\") +\n  theme_minimal(base_size = 14) +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\n\nFigure 12.1: Schematic of a survival analysis study. Each line represents a subject. Circles indicate censored data, crosses indicate the event occurred.\n\n\n\n\n\nA comparison of the mean time to reach the endpoint in patients can give misleading results because of censored data. Therefore, a number of statistical techniques, known as survival methods, have been developed to deal with these situations.\nThe aim of these techniques is to:\n\nStatistically describe survival times\nCompare survival over several therapy groups (the idea being the longer the survival times, the better the therapy)\nFind relations between survival times and other prognostic variables (for example, age, stage, severity of disease)",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#kaplan-meier-survival-curves",
+    "href": "12-survival-analysis.html#kaplan-meier-survival-curves",
+    "title": "12  Survival Analysis",
+    "section": "12.3 Kaplan-Meier Survival Curves",
+    "text": "12.3 Kaplan-Meier Survival Curves\nSurvival data can be displayed graphically in a Kaplan-Meier plot.\n\nThe vertical axis displays the proportion of patients remaining free of the endpoint at any time after baseline\nEach event (death) is indicated by a step in the curve\nCensored data are indicated by (+)\nThe resulting curve is therefore a series of steps, starting at a survival probability of 1 (or 100%) at time 0 and drops towards 0 as time increases\n\nIn effect it shows the proportion of people who are still at risk of experiencing the event, while the horizontal axis shows the time that the subjects were followed up for.\nThe plot can be used to:\n\nDescribe time-to-event in one group\nCompare time-to-event among different groups (for example, by treatment, or sex)\n\n\n\ncode\n# Create synthetic survival data similar to the brain metastases example\nset.seed(456)\n\n# WBRT - worst survival (median ~60 days)\nwbrt &lt;- tibble(\n  time = c(rexp(10, 1/60), runif(4, 30, 180)),\n  status = c(rep(1, 10), rep(0, 4)),\n  treatment = \"WBRT\"\n)\n\n# SRS - better survival (median ~426 days)\nsrs &lt;- tibble(\n  time = c(rexp(6, 1/400), runif(4, 200, 800)),\n  status = c(rep(1, 6), rep(0, 4)),\n  treatment = \"SRS\"\n)\n\n# PBRT - best survival (median ~588 days)\npbrt &lt;- tibble(\n  time = c(rexp(4, 1/550), runif(4, 300, 1000)),\n  status = c(rep(1, 4), rep(0, 4)),\n  treatment = \"PBRT\"\n)\n\nsurv_data &lt;- bind_rows(wbrt, srs, pbrt)\nsurv_data$treatment &lt;- factor(surv_data$treatment, levels = c(\"WBRT\", \"SRS\", \"PBRT\"))\n\n# Convert time to years\nsurv_data$time_years &lt;- surv_data$time / 365\n\n# Fit survival curves\nfit &lt;- survfit(Surv(time_years, status) ~ treatment, data = surv_data)\n\n# Plot\nggsurvplot(fit, data = surv_data,\n           palette = c(\"#e74c3c\", \"#3498db\", \"#27ae60\"),\n           risk.table = TRUE,\n           pval = TRUE,\n           conf.int = FALSE,\n           xlab = \"Time since end of radiotherapy (years)\",\n           ylab = \"Percent alive (%)\",\n           legend.title = \"Treatment\",\n           legend.labs = c(\"WBRT\", \"SRS\", \"PBRT\"),\n           surv.scale = \"percent\",\n           break.time.by = 1,\n           ggtheme = theme_minimal(base_size = 12))\n\n\n\n\n\n\n\n\nFigure 12.2: Kaplan-Meier curves for overall survival among renal cancer patients with brain metastases treated with different radiotherapy modalities\n\n\n\n\n\n\nInterpreting Kaplan-Meier Curves\nAt the start of the study, no patients have died and the proportion at risk is 1.0 (100%). At each time point where a line drops, at least 1 patient experiences the event (death).\nThe dashed horizontal line at 50% indicates the median survival time in each treatment group. The median survival time is a useful summary measure that indicates the time at which 50% of patients have experienced the event.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#log-rank-test",
+    "href": "12-survival-analysis.html#log-rank-test",
+    "title": "12  Survival Analysis",
+    "section": "12.4 Log-Rank Test",
+    "text": "12.4 Log-Rank Test\nThe most common (non-parametric) method of comparing survival between independent groups is the log-rank test.\nThe null hypothesis would be that the groups have equal median survival times (i.e. there is no difference in median survival between the groups). The alternative hypothesis is that at least one of the groups is different.\nIf the p-value is less than 0.05, the null hypothesis is rejected and we can conclude that there is evidence of at least one difference in the median survival times.\n\nExtensions to the Log-Rank Test\n\nStratified log-rank test: Can adjust for categorical prognostic covariates (for example age group or sex)\nLog-rank test for trend: Used for ordered groups (for example, cancer stage, or number of metastases). This is a more appropriate test for considering a trend in survival across the groups",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#life-tables",
+    "href": "12-survival-analysis.html#life-tables",
+    "title": "12  Survival Analysis",
+    "section": "12.5 Life Tables",
+    "text": "12.5 Life Tables\nLife tables describe survival data, where the results have been grouped into time intervals, often of equal length. This method is often described as actuarial.\nThe method of calculation is similar to the Kaplan-Meier method, but differences arise because of the lack of precision of recording of survival times. In general, the Kaplan-Meier analysis is recommended.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#cox-proportional-hazards-model",
+    "href": "12-survival-analysis.html#cox-proportional-hazards-model",
+    "title": "12  Survival Analysis",
+    "section": "12.6 Cox Proportional Hazards Model",
+    "text": "12.6 Cox Proportional Hazards Model\nThe log-rank test is solely a hypothesis test, comparing survival in two or more groups. It does not allow the relationships between one or more categorical or continuous factors and survival to be quantified.\nTo do this we employ the hazard rate (sometimes called the failure rate) which is closely related to survival curves. The hazard rate represents the risk of dying in a very short time interval after a given time t, assuming survival to time t.\nWe want to know whether there are any systematic differences between the hazards, over all time points, of individuals with different characteristics.\nThis can be achieved using the Cox proportional hazards model to test the independent effects of a number of explanatory variables on the hazard. The method assumes that the effect of a predictor on survival does not change over time.\n\nOutput from Cox Models\nFor each variable the Cox proportional hazards model produces an output which includes:\n\nA hazard ratio with a confidence interval\nA p-value\n\n\n\nInterpreting Hazard Ratios\n\n\n\n\n\n\n\nHazard Ratio\nInterpretation\n\n\n\n\n&gt; 1\nRaised hazard, suggests shorter survival times. The hazard increases by 100 × (HR - 1)%\n\n\n= 1\nNo increased or decreased hazard of the endpoint\n\n\n&lt; 1\nDecreased hazard, suggests longer survival times. The hazard decreases by 100 × (1 - HR)%\n\n\n\nThe p-value relates to a significance test performed to test whether that hazard ratio is different from one.\n\n\nTypes of Predictors\n\nFor a continuous predictor: The hazard ratio describes what happens to the hazard as the predictor changes by 1 unit of measurement\nFor levels of a categorical predictor: The hazard ratio describes the relative difference in the hazard between a level and a chosen reference level",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#worked-example-brain-metastases-in-renal-cancer",
+    "href": "12-survival-analysis.html#worked-example-brain-metastases-in-renal-cancer",
+    "title": "12  Survival Analysis",
+    "section": "12.7 Worked Example: Brain Metastases in Renal Cancer",
+    "text": "12.7 Worked Example: Brain Metastases in Renal Cancer\nUsing data from the brain metastases example, a proportional hazards model produces:\n\n\ncode\ncox_output &lt;- tibble(\n  Variable = c(\"Sex\", \"  Men (reference)\", \"  Women\", \n               \"Age (years)\", \n               \"Number of metastases\", \"  1 (reference)\", \"  2+\",\n               \"Treatment\", \"  SRS (reference)\", \"  WBRT\", \"  PBRT\"),\n  `Hazard Ratio` = c(\"\", \"1\", \"1.33\", \"1.02\", \"\", \"1\", \"1.68\", \"\", \"1\", \"7.11\", \"0.75\"),\n  `95% CI` = c(\"\", \"-\", \"0.24-2.36\", \"0.97-1.08\", \"\", \"-\", \"0.45-6.19\", \"\", \"-\", \"1.85-27.3\", \"0.23-2.36\"),\n  `P-value` = c(\"\", \"-\", \"0.54\", \"0.40\", \"\", \"-\", \"0.43\", \"\", \"-\", \"0.004\", \"0.62\")\n)\n\ncox_output |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 12.1: Cox proportional hazards model output for brain metastases survival\n\n\n\n\n\n\nVariable\nHazard Ratio\n95% CI\nP-value\n\n\n\n\nSex\n\n\n\n\n\nMen (reference)\n1\n-\n-\n\n\nWomen\n1.33\n0.24-2.36\n0.54\n\n\nAge (years)\n1.02\n0.97-1.08\n0.40\n\n\nNumber of metastases\n\n\n\n\n\n1 (reference)\n1\n-\n-\n\n\n2+\n1.68\n0.45-6.19\n0.43\n\n\nTreatment\n\n\n\n\n\nSRS (reference)\n1\n-\n-\n\n\nWBRT\n7.11\n1.85-27.3\n0.004\n\n\nPBRT\n0.75\n0.23-2.36\n0.62\n\n\n\n\n\n\n\n\n\nInterpretation\nSex: The reference group is men. After accounting for age, treatment and number of brain metastases, the hazard for women is higher than the hazard for men by 33% (1.33 - 1). The p-value is greater than 0.05 and the confidence interval includes 1, so there is no evidence to suggest an association between sex and hazard in the wider population.\nAge: Age is a continuous variable. After accounting for sex and treatment, increasing age is associated with increasing hazard. A one-year increase in age is associated with a 2% (1.02 - 1) increase in hazard. However, the p-value is above 0.05 and the confidence interval includes 1, so there is no evidence to suggest an association between age and hazard in the wider population.\nTreatment: The treatment reference group is SRS.\n\nWBRT: After accounting for age and sex, the hazard for WBRT is statistically significantly higher than the hazard for SRS. Hazard for WBRT patients is 611% (7.11 - 1) higher than for SRS. This increase is statistically significantly different from 0. In a wider population of similarly chosen patients, the increased hazard is likely to be between 85% and 2630%.\nPBRT: For patients chosen to receive PBRT, the hazard is 25% (1 - 0.75) lower than SRS, but is not significantly different from 0.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "12-survival-analysis.html#summary",
+    "href": "12-survival-analysis.html#summary",
+    "title": "12  Survival Analysis",
+    "section": "12.8 Summary",
+    "text": "12.8 Summary\n\n\n\n\n\n\n\nConcept\nDescription\n\n\n\n\nSurvival analysis\nAnalysis of time-to-event data\n\n\nCensoring\nIncomplete follow-up (event not observed)\n\n\nKaplan-Meier curve\nGraphical display of survival probability over time\n\n\nMedian survival\nTime at which 50% of patients have experienced the event\n\n\nLog-rank test\nNon-parametric test comparing survival between groups\n\n\nCox proportional hazards\nRegression model for survival data\n\n\nHazard ratio\nRelative risk of event; HR &gt; 1 = worse survival, HR &lt; 1 = better survival",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Survival Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html",
+    "href": "13-epidemiological-studies.html",
+    "title": "13  Epidemiological Studies",
+    "section": "",
+    "text": "13.1 Introduction\nEpidemiology is the study of the occurrence and determinants of ill health in the population.\nEpidemiological studies assess the relationship between factors of interest (these may include biological, social, behavioural, and environmental) and the occurrence of disease in the population (for example the incidence of cancer, heart disease, hypertension).\nEpidemiological studies are mostly observational in design (in contrast to experimental studies which involve interventions to affect an outcome).",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#routinely-collected-data",
+    "href": "13-epidemiological-studies.html#routinely-collected-data",
+    "title": "13  Epidemiological Studies",
+    "section": "13.2 Routinely Collected Data",
+    "text": "13.2 Routinely Collected Data\nRoutinely collected administrative data such as death certification, cancer registration and hospital discharge records can be used for epidemiological purposes and provide insights into the health of the population.\nDeath certification provides estimates of the annual death rates in the population. These rates are usually age standardised to take account of differences in the age structure of the population over time or between places.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#types-of-observational-studies",
+    "href": "13-epidemiological-studies.html#types-of-observational-studies",
+    "title": "13  Epidemiological Studies",
+    "section": "13.3 Types of Observational Studies",
+    "text": "13.3 Types of Observational Studies\nObservational epidemiological studies fall into three broad groups:\n\nCross-sectional studies\nCohort studies\nCase-control studies\n\nThe unit of observation is usually individuals but can also be groups of individuals (for example – different populations defined by a shared geography – these are called ecological studies).\n\nStudies in which the health event of interest has yet to happen are called prospective\nStudies in which the health event has already occurred are called retrospective\n\n\n\ncode\n# Create a visual comparison of study designs\nstudy_designs &lt;- tibble(\n  Design = c(\"Cross-sectional\", \"Cohort\", \"Case-control\"),\n  Direction = c(\"Single time point\", \"Forward in time\", \"Backward in time\"),\n  `Time Frame` = c(\"Present\", \"Prospective\", \"Retrospective\"),\n  `Outcome Measure` = c(\"Prevalence\", \"Incidence/Relative Risk\", \"Odds Ratio\")\n)\n\nstudy_designs |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\n\n\n\n\nDesign\n\n\nDirection\n\n\nTime Frame\n\n\nOutcome Measure\n\n\n\n\n\n\nCross-sectional\n\n\nSingle time point\n\n\nPresent\n\n\nPrevalence\n\n\n\n\nCohort\n\n\nForward in time\n\n\nProspective\n\n\nIncidence/Relative Risk\n\n\n\n\nCase-control\n\n\nBackward in time\n\n\nRetrospective\n\n\nOdds Ratio\n\n\n\n\n\n\nFigure 13.1: Comparison of epidemiological study designs",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#cross-sectional-study",
+    "href": "13-epidemiological-studies.html#cross-sectional-study",
+    "title": "13  Epidemiological Studies",
+    "section": "13.4 Cross-sectional Study",
+    "text": "13.4 Cross-sectional Study\nA cross-sectional study is carried out at a single point in time. A health survey is a type of cross-sectional study where the aim is to describe health behaviours or health status in a large sample of the population.\nA cross-sectional study is suitable for estimating the prevalence of a condition in the population.\n\n\n\n\n\n\nDefinition\n\n\n\nPrevalence is the proportion (or percent) of individuals with a particular condition in the population at a point in time.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#cohort-study",
+    "href": "13-epidemiological-studies.html#cohort-study",
+    "title": "13  Epidemiological Studies",
+    "section": "13.5 Cohort Study",
+    "text": "13.5 Cohort Study\nA cohort study takes a group of individuals and follows them forward in time. These studies are usually prospective.\nThe aim is to assess whether exposure to a particular factor affects the incidence of disease in the future.\n\n\n\n\n\n\nDefinitions\n\n\n\nIncidence is the number of new cases of a condition occurring in a population over a set time period.\nIncidence rate is the number of new cases divided by the person-time at risk, and is usually expressed in terms of person-years.\n\n\n\nAnalysis of Cohort Studies\nThe analysis of cohort studies can be summarised by the ratio of incidence rates in the exposed and non-exposed groups (incidence rate ratios or relative risk).\n\n\ncode\ncohort_table &lt;- tibble(\n  ` ` = c(\"Exposed: Yes\", \"Exposed: No\", \"**Total**\"),\n  `Disease: Yes` = c(\"a\", \"c\", \"a + c\"),\n  `Disease: No` = c(\"b\", \"d\", \"b + d\"),\n  `Total` = c(\"a + b\", \"c + d\", \"n\"),\n  `Incidence Rate` = c(\"a / (a + b)\", \"c / (c + d)\", \"\")\n)\n\ncohort_table |&gt;\n  kable(escape = FALSE) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 13.1: Structure of a cohort study analysis table\n\n\n\n\n\n\n\nDisease: Yes\nDisease: No\nTotal\nIncidence Rate\n\n\n\n\nExposed: Yes\na\nb\na + b\na / (a + b)\n\n\nExposed: No\nc\nd\nc + d\nc / (c + d)\n\n\n**Total**\na + c\nb + d\nn\n\n\n\n\n\n\n\n\n\n\n\nRelative Risk\nThe relative risk (RR) indicates the increased (or decreased) risk of disease associated with exposure to the factor of interest.\n\\[RR = \\frac{a/(a+b)}{c/(c+d)}\\]\n\n\n\nRelative Risk\nInterpretation\n\n\n\n\n&gt; 1\nAn increased risk in the exposed group\n\n\n= 1\nRisk is the same in the exposed and unexposed groups\n\n\n&lt; 1\nA reduced risk in the exposed group\n\n\n\nA relative risk of one indicates that the risk is the same in the exposed and unexposed groups. A relative risk greater than one indicates that there is an increased risk in the exposed group compared with the unexposed group; a relative risk less than one indicates a reduction in the risk of disease in the exposed group.\n\n\nWorked Example: Serum Ferritin and Cancer Mortality\nA cohort study investigated whether elevated serum ferritin levels (a marker of iron overload) were associated with increased cancer mortality. Researchers followed 1,420 patients for 5 years after measuring their baseline serum ferritin levels.\n\n\ncode\nferritin_cohort &lt;- tibble(\n  `Serum Ferritin` = c(\"High (&gt;400 μg/L)\", \"Normal (≤400 μg/L)\", \"**Total**\"),\n  `Cancer Death` = c(\"48\", \"82\", \"**130**\"),\n  `Alive` = c(\"352\", \"938\", \"**1290**\"),\n  `Total` = c(\"**400**\", \"**1020**\", \"**1420**\"),\n  `Incidence Rate` = c(\"48/400 = 0.120\", \"82/1020 = 0.080\", \"\")\n)\n\nferritin_cohort |&gt;\n  kable(escape = FALSE) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 13.2: Cohort study of serum ferritin and cancer mortality\n\n\n\n\n\n\nSerum Ferritin\nCancer Death\nAlive\nTotal\nIncidence Rate\n\n\n\n\nHigh (&gt;400 μg/L)\n48\n352\n**400**\n48/400 = 0.120\n\n\nNormal (≤400 μg/L)\n82\n938\n**1020**\n82/1020 = 0.080\n\n\n**Total**\n**130**\n**1290**\n**1420**\n\n\n\n\n\n\n\n\n\n\n\nCalculating the Relative Risk\n\n\ncode\n# Define the values from the 2×2 table\nexposed_disease &lt;- 48      # a: High ferritin with cancer death\nexposed_no_disease &lt;- 352  # b: High ferritin, alive\nunexposed_disease &lt;- 82    # c: Normal ferritin with cancer death\nunexposed_no_disease &lt;- 938 # d: Normal ferritin, alive\n\n# Calculate incidence rates\nir_exposed &lt;- exposed_disease / (exposed_disease + exposed_no_disease)\nir_unexposed &lt;- unexposed_disease / (unexposed_disease + unexposed_no_disease)\n\n# Calculate relative risk\nrr &lt;- ir_exposed / ir_unexposed\n\n\n\\[RR = \\frac{48/400}{82/1020} = \\frac{0.12}{0.08} = 1.49\\]\nThe relative risk of 1.49 indicates that patients with high serum ferritin levels have a 1.49 times higher risk of cancer death compared to those with normal ferritin levels over the 5-year follow-up period.\n\n\n\n\n\n\nInterpretation\n\n\n\nSince RR = 1.49 &gt; 1, there is an increased risk in the exposed group (high ferritin). Specifically:\n\nThe risk of cancer death in the high ferritin group is 12%\nThe risk of cancer death in the normal ferritin group is 8%\nPatients with high ferritin are 49% more likely to die from cancer\n\nIf a 95% confidence interval for this RR does not include 1.0, we would conclude the association is statistically significant.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#case-control-study",
+    "href": "13-epidemiological-studies.html#case-control-study",
+    "title": "13  Epidemiological Studies",
+    "section": "13.6 Case-Control Study",
+    "text": "13.6 Case-Control Study\nA case-control study compares the characteristics of a group of patients with a particular disease (the cases) to a group of individuals without the disease (the controls), to see whether exposure to a factor occurred more or less frequently in the cases than the controls.\nBecause patients are selected on the basis of their disease status, it is not possible to estimate the risk of disease. For cases and controls we can estimate the odds of being exposed to the risk factor.\n\n\ncode\ncc_table &lt;- tibble(\n  ` ` = c(\"Exposed: Yes\", \"Exposed: No\", \"**Total**\", \"Odds of exposure\"),\n  `Case (Disease)` = c(\"a\", \"c\", \"a + c\", \"a / c\"),\n  `Control (No Disease)` = c(\"b\", \"d\", \"b + d\", \"b / d\"),\n  `Total` = c(\"a + b\", \"c + d\", \"n\", \"\")\n)\n\ncc_table |&gt;\n  kable(escape = FALSE) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 13.3: Structure of a case-control study analysis table\n\n\n\n\n\n\n\nCase (Disease)\nControl (No Disease)\nTotal\n\n\n\n\nExposed: Yes\na\nb\na + b\n\n\nExposed: No\nc\nd\nc + d\n\n\n**Total**\na + c\nb + d\nn\n\n\nOdds of exposure\na / c\nb / d\n\n\n\n\n\n\n\n\n\n\nOdds Ratio\nThe odds ratio (OR) gives an indication of the increased (or decreased) odds associated with exposure to the factor of interest.\n\\[OR = \\frac{a/c}{b/d} = \\frac{ad}{bc}\\]\n\n\n\nOdds Ratio\nInterpretation\n\n\n\n\n&lt; 1\nA reduced odds of disease in the exposed group\n\n\n= 1\nOdds is the same in the exposed and unexposed groups\n\n\n&gt; 1\nAn increased odds of disease in the exposed group\n\n\n\nAn odds ratio of one indicates that the odds is the same in the exposed and unexposed groups; an odds ratio greater than one indicates that the odds of disease is greater in the exposed group than in the unexposed group.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#worked-example-oral-contraceptives-and-breast-cancer",
+    "href": "13-epidemiological-studies.html#worked-example-oral-contraceptives-and-breast-cancer",
+    "title": "13  Epidemiological Studies",
+    "section": "13.7 Worked Example: Oral Contraceptives and Breast Cancer",
+    "text": "13.7 Worked Example: Oral Contraceptives and Breast Cancer\n\n\ncode\noc_table &lt;- tibble(\n  `Oral contraceptives` = c(\"Ever used\", \"Never used\", \"**Total**\"),\n  `Case (Breast Cancer)` = c(\"537\", \"639\", \"**1176**\"),\n  `Control` = c(\"554\", \"622\", \"**1176**\")\n)\n\noc_table |&gt;\n  kable(escape = FALSE) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 13.4: Case-control study of oral contraceptives and breast cancer\n\n\n\n\n\n\nOral contraceptives\nCase (Breast Cancer)\nControl\n\n\n\n\nEver used\n537\n554\n\n\nNever used\n639\n622\n\n\n**Total**\n**1176**\n**1176**\n\n\n\n\n\n\n\n\nThe cases were women recently diagnosed with breast cancer in a certain hospital. The controls were women inpatients in the same hospital.\n\nCalculating the Odds Ratio\n\n\ncode\na &lt;- 537  # Cases exposed\nb &lt;- 554  # Controls exposed\nc &lt;- 639  # Cases not exposed\nd &lt;- 622  # Controls not exposed\n\nor &lt;- (a * d) / (b * c)\n\n\n\\[OR = \\frac{537/639}{554/622} = \\frac{537 \\times 622}{554 \\times 639} = 0.94\\]\nThe OR &lt; 1 and this indicates that the odds of breast cancer patients using contraceptives is 6% (1 - 0.94) smaller than among controls.\nAnother interpretation is that the odds of contraceptive users developing breast cancer is 6% smaller compared to those who do not use contraceptives.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#pros-and-cons-of-study-designs",
+    "href": "13-epidemiological-studies.html#pros-and-cons-of-study-designs",
+    "title": "13  Epidemiological Studies",
+    "section": "13.8 Pros and Cons of Study Designs",
+    "text": "13.8 Pros and Cons of Study Designs\n\nCase-Control Studies\nAdvantages:\n\nUseful for investigating rare diseases\nRelatively quick, cheap, and easy to perform\nA wide range of risk factors can be investigated in each study\nThere is no loss to follow-up\n\nDisadvantages:\n\nSelection of appropriate controls can be difficult\nNot efficient when exposures are rare\nCannot be used to establish incidence (retrospective nature)\nSubject to recall bias and data inaccuracy\nCannot infer causation if onset of disease preceded exposure\n\n\n\nCohort Studies\nAdvantages:\n\nData recording tends to be more accurate\nMultiple outcomes can be studied\nIncidence rates can be established\nThe time sequence of events can be assessed\nCan study exposure to factors that are rare\nReduced recall and selection bias compared with case-control studies\n\nDisadvantages:\n\nNeed to follow up subjects over a long period of time\nExpensive\nProne to subjects dropping out (loss to follow-up)\nNot efficient for rare diseases\nDifficult to maintain consistency of measurements over time",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "13-epidemiological-studies.html#summary",
+    "href": "13-epidemiological-studies.html#summary",
+    "title": "13  Epidemiological Studies",
+    "section": "13.9 Summary",
+    "text": "13.9 Summary\n\n\n\n\n\n\n\n\n\nStudy Design\nDirection\nMain Measure\nBest For\n\n\n\n\nCross-sectional\nSingle time point\nPrevalence\nDescribing current health status\n\n\nCohort\nForward (prospective)\nRelative Risk\nAssessing incidence and causation\n\n\nCase-control\nBackward (retrospective)\nOdds Ratio\nInvestigating rare diseases\n\n\n\n\n\n\n\n\n\n\n\nMeasure\nFormula\nInterpretation\n\n\n\n\nPrevalence\nCases / Population\nProportion with disease at a point in time\n\n\nIncidence\nNew cases / Person-time at risk\nRate of new cases over time\n\n\nRelative Risk\nRiskexposed / Riskunexposed\nHow much more likely disease is in exposed group\n\n\nOdds Ratio\n(a×d) / (b×c)\nHow much higher odds of exposure in cases vs controls",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Epidemiological Studies</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html",
+    "href": "14-clinical-trials.html",
+    "title": "14  Clinical Trials",
+    "section": "",
+    "text": "14.1 Introduction\nA clinical trial is a planned experimental study on humans designed to evaluate new interventions (e.g. type or dose of drug, or surgical procedure) compared to a comparative treatment.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#phases-of-clinical-trials",
+    "href": "14-clinical-trials.html#phases-of-clinical-trials",
+    "title": "14  Clinical Trials",
+    "section": "14.2 Phases of Clinical Trials",
+    "text": "14.2 Phases of Clinical Trials\nThere are several different stages of clinical trials:\n\n\ncode\nphases &lt;- tibble(\n  Phase = c(\"Phase I\", \"Phase II\", \"Phase III\", \"Phase IV\"),\n  Purpose = c(\n    \"Establish dosage, side effects and delivery mechanisms\",\n    \"Investigate treatment effects and safety in small studies\",\n    \"Full evaluation of new treatment compared to comparator\",\n    \"Observe how treatment works in non-trial setting\"\n  ),\n  `Sample Size` = c(\"Small (20-80)\", \"Moderate (100-300)\", \"Large (1000+)\", \"Very large\"),\n  Focus = c(\n    \"Safety, dose-finding\",\n    \"Efficacy, optimal dosing\",\n    \"Effectiveness vs standard care\",\n    \"Long-term effects, rare side effects\"\n  )\n)\n\nphases |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 14.1: Phases of clinical trials\n\n\n\n\n\n\nPhase\nPurpose\nSample Size\nFocus\n\n\n\n\nPhase I\nEstablish dosage, side effects and delivery mechanisms\nSmall (20-80)\nSafety, dose-finding\n\n\nPhase II\nInvestigate treatment effects and safety in small studies\nModerate (100-300)\nEfficacy, optimal dosing\n\n\nPhase III\nFull evaluation of new treatment compared to comparator\nLarge (1000+)\nEffectiveness vs standard care\n\n\nPhase IV\nObserve how treatment works in non-trial setting\nVery large\nLong-term effects, rare side effects\n\n\n\n\n\n\n\n\nPhase I & II trials are pre-clinical or small studies which investigate treatment effects and safety. They establish dosage, side effects and delivery mechanisms.\nA Phase III trial is a full evaluation of the new treatment compared to a comparative treatment.\nAfter a treatment has been approved and licensed for general use, Phase IV trials observe how the treatment works in a non-trial setting, identify long-term effects and rare side effects.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#control-groups",
+    "href": "14-clinical-trials.html#control-groups",
+    "title": "14  Clinical Trials",
+    "section": "14.3 Control Groups",
+    "text": "14.3 Control Groups\nPhase III trials have at least one treatment group and comparator group (the control group).\n\nIf the condition under investigation has a standard treatment, then this is the treatment that the control group may receive\nIf standard care does not exist, then the control might be given a placebo (a treatment which does not consist of an active component) or no treatment if considered ethical\n\nThe purpose of the control group is to quantify the effect of the treatment by comparing the outcome of interest in the control group to the outcome in the treatment group.",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#treatment-allocation-randomisation",
+    "href": "14-clinical-trials.html#treatment-allocation-randomisation",
+    "title": "14  Clinical Trials",
+    "section": "14.4 Treatment Allocation (Randomisation)",
+    "text": "14.4 Treatment Allocation (Randomisation)\nPatients are usually randomised to treatment groups. This is to avoid systematic bias, and ensure that each patient has an equal chance of being allocated to each treatment.\n\nMethods of Randomisation\n\n\ncode\nrandomisation &lt;- tibble(\n  Method = c(\"Simple randomisation\", \"Block randomisation\", \n             \"Stratified randomisation\", \"Cluster randomisation\"),\n  Description = c(\n    \"Each patient randomly allocated to treatment (like flipping a coin)\",\n    \"After every x patients, number on each treatment is equal\",\n    \"Block randomisation within important prognostic strata (e.g. age, stage)\",\n    \"Groups/clusters of individuals randomised rather than individuals\"\n  ),\n  Advantage = c(\n    \"Simple to implement\",\n    \"Ensures balanced numbers in each arm\",\n    \"Balances important prognostic factors\",\n    \"Practical when individual randomisation not possible\"\n  )\n)\n\nrandomisation |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 14.2: Methods of randomisation in clinical trials\n\n\n\n\n\n\nMethod\nDescription\nAdvantage\n\n\n\n\nSimple randomisation\nEach patient randomly allocated to treatment (like flipping a coin)\nSimple to implement\n\n\nBlock randomisation\nAfter every x patients, number on each treatment is equal\nEnsures balanced numbers in each arm\n\n\nStratified randomisation\nBlock randomisation within important prognostic strata (e.g. age, stage)\nBalances important prognostic factors\n\n\nCluster randomisation\nGroups/clusters of individuals randomised rather than individuals\nPractical when individual randomisation not possible",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#allocation-concealment-blinding",
+    "href": "14-clinical-trials.html#allocation-concealment-blinding",
+    "title": "14  Clinical Trials",
+    "section": "14.5 Allocation Concealment (Blinding)",
+    "text": "14.5 Allocation Concealment (Blinding)\nRandomisation is not sufficient to ensure that a trial is unbiased. If outcome assessment is subjective or open to interpretation, systematic bias can be introduced by knowledge of the treatment received.\nMasking or blinding means that people are unaware of the treatment that someone received.\n\nLevels of Blinding\n\n\n\n\n\n\n\nLevel\nDescription\n\n\n\n\nSingle blind\nThe patient does not know which treatment they have been allocated\n\n\nDouble blind\nNeither patient nor doctor/evaluator knows which treatment has been allocated\n\n\nTriple blind\nNeither the patient, nor the doctor, nor those reviewing the interim results know which treatment the patient has been allocated",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#designs-for-randomised-trials",
+    "href": "14-clinical-trials.html#designs-for-randomised-trials",
+    "title": "14  Clinical Trials",
+    "section": "14.6 Designs for Randomised Trials",
+    "text": "14.6 Designs for Randomised Trials\n\nParallel Groups\nThe simplest form of randomised trial is a parallel group trial. Eligible patients are randomised to two or more groups, treated according to the assigned group, and assessed for their response to treatment.\n\n\ncode\n# Simple diagram\nggplot() +\n  # Population box\n  annotate(\"rect\", xmin = 0, xmax = 2, ymin = 2, ymax = 3, \n           fill = \"#3498db\", alpha = 0.3, colour = \"#2980b9\") +\n  annotate(\"text\", x = 1, y = 2.5, label = \"Eligible\\nPatients\", size = 4) +\n  \n  # Randomisation\n  annotate(\"text\", x = 3, y = 2.5, label = \"Randomise\", size = 4, fontface = \"bold\") +\n  \n  # Treatment arm\n\n  annotate(\"rect\", xmin = 4, xmax = 6, ymin = 3.2, ymax = 4.2, \n           fill = \"#27ae60\", alpha = 0.3, colour = \"#1e8449\") +\n  annotate(\"text\", x = 5, y = 3.7, label = \"Treatment\", size = 4) +\n  \n  # Control arm\n  annotate(\"rect\", xmin = 4, xmax = 6, ymin = 0.8, ymax = 1.8, \n           fill = \"#e74c3c\", alpha = 0.3, colour = \"#c0392b\") +\n  annotate(\"text\", x = 5, y = 1.3, label = \"Control\", size = 4) +\n  \n  # Outcome boxes\n  annotate(\"rect\", xmin = 7, xmax = 9, ymin = 3.2, ymax = 4.2, \n           fill = \"#27ae60\", alpha = 0.2, colour = \"#1e8449\") +\n  annotate(\"text\", x = 8, y = 3.7, label = \"Assess\\nOutcome\", size = 3.5) +\n  \n  annotate(\"rect\", xmin = 7, xmax = 9, ymin = 0.8, ymax = 1.8, \n           fill = \"#e74c3c\", alpha = 0.2, colour = \"#c0392b\") +\n  annotate(\"text\", x = 8, y = 1.3, label = \"Assess\\nOutcome\", size = 3.5) +\n  \n  # Arrows\n  annotate(\"segment\", x = 2, xend = 2.5, y = 2.5, yend = 2.5,\n           arrow = arrow(length = unit(0.2, \"cm\"))) +\n  annotate(\"segment\", x = 3.5, xend = 4, y = 2.5, yend = 3.7,\n           arrow = arrow(length = unit(0.2, \"cm\"))) +\n  annotate(\"segment\", x = 3.5, xend = 4, y = 2.5, yend = 1.3,\n           arrow = arrow(length = unit(0.2, \"cm\"))) +\n  annotate(\"segment\", x = 6, xend = 7, y = 3.7, yend = 3.7,\n           arrow = arrow(length = unit(0.2, \"cm\"))) +\n  annotate(\"segment\", x = 6, xend = 7, y = 1.3, yend = 1.3,\n           arrow = arrow(length = unit(0.2, \"cm\"))) +\n  \n  # Compare\n  annotate(\"segment\", x = 9, xend = 10, y = 3.7, yend = 2.5,\n           arrow = arrow(length = unit(0.2, \"cm\"))) +\n  annotate(\"segment\", x = 9, xend = 10, y = 1.3, yend = 2.5,\n           arrow = arrow(length = unit(0.2, \"cm\"))) +\n  annotate(\"text\", x = 10.5, y = 2.5, label = \"Compare\\nOutcomes\", size = 3.5) +\n  \n  theme_void() +\n  coord_cartesian(xlim = c(-0.5, 11.5), ylim = c(0, 5))\n\n\n\n\n\n\n\n\nFigure 14.1: Schematic of a parallel group trial design\n\n\n\n\n\n\n\nFactorial Designs\nIn a factorial trial, two (or more) intervention comparisons are carried out simultaneously.\nFor example, in a trial for surgical patients with colorectal cancer, those who participate might be randomised to:\n\nReceive peri-operative radiotherapy or not, AND\nReceive local regional chemotherapy or not\n\nMost factorial trials have two ‘factors’, each of which has two levels. This is called a 2×2 factorial trial, and gives 4 combinations of treatment:\n\n\ncode\nfactorial &lt;- tibble(\n  ` ` = c(\"No chemotherapy\", \"Chemotherapy\"),\n  `No radiotherapy` = c(\"Neither treatment\", \"Chemotherapy alone\"),\n  `Radiotherapy` = c(\"Radiotherapy alone\", \"Both treatments\")\n)\n\nfactorial |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 14.3: Treatment combinations in a 2×2 factorial trial\n\n\n\n\n\n\n\nNo radiotherapy\nRadiotherapy\n\n\n\n\nNo chemotherapy\nNeither treatment\nRadiotherapy alone\n\n\nChemotherapy\nChemotherapy alone\nBoth treatments\n\n\n\n\n\n\n\n\nPotential problems:\n\nTreatment effects may not be additive (interaction)\nMust be practical to combine treatments\nToxicity of combined treatment must be acceptable\n\n\n\nCross-over Trials\nIn a cross-over trial, every patient receives all treatments under investigation, but the order in which they receive them is randomised.\nIn the case of a two-treatment cross-over trial, eligible patients are randomised to receive either:\n\nTreatment A followed by Treatment B, OR\nTreatment B followed by Treatment A\n\nBenefits:\n\nEach patient acts as their own control\nEffectively leads to a smaller sample size - halving the number of patients when compared to a conventional parallel design\n\nPotential problems:\n\nDrop-out after the first treatment (which may be related to treatment)\nCarry-over of treatment effects from the first period which is not eliminated by a wash-out period\nTreatment-period interaction – in which the effect of a treatment is substantially different in the two periods",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#analysis-of-clinical-trial-data",
+    "href": "14-clinical-trials.html#analysis-of-clinical-trial-data",
+    "title": "14  Clinical Trials",
+    "section": "14.7 Analysis of Clinical Trial Data",
+    "text": "14.7 Analysis of Clinical Trial Data\n\nIntention-to-Treat Analysis\nRandomised controlled trials often suffer from noncompliance, drop-outs and missing outcomes.\nAn analysis based only on those patients who completed the study without protocol violations (per-protocol population) can introduce bias and lead to an overestimation of effectiveness. This is because the reason why patients do not comply or drop out may be related to the treatment they received.\nOne potential solution is called intention-to-treat (ITT) analysis. ITT analysis includes every subject who was randomised according to the randomised treatment assignment. It ignores noncompliance, protocol deviations, withdrawal, and anything that happens after randomisation.\n\n\n\n\n\n\nKey Point\n\n\n\nIn ITT analysis, the estimate of treatment effect will generally be more conservative than that found with a per-protocol analysis.\n\n\n\n\nNumber Needed to Treat (NNT)\nThe NNT is the number of patients that need to be treated for one patient to benefit from a treatment compared to a control treatment.\n\\[NNT = \\frac{1}{\\text{Absolute Risk Reduction}}\\]\nThe absolute risk reduction is the risk in control group minus the risk in treatment group.\n\n\n\n\n\n\n\nNNT\nInterpretation\n\n\n\n\n1\nEveryone improves with treatment and no one improves with control\n\n\nHigher values\nLess effective treatment (more patients need to be treated for one to benefit)",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#outcome-measures-in-oncology-trials",
+    "href": "14-clinical-trials.html#outcome-measures-in-oncology-trials",
+    "title": "14  Clinical Trials",
+    "section": "14.8 Outcome Measures in Oncology Trials",
+    "text": "14.8 Outcome Measures in Oncology Trials\n\n\ncode\nendpoints &lt;- tibble(\n  Endpoint = c(\"Overall survival (OS)\", \"Progression-free survival (PFS)\", \n               \"Disease-free survival (DFS)\", \"Objective response rate (ORR)\",\n               \"Tumour regression\", \"Quality of life\", \"Toxicity\"),\n  Description = c(\n    \"Time from randomisation to death from any cause\",\n    \"Time from randomisation to progression or death\",\n    \"Time from randomisation to recurrence or death (after curative treatment)\",\n    \"Proportion with complete or partial response\",\n    \"Reduction in tumour size\",\n    \"Patient-reported outcomes on wellbeing\",\n    \"Adverse events and side effects\"\n  )\n)\n\nendpoints |&gt;\n  kable() |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"))\n\n\n\n\nTable 14.4: Common outcome measures in oncology clinical trials\n\n\n\n\n\n\nEndpoint\nDescription\n\n\n\n\nOverall survival (OS)\nTime from randomisation to death from any cause\n\n\nProgression-free survival (PFS)\nTime from randomisation to progression or death\n\n\nDisease-free survival (DFS)\nTime from randomisation to recurrence or death (after curative treatment)\n\n\nObjective response rate (ORR)\nProportion with complete or partial response\n\n\nTumour regression\nReduction in tumour size\n\n\nQuality of life\nPatient-reported outcomes on wellbeing\n\n\nToxicity\nAdverse events and side effects",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#consort-statement",
+    "href": "14-clinical-trials.html#consort-statement",
+    "title": "14  Clinical Trials",
+    "section": "14.9 CONSORT Statement",
+    "text": "14.9 CONSORT Statement\nCONSORT stands for Consolidated Standards of Reporting Trials. The CONSORT statement is a set of recommendations for the standardised reporting of randomised trials. It is used to aid transparency, critical appraisal and interpretation.\nThe CONSORT statement contains:\n\nA 25-item checklist ensuring information on trial design, participants, treatment allocation, analysis, interpretation and limitations is included\nA flow diagram displaying for each group:\n\nNumbers of participants randomly assigned\nNumbers who received intended treatment\nNumbers analysed for the primary outcome\nLosses and exclusions after randomisation",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "14-clinical-trials.html#summary",
+    "href": "14-clinical-trials.html#summary",
+    "title": "14  Clinical Trials",
+    "section": "14.10 Summary",
+    "text": "14.10 Summary\n\n\n\n\n\n\n\nConcept\nDescription\n\n\n\n\nClinical trial\nPlanned experimental study to evaluate interventions\n\n\nPhase I/II\nSafety and dose-finding studies\n\n\nPhase III\nFull efficacy evaluation vs comparator\n\n\nPhase IV\nPost-marketing surveillance\n\n\nRandomisation\nRandom allocation to ensure equal chance of treatment\n\n\nBlinding\nConcealment of treatment allocation\n\n\nParallel design\nPatients randomised to one treatment only\n\n\nCross-over design\nPatients receive all treatments in random order\n\n\nFactorial design\nTwo or more interventions tested simultaneously\n\n\nITT analysis\nAll randomised patients analysed as allocated\n\n\nNNT\nNumber needed to treat for one patient to benefit\n\n\nCONSORT\nStandards for reporting randomised trials",
+    "crumbs": [
+      "Clinical Applications",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Clinical Trials</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "15  References",
+    "section": "",
+    "text": "References",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
+    "objectID": "references.html#recommended-textbooks",
+    "href": "references.html#recommended-textbooks",
+    "title": "15  References",
+    "section": "15.1 Recommended Textbooks",
+    "text": "15.1 Recommended Textbooks\nIntroductory Statistics:\n\nKirkwood BR, Sterne JAC. Essential Medical Statistics. 2nd ed. Blackwell Science; 2003.\nBland M. An Introduction to Medical Statistics. 4th ed. Oxford University Press; 2015.\nAltman DG. Practical Statistics for Medical Research. Chapman & Hall; 1991.\n\nSurvival Analysis:\n\nMachin D, Cheung YB, Parmar MKB. Survival Analysis: A Practical Approach. 2nd ed. Wiley; 2006.\nCollett D. Modelling Survival Data in Medical Research. 3rd ed. Chapman & Hall/CRC; 2014.\n\nClinical Trials:\n\nMatthews JNS. An Introduction to Randomized Controlled Clinical Trials. 2nd ed. Chapman & Hall/CRC; 2006.\nFriedman LM, Furberg CD, DeMets DL. Fundamentals of Clinical Trials. 5th ed. Springer; 2015.",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
+    "objectID": "references.html#online-resources",
+    "href": "references.html#online-resources",
+    "title": "15  References",
+    "section": "15.2 Online Resources",
+    "text": "15.2 Online Resources\nStatistics:\n\nBMJ Statistics Notes: https://www.bmj.com/specialties/statistics-notes\nSTHDA Statistical Tools for High-throughput Data Analysis: http://www.sthda.com/\n\nR Programming:\n\nR for Data Science: https://r4ds.hadley.nz/\nTidyverse: https://www.tidyverse.org/\n\nReporting Guidelines:\n\nCONSORT Statement: http://www.consort-statement.org/\nSTROBE Statement: https://www.strobe-statement.org/\nEQUATOR Network: https://www.equator-network.org/",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>References</span>"
+    ]
+  },
+  {
+    "objectID": "references.html#examination-resources",
+    "href": "references.html#examination-resources",
+    "title": "15  References",
+    "section": "15.3 Examination Resources",
+    "text": "15.3 Examination Resources\nFRCR Part 1:\n\nRoyal College of Radiologists: https://www.rcr.ac.uk/\n\nSCE Medical Oncology:\n\nRoyal College of Physicians: https://www.mrcpuk.org/",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>References</span>"
+    ]
+  }
+]

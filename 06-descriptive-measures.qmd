@@ -1,0 +1,247 @@
+---
+title: "Descriptive Measures"
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "knitr", "kableExtra"), ask = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Introduction
+
+A **descriptive measure** is a numerical value which summarises a set of data. We represent the number of patients in a sample by the letter **n**. We often represent the individual values of a variable with a small letter **x**. The value for patient 1 would be x~1~, the value for patient 2 would be x~2~. In a sample of n patients, the value for patient n would be x~n~.
+
+## Measures of Location or Central Tendency
+
+These give the location of the centre of the data. Representative measures are **mean**, **median**, and **mode**. They are referred to as 'average' values – i.e. 'something in the middle'.
+
+### Sample Mean
+
+The **sample mean** ($\bar{x}$) is calculated as:
+
+$$\text{mean} = \frac{\sum x}{n}$$
+
+Where Σx = x~1~ + x~2~ + x~3~ + … + x~n~ is the sum of all values across the subjects, and n is the total number of subjects.
+
+### Sample Median
+
+The **sample median** is the middle value when the observations are ranked from lowest to highest. If n is even, it is the mean of the middle two values.
+
+Its interpretation is that 50% of data values are above the median; 50% are below the median.
+
+### Quartiles
+
+**Quartiles** (Q1, Q2, and Q3) – when the observations are ranked from lowest to highest the quartiles divide a set of data into four parts of equal frequency:
+
+- **25%** of the data values are smaller than Q1 (lower quartile)
+- **50%** of the data values are smaller than Q2 (median)
+- **25%** of the data values are larger than Q3 (upper quartile)
+
+### Sample Mode
+
+The **sample mode** is the most frequently occurring value. This term is seldom used.
+
+## Measures of Dispersion
+
+Knowing the "average" value of data is not very informative by itself. We also need to know how "concentrated" or "spread out" the data are. That is, we need to know something about the "variability" of the data.
+
+Measures of dispersion are ways of quantifying this numerically. They describe the degree to which the data vary about their average value, their scatter or spread. Representative measures: **range**, **standard deviation**, and **interquartile range**.
+
+### Range
+
+**Range** is simply the difference between the smallest (minimum) and largest (maximum) values in the sample.
+
+### Standard Deviation
+
+**Standard deviation** (SD or sd) is a measure of how far away observations are from the sample mean.
+
+It is calculated as:
+
+$$SD = \sqrt{\frac{\sum(x - \text{mean})^2}{n-1}}$$
+
+Which is the square root of the sum of squared differences from the sample mean divided by (n-1).
+
+### Interquartile Range
+
+**Interquartile range** (IQR) is simply the lower quartile and upper quartile (Q1, Q3). Sometimes it is expressed as the value of Q3 - Q1.
+
+## Worked Example: SUVmax in Lung Cancer Patients
+
+10 patients with lung cancer had a pretreatment PET scan and SUVmax was measured.
+
+### The Data
+
+```{r}
+#| label: suv-example
+
+# Original data
+suv_data <- c(1.8, 8.9, 2.7, 9.4, 5.4, 16.0, 5.8, 17.9, 13.1, 6.6)
+
+tibble(
+  Patient = 1:10,
+  `SUVmax` = suv_data
+) |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+### Calculating the Mean
+
+```{r}
+#| label: calculate-mean
+
+# Calculate mean
+sum_values <- sum(suv_data)
+n <- length(suv_data)
+mean_suv <- sum_values / n
+```
+
+The mean SUVmax = (1.8 + 8.9 + 2.7 + 9.4 + 5.4 + 16.0 + 5.8 + 17.9 + 13.1 + 6.6) / 10 = **`r round(mean_suv, 2)`**
+
+### Calculating the Standard Deviation
+
+The calculation of the standard deviation involves:
+
+**Step 1:** Subtracting the mean SUVmax from each observation:
+
+```{r}
+#| label: calculate-sd
+
+deviations <- suv_data - mean_suv
+tibble(
+  Patient = 1:10,
+  SUVmax = suv_data,
+  `Deviation (x - mean)` = round(deviations, 1)
+) |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+**Step 2:** Squaring these values:
+
+```{r}
+squared_deviations <- deviations^2
+sum_squared <- sum(squared_deviations)
+```
+
+Squared deviations: `r paste(round(squared_deviations, 2), collapse = ", ")`
+
+**Step 3:** Summing these values together: **`r round(sum_squared, 2)`**
+
+**Step 4:** Dividing by the number of observations minus 1:
+
+$$\frac{`r round(sum_squared, 2)`}{(10-1)} = `r round(sum_squared/9, 2)`$$
+
+**Step 5:** Taking the square root:
+
+$$\text{standard deviation} = \sqrt{`r round(sum_squared/9, 2)`} = `r round(sqrt(sum_squared/9), 2)`$$
+
+### Calculating the Median and Interquartile Range
+
+Ordering the data from lowest to highest allows identification of the median and quartiles.
+
+**Ordered data:** 1.8, 2.7, 5.4, 5.8, 6.6, 8.9, 9.4, 13.1, 16.0, 17.9
+
+```{r}
+#| label: calculate-median
+
+ordered_data <- sort(suv_data)
+median_suv <- median(suv_data)
+q1 <- quantile(suv_data, 0.25)
+q3 <- quantile(suv_data, 0.75)
+min_val <- min(suv_data)
+max_val <- max(suv_data)
+range_val <- max_val - min_val
+iqr_val <- q3 - q1
+```
+
+- The **median** SUVmax = (6.6 + 8.9)/2 = **`r median_suv`**
+- **Q1** = `r q1` and **Q3** = `r q3`
+- The **minimum** value is `r min_val`, and the **maximum** value is `r max_val`
+- The **range** = `r max_val` - `r min_val` = `r range_val`
+- The **interquartile range** (IQR) is (`r q1`, `r q3`) or `r q3` - `r q1` = `r iqr_val`
+
+### Summary Table
+
+```{r}
+#| label: tbl-summary
+#| tbl-cap: "Summary statistics for SUVmax in 10 lung cancer patients"
+
+tibble(
+  Measure = c("Mean (SD)", "Median (IQR)", "Range"),
+  Value = c(
+    paste0(round(mean_suv, 2), " (", round(sd(suv_data), 2), ")"),
+    paste0(median_suv, " (", q1, "-", q3, ")"),
+    paste0(min_val, " to ", max_val)
+  )
+) |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+::: {.callout-important}
+## Reporting Convention
+Remember to report **means with standard deviations** (8.76 (SD 5.43)), and **medians with interquartile ranges** (7.75 (IQR 5.4-13.1)).
+
+Do not mix means with the interquartile range or medians with standard deviations.
+:::
+
+## Which Measures to Choose?
+
+```{r}
+#| label: fig-mean-vs-median
+#| fig-cap: "The median is less influenced by outliers than the mean"
+#| fig-width: 8
+#| fig-height: 4
+
+set.seed(42)
+# Normal data
+normal_data <- tibble(
+  value = rnorm(100, mean = 50, sd = 10),
+  type = "Symmetric distribution"
+)
+
+# Skewed data with outlier
+skewed_data <- tibble(
+  value = c(rnorm(95, mean = 50, sd = 10), 120, 130, 140, 150, 160),
+  type = "With outliers"
+)
+
+combined <- bind_rows(normal_data, skewed_data)
+
+ggplot(combined, aes(x = value)) +
+  geom_histogram(bins = 20, fill = "#3498db", alpha = 0.7) +
+  geom_vline(data = combined |> group_by(type) |> summarise(m = mean(value)),
+             aes(xintercept = m), colour = "#e74c3c", linewidth = 1, linetype = "dashed") +
+  geom_vline(data = combined |> group_by(type) |> summarise(m = median(value)),
+             aes(xintercept = m), colour = "#27ae60", linewidth = 1) +
+  facet_wrap(~type, scales = "free_x") +
+  labs(x = "Value", y = "Frequency",
+       caption = "Red dashed = mean, Green solid = median") +
+  theme_minimal(base_size = 12)
+```
+
+- The **mode** should be used when calculating a measure of centre for nominal categorical variables
+- When the variable is numeric with a **symmetric distribution**, then the **mean** is the proper measure of centre
+- In the case of numeric variables with **skewed distribution**, the **median** is a good choice for the measure of centre. The median is less influenced by outlier (extreme) values
+
+The sample mode, the sample median and the sample mean have corresponding population measures. That is, we assume that the variable in question has a population mode, population median, population mean, which are all unknown. The sample mode, the sample median and the sample mean are used to estimate the values of these corresponding unknown population parameters.
+
+## Summary
+
+| Measure | Description | When to Use |
+|---------|-------------|-------------|
+| Mean | Sum of values divided by n | Symmetric numeric data |
+| Median | Middle value when ordered | Skewed numeric data |
+| Mode | Most frequent value | Categorical data |
+| Range | Maximum minus minimum | Quick measure of spread |
+| Standard deviation | Average distance from mean | Symmetric numeric data |
+| Interquartile range | Q3 minus Q1 | Skewed numeric data |

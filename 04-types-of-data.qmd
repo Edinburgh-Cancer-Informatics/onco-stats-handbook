@@ -1,0 +1,176 @@
+---
+title: "Types of Data"
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "knitr", "kableExtra"), ask = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Overview
+
+Broadly, data are either **numerical** or **categorical**. Other terms to describe this are quantitative or qualitative.
+
+## Categorical (Qualitative) Data
+
+Categorical data tells us which category an individual belongs to.
+
+### Nominal Scale
+
+Categories are distinguished by a **name**, with **no intrinsic ordering**.
+
+**Examples:** sex, histology, cancer type, postcode
+
+### Ordinal Scale
+
+Categories are distinguished by name, **with intrinsic ordering**.
+
+**Examples:** performance status, toxicity grade, tumour stage
+
+### Dichotomous Variables
+
+A categorical measure with only two categories (for example alive or dead) is called **dichotomous**. Sometimes the categories of a dichotomous variable are labelled 0 and 1, and are called a **binary variable**.
+
+## Numerical (Quantitative) Data
+
+Numerical data consists of values that are counts or measurements.
+
+### Discrete Data
+
+Values arise from a **counting** process.
+
+**Examples:** number of tumours, number of metastases, number of hospital admissions
+
+### Continuous Data
+
+Values arise from a **measuring** process.
+
+**Examples:** height, tumour size, planning treatment volume, age, overall survival, weight, FEV1
+
+```{r}
+#| label: fig-data-types
+#| fig-cap: "Classification of data types"
+#| fig-width: 10
+#| fig-height: 6
+
+# Create diagram using ggplot
+ggplot() +
+  # Main categorical box
+  annotate("rect", xmin = 0, xmax = 4, ymin = 4, ymax = 5, 
+           fill = "#3498db", alpha = 0.3, colour = "#2980b9") +
+  annotate("text", x = 2, y = 4.7, label = "Categorical (qualitative)", 
+           fontface = "bold", size = 4) +
+  annotate("text", x = 2, y = 4.3, label = "tells us which category an\nindividual belongs to", 
+           size = 3) +
+  
+  # Nominal box
+  annotate("rect", xmin = 0, xmax = 1.9, ymin = 2, ymax = 3.5, 
+           fill = "#3498db", alpha = 0.2, colour = "#2980b9") +
+  annotate("text", x = 0.95, y = 3.2, label = "Nominal scale", 
+           fontface = "bold", size = 3.5) +
+  annotate("text", x = 0.95, y = 2.8, label = "Categories distinguished\nby name, with no\nintrinsic ordering", 
+           size = 2.5) +
+  annotate("text", x = 0.95, y = 2.2, label = "(e.g. sex, histology,\ncancer type)", 
+           size = 2.5, fontface = "italic") +
+  
+  # Ordinal box
+  annotate("rect", xmin = 2.1, xmax = 4, ymin = 2, ymax = 3.5, 
+           fill = "#3498db", alpha = 0.2, colour = "#2980b9") +
+  annotate("text", x = 3.05, y = 3.2, label = "Ordinal scale", 
+           fontface = "bold", size = 3.5) +
+  annotate("text", x = 3.05, y = 2.8, label = "Categories distinguished\nby name, with\nintrinsic ordering", 
+           size = 2.5) +
+  annotate("text", x = 3.05, y = 2.2, label = "(e.g. performance status,\ntoxicity grade)", 
+           size = 2.5, fontface = "italic") +
+  
+  # Main numerical box
+  annotate("rect", xmin = 5, xmax = 9, ymin = 4, ymax = 5, 
+           fill = "#e74c3c", alpha = 0.3, colour = "#c0392b") +
+  annotate("text", x = 7, y = 4.7, label = "Numerical (quantitative)", 
+           fontface = "bold", size = 4) +
+  annotate("text", x = 7, y = 4.3, label = "values are counts or\nmeasurements", 
+           size = 3) +
+  
+  # Discrete box
+  annotate("rect", xmin = 5, xmax = 6.9, ymin = 2, ymax = 3.5, 
+           fill = "#e74c3c", alpha = 0.2, colour = "#c0392b") +
+  annotate("text", x = 5.95, y = 3.2, label = "Discrete", 
+           fontface = "bold", size = 3.5) +
+  annotate("text", x = 5.95, y = 2.8, label = "Values arise from\ncounting process", 
+           size = 2.5) +
+  annotate("text", x = 5.95, y = 2.2, label = "(e.g. number of\ntumours)", 
+           size = 2.5, fontface = "italic") +
+  
+  # Continuous box
+  annotate("rect", xmin = 7.1, xmax = 9, ymin = 2, ymax = 3.5, 
+           fill = "#e74c3c", alpha = 0.2, colour = "#c0392b") +
+  annotate("text", x = 8.05, y = 3.2, label = "Continuous", 
+           fontface = "bold", size = 3.5) +
+  annotate("text", x = 8.05, y = 2.8, label = "Values arise from\nmeasuring process", 
+           size = 2.5) +
+  annotate("text", x = 8.05, y = 2.2, label = "(e.g. height, tumour size,\nage, survival)", 
+           size = 2.5, fontface = "italic") +
+  
+  # Connecting lines
+  annotate("segment", x = 1, y = 4, xend = 1, yend = 3.5) +
+  annotate("segment", x = 3, y = 4, xend = 3, yend = 3.5) +
+  annotate("segment", x = 1, y = 4, xend = 3, yend = 4) +
+  annotate("segment", x = 2, y = 4.0, xend = 2, yend = 4) +
+  
+  annotate("segment", x = 6, y = 4, xend = 6, yend = 3.5) +
+  annotate("segment", x = 8, y = 4, xend = 8, yend = 3.5) +
+  annotate("segment", x = 6, y = 4, xend = 8, yend = 4) +
+  annotate("segment", x = 7, y = 4.0, xend = 7, yend = 4) +
+  
+  theme_void() +
+  coord_cartesian(xlim = c(-0.5, 9.5), ylim = c(1.5, 5.5))
+```
+
+## Paired Data
+
+The majority of statistical analyses compare characteristics measured in two separate groups of individuals. In some circumstances, however, data may consist of **pairs of outcome measurements**.
+
+When the same variable is measured on two occasions in the same individual, this is called **paired** data. If measurements are only made once on each individual they are **unpaired**.
+
+### Examples of Paired Data
+
+**Before and after treatment:** We might wish, for example, to carry out a study where the assessment of tumour response to radiotherapy is based on comparing tumour size measurements in a group of lung cancer patients, before and after they received treatment. For each person, we therefore have a pair of measures: tumour size after treatment and tumour size before treatment.
+
+**Comparing two sites:** When two measurements are taken on the same patient (e.g., comparing left and right eyes, or two different anatomical sites).
+
+::: {.callout-important}
+## Why Pairing Matters
+It is important to take this pairing in the data into account when assessing how much on average the treatment has affected tumour size. Paired analyses account for within-person variability and are typically more powerful than unpaired analyses.
+:::
+
+```{r}
+#| label: tbl-paired-example
+#| tbl-cap: "Example of paired data: tumour size before and after radiotherapy in lung cancer patients"
+
+tibble(
+  Patient = 1:8,
+  `Tumour Size Before (cm)` = c(4.2, 3.8, 5.1, 4.5, 3.2, 6.0, 4.8, 3.5),
+  `Tumour Size After (cm)` = c(2.1, 2.5, 3.2, 2.8, 1.8, 4.2, 3.1, 2.0),
+  `Change (cm)` = c(-2.1, -1.3, -1.9, -1.7, -1.4, -1.8, -1.7, -1.5)
+) |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Summary
+
+| Data Type | Subtype | Description | Examples |
+|-----------|---------|-------------|----------|
+| Categorical | Nominal | Categories with no ordering | Sex, histology, cancer type |
+| Categorical | Ordinal | Categories with ordering | Performance status, toxicity grade |
+| Categorical | Dichotomous | Only two categories | Alive/dead, yes/no |
+| Numerical | Discrete | Counting process | Number of tumours |
+| Numerical | Continuous | Measuring process | Height, tumour size, survival time |

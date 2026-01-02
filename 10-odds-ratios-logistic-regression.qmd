@@ -1,0 +1,166 @@
+---
+title: "Odds, Odds Ratios and Logistic Regression"
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "knitr", "kableExtra"), ask = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Odds vs Risk
+
+**Odds** are simply another way of describing probability. Odds are calculated by dividing the number of times an event happens by the number of times it does not happen.
+
+If one in every 100 patients suffers a side-effect from a treatment, the odds are:
+
+$$\text{Odds} = 1:99 = \frac{1}{99} = 0.0101$$
+
+**Risk**, on the other hand, indicates the probability that an event will happen. It is calculated by dividing the number of events by the number of people at risk. In the example above the risk would be:
+
+$$\text{Risk} = \frac{1}{100} = 0.01$$
+
+::: {.callout-note}
+## Key Difference
+- **Odds** = Number of events / Number of non-events
+- **Risk** = Number of events / Total number at risk
+
+While similar for rare events, odds and risk diverge as events become more common.
+:::
+
+## Odds Ratios
+
+**Odds ratios** are calculated by dividing the odds in one group of patients (e.g. experimental group) with the odds in a comparison group of patients (control group).
+
+An odds ratio of 1 indicates no difference in risk between the groups, i.e. the odds in each group are the same.
+
+| Odds Ratio | Interpretation |
+|------------|----------------|
+| = 1 | No difference in odds between groups |
+| > 1 | Increased odds in the exposed/treatment group |
+| < 1 | Reduced odds in the exposed/treatment group |
+
+Odds ratios are frequently given with 95% confidence intervals – if the confidence interval for an odds ratio does not include 1 (no difference in odds), it is statistically significant.
+
+### Worked Example: Calculating Odds Ratios
+
+A study investigated whether smoking was associated with developing lung cancer. The results from 200 patients are shown below:
+
+```{r}
+#| label: tbl-smoking-lung-cancer
+#| tbl-cap: "Association between smoking and lung cancer"
+
+smoking_data <- tibble(
+  `Smoking Status` = c("Smoker", "Non-smoker", "**Total**"),
+  `Lung Cancer` = c("70", "20", "**90**"),
+  `No Lung Cancer` = c("45", "65", "**110**"),
+  `Total` = c("**115**", "**85**", "**200**")
+)
+
+smoking_data |>
+  kable(escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+**Calculating the odds ratio:**
+
+```{r}
+#| label: or-smoking-calculation
+
+a <- 70  # Smokers with lung cancer
+b <- 45  # Smokers without lung cancer
+c <- 20  # Non-smokers with lung cancer
+d <- 65  # Non-smokers without lung cancer
+
+# Odds of lung cancer in smokers
+odds_smokers <- a / b
+
+# Odds of lung cancer in non-smokers
+odds_nonsmokers <- c / d
+
+# Odds ratio
+or <- odds_smokers / odds_nonsmokers
+# Alternatively: or <- (a * d) / (b * c)
+```
+
+$$\text{Odds ratio} = \frac{70/45}{20/65} = \frac{`r round(odds_smokers, 2)`}{`r round(odds_nonsmokers, 2)`} = `r round(or, 2)`$$
+
+**Interpretation:** The odds of developing lung cancer are **`r round(or, 2)` times higher** in smokers compared to non-smokers. This represents a **`r round((or-1)*100)`% increase** in the odds of lung cancer among smokers.
+
+::: {.callout-important}
+## Clinical Significance
+An odds ratio of `r round(or, 2)` indicates a strong positive association between smoking and lung cancer. If the 95% confidence interval for this OR excludes 1.0, we would conclude the association is statistically significant.
+:::
+
+## Logistic Regression
+
+**Logistic regression** is similar to linear regression but is used when the outcome variable is binary (e.g. having a disease or not) as opposed to continuous.
+
+The coefficients in a logistic regression are interpreted as odds ratios. The coefficients indicate the percent change in the odds of the event when a unit change in the explanatory variable occurs.
+
+::: {.callout-tip}
+## Practical Application
+Logistic regression is commonly used in medical research to:
+
+- Predict disease risk based on multiple factors
+- Identify risk factors for binary outcomes (e.g., death vs survival)
+- Adjust for confounding variables when examining associations
+:::
+
+### Worked Example: Logistic Regression for Treatment Response
+
+A study investigated factors predicting complete response to chemotherapy in 150 cancer patients. The outcome was binary (complete response: yes/no) and predictors included age, tumour size, and performance status.
+
+```{r}
+#| label: tbl-logistic-output
+#| tbl-cap: "Logistic regression output for predicting complete response to chemotherapy"
+
+# Create example logistic regression output
+logistic_results <- tibble(
+  Predictor = c("Intercept", "Age (per year)", "Tumour size (per cm)", "Performance status (1 vs 0)"),
+  `Coefficient (log OR)` = c(2.45, -0.03, -0.42, -1.15),
+  `Odds Ratio` = c(11.59, 0.97, 0.66, 0.32),
+  `95% CI Lower` = c(3.21, 0.95, 0.51, 0.15),
+  `95% CI Upper` = c(41.85, 0.99, 0.85, 0.67),
+  `P-value` = c("<0.001", "0.041", "0.002", "0.003")
+)
+
+logistic_results |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+**Interpretation:**
+
+1. **Age**: OR = 0.97 (95% CI: 0.95-0.99, p = 0.041)
+   - For each additional year of age, the odds of complete response decrease by 3% (1 - 0.97 = 0.03)
+   - Older patients have slightly lower odds of complete response
+
+2. **Tumour size**: OR = 0.66 (95% CI: 0.51-0.85, p = 0.002)
+   - For each additional cm of tumour size, the odds of complete response decrease by 34% (1 - 0.66 = 0.34)
+   - Larger tumours have significantly lower odds of complete response
+
+3. **Performance status**: OR = 0.32 (95% CI: 0.15-0.67, p = 0.003)
+   - Patients with performance status 1 have 68% lower odds (1 - 0.32 = 0.68) of complete response compared to those with performance status 0
+   - Poor performance status is a strong negative predictor
+
+::: {.callout-note}
+## Statistical Significance
+All three predictors are statistically significant (p < 0.05), and none of the 95% confidence intervals include 1.0. This indicates that age, tumour size, and performance status are all independently associated with complete response when adjusting for the other variables.
+:::
+
+## Summary
+
+| Concept | Formula | Use |
+|---------|---------|-----|
+| Odds | Events / Non-events | Alternative to probability |
+| Risk | Events / Total at risk | Probability of event |
+| Odds Ratio | Odds₁ / Odds₂ | Compare odds between groups |
+| Logistic Regression | Binary outcome model | Predict and explain binary outcomes |

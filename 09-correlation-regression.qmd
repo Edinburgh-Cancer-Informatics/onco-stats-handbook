@@ -1,0 +1,429 @@
+---
+title: "Correlation and Regression"
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "knitr", "kableExtra", "broom", "patchwork"), ask = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(broom)
+library(patchwork)
+```
+
+## Introduction
+
+Correlation and linear regression are techniques for describing the relationships between variables.
+
+**Correlation** looks for a linear association between two variables. The strength of the association is summarised by the correlation coefficient.
+
+**Regression** looks for the dependence of one variable (the dependent variable) on another (the independent variable). It quantifies the best linear relation between the variables and allows the prediction of the dependent variable when only the independent variable is known.
+
+## Correlation
+
+Correlation is used to measure the degree of **linear association** between two continuous variables.
+
+### Types of Correlation Coefficients
+
+There are two main types of correlation coefficients:
+
+| Coefficient | When to Use |
+|-------------|-------------|
+| **Pearson's correlation coefficient** | Data are approximately Normally distributed |
+| **Spearman's rank correlation coefficient** | Non-parametric alternative - use if data are not approximately normally distributed, have extreme values (outliers), or the sample size is small |
+
+### Interpreting the Correlation Coefficient
+
+The correlation coefficient (**r**) can take any value in the range **-1 to +1**.
+
+**The sign** of the correlation coefficient indicates:
+
+- **Positive r**: One variable increases as the other variable increases
+- **Negative r**: One variable decreases as the other increases
+
+**The magnitude** of the correlation coefficient indicates the strength of the linear association:
+
+- **r = +1 or −1**: Perfect correlation. If both variables were plotted on a scatter graph all the points would lie on a straight line
+- **r = 0**: No linear correlation
+- The closer r is to -1 or 1, the greater the degree of linear association
+
+```{r}
+#| label: fig-correlation-examples
+#| fig-cap: "Scatterplots showing datasets with different correlations"
+#| fig-width: 10
+#| fig-height: 8
+
+set.seed(123)
+
+# Strong positive
+n <- 50
+strong_pos <- tibble(
+  x = rnorm(n, 50, 10),
+  y = 0.9 * x + rnorm(n, 0, 3),
+  type = "(a) Strong positive\nr ≈ 0.95"
+)
+
+# Weak positive
+weak_pos <- tibble(
+  x = rnorm(n, 50, 10),
+  y = 0.3 * x + rnorm(n, 35, 8),
+  type = "(b) Weak positive\nr ≈ 0.35"
+)
+
+# Uncorrelated
+uncorr <- tibble(
+  x = rnorm(n, 50, 10),
+  y = rnorm(n, 50, 10),
+  type = "(c) Uncorrelated\nr ≈ 0"
+)
+
+# Weak negative
+weak_neg <- tibble(
+  x = rnorm(n, 50, 10),
+  y = -0.4 * x + rnorm(n, 70, 8),
+  type = "(d) Weak negative\nr ≈ -0.40"
+)
+
+all_corr <- bind_rows(strong_pos, weak_pos, uncorr, weak_neg)
+
+ggplot(all_corr, aes(x = x, y = y)) +
+  geom_point(colour = "#2c3e50", alpha = 0.7) +
+  facet_wrap(~type, scales = "free") +
+  labs(x = "x", y = "y") +
+  theme_minimal(base_size = 12)
+```
+
+### Important Cautions
+
+::: {.callout-warning}
+## Correlation Does Not Imply Causation
+It is important to remember that a correlation between two variables does not necessarily imply a 'cause and effect' relationship.
+:::
+
+Correlation refers only to **linear relationships**. A correlation of 0 means there is no linear relationship between the two variables. However, relationships between variables may still exist but be **non-linear**. It is always important to look at plots of data.
+
+```{r}
+#| label: fig-nonlinear
+#| fig-cap: "Examples where the correlation coefficient is misleading - non-linear relationships"
+#| fig-width: 10
+#| fig-height: 4
+
+set.seed(456)
+n <- 50
+
+# Quadratic relationship
+quad <- tibble(
+  x = seq(-3, 3, length.out = n),
+  y = x^2 + rnorm(n, 0, 0.5),
+  type = "Quadratic (r ≈ 0)"
+)
+
+# Sinusoidal
+sine <- tibble(
+  x = seq(0, 2*pi, length.out = n),
+  y = sin(x) + rnorm(n, 0, 0.2),
+  type = "Sinusoidal (r ≈ 0)"
+)
+
+# Outlier effect
+outlier <- tibble(
+  x = c(rnorm(n-1, 50, 5), 100),
+  y = c(rnorm(n-1, 50, 5), 100),
+  type = "Outlier influence"
+)
+
+nonlinear <- bind_rows(quad, sine, outlier)
+
+ggplot(nonlinear, aes(x = x, y = y)) +
+  geom_point(colour = "#e74c3c", alpha = 0.7) +
+  facet_wrap(~type, scales = "free") +
+  labs(x = "x", y = "y") +
+  theme_minimal(base_size = 12)
+```
+
+::: {.callout-warning}
+## When NOT to Use Correlation
+
+Correlation analysis is **inappropriate** in these situations:
+
+1. **Non-linear relationships**: As shown above, quadratic or curved relationships will have r ≈ 0 even though a strong relationship exists.
+
+2. **Categorical data**: You cannot calculate a meaningful Pearson correlation between categorical variables (e.g., cancer type and treatment response categories). Use contingency tables and chi-squared tests instead.
+
+3. **Time series data**: Measurements taken over time often violate the independence assumption because consecutive observations are correlated.
+
+4. **Restricted range**: If you only observe a narrow range of values, the correlation may not reflect the true relationship across the full range.
+
+5. **Outliers present**: Single extreme values can dramatically inflate or deflate the correlation coefficient, making it unrepresentative of the overall pattern.
+
+**Always plot your data first** before calculating correlation coefficients. Visual inspection will reveal patterns that a single number cannot capture.
+:::
+
+### Clinical Example: Inappropriate Use of Correlation
+
+Consider trying to correlate cancer stage (I, II, III, IV) with treatment type (surgery, chemotherapy, radiotherapy). This is inappropriate because:
+
+- Stage is ordinal categorical (not truly continuous)
+- Treatment type is nominal categorical
+- The relationship is not linear
+- Better approaches: contingency tables, chi-squared test, or logistic regression
+
+## Linear Regression
+
+Linear regression is used when we believe a variable **y** is linearly dependent on another variable **x**. This means that a change in x will lead to a change in y. We use linear regression to determine the linear line (the regression of y on x) that best describes the straight-line relationship between the two variables.
+
+### The Regression Equation
+
+The equation which estimates the simple linear regression line is:
+
+$$Y = a + bx$$
+
+Where:
+
+- **x** is usually called the independent, predictor, or explanatory variable
+- **Y** is the value of y (usually called the dependent, outcome, or response variable) which lies on the estimated line. It is an estimate of the value we expect for y if the value of x is known. Y is called the **fitted value** of y
+- **a** and **b** are called the **regression coefficients** of the estimated line
+- **a** is the **intercept** of the estimated line; it is the average value of Y when x = 0
+- **b** is the **slope** of the estimated line; it represents the average amount by which Y increases if we increase x by one unit
+
+### Residuals and Least Squares
+
+The **residual** is the difference between the actual response y and the predicted response Y from the regression line. The method of **least squares** regression works by minimising the sum of squared residuals.
+
+The intercept and slope are determined by the **method of least squares** (often called ordinary least squares, OLS). This method determines the line of best fit so that the sum of the squared residuals is at a minimum.
+
+```{r}
+#| label: fig-regression-line
+#| fig-cap: "Scatterplot with fitted regression line showing residuals"
+#| fig-width: 8
+#| fig-height: 6
+
+set.seed(789)
+n <- 20
+
+reg_data <- tibble(
+  age = runif(n, 20, 75),
+  hb = 8.24 + 0.13 * age + rnorm(n, 0, 1.5)
+)
+
+model <- lm(hb ~ age, data = reg_data)
+
+# Add one point to highlight residual
+highlight_point <- tibble(age = 31, hb = 10.5)
+predicted_hb <- predict(model, newdata = highlight_point)
+
+ggplot(reg_data, aes(x = age, y = hb)) +
+  geom_point(colour = "#2c3e50", size = 2) +
+  geom_smooth(method = "lm", se = FALSE, colour = "#3498db", linewidth = 1) +
+  geom_point(data = highlight_point, colour = "#e74c3c", size = 3) +
+  geom_segment(aes(x = 31, xend = 31, y = 10.5, yend = predicted_hb),
+               colour = "#e74c3c", linetype = "dashed") +
+  annotate("text", x = 60, y = 10, 
+           label = paste0("Hb = ", round(coef(model)[1], 2), " + ", 
+                         round(coef(model)[2], 2), " × Age"),
+           size = 4, colour = "#3498db") +
+  annotate("text", x = 38, y = 10.2, label = "residual", size = 3, colour = "#e74c3c") +
+  labs(x = "Age (years)", y = "Haemoglobin (g/dL)") +
+  theme_minimal(base_size = 14)
+```
+
+### Coefficients, Confidence Intervals, P-values, and R-squared
+
+As mentioned previously:
+
+- The **intercept (a)** is the average value of the response when the predictor is 0
+- The **slope (b)** is the average change in the response when the predictor increases by 1 unit
+- If the predictor was a binary variable (for example indicating men and women) the slope (b) would indicate the average difference in response between the two groups
+
+The intercept (a) and the slope (b) are sample estimates of corresponding population parameters. These estimates have an inherent variability which is used to provide **95% confidence intervals** for where the true population parameters may lie.
+
+The interval for the slope indicates the range, for the wider population, that the change in the response is likely to lie between as the predictor increases by 1 unit. **If this interval includes 0, the coefficient is not statistically different from 0.**
+
+Each coefficient has a **p-value**. The p-value relates to a test of the null hypothesis that the coefficient equals 0, versus the alternative hypothesis that the coefficient does not equal 0:
+
+- If p<0.05 the null hypothesis is rejected in favour of the alternative hypothesis
+- If p>0.05 the null hypothesis cannot be discounted
+
+### R-squared
+
+We can assess how well the line fits the data by calculating the **coefficient of determination R-squared** (usually expressed as a percentage ranging from 0-100%), which is equal to the square of the correlation coefficient.
+
+This represents the **percentage of the variability of the response that can be explained by the predictor**. The higher the R-squared, the better the model.
+
+## Assumptions of Linear Regression
+
+Many of the assumptions which underlie regression analysis relate to the distribution of the residuals. The assumptions are:
+
+1. The relationship between the response and predictor is approximately **linear**
+2. The observations in the sample are **independent**
+3. The distribution of residuals is **Normal**
+4. The residuals have **constant variance** (homoscedasticity)
+
+### Checking Assumptions
+
+Assumptions can be checked by examining plots of the residuals. The most common method is to plot the residuals against the fitted values. This plot can show systematic deviations from a linear relationship and highlight non-constant variance. A Normal probability plot or histogram can be used to assess the Normality assumption of residuals.
+
+- A **linear relationship** means that across the range of fitted values, the residuals are spread equally above and below 0
+- **Constant variance** of the residuals means that in a plot of residuals against fitted values, the spread of the residuals doesn't change
+
+### Diagnostic Plots for Checking Assumptions
+
+Here are examples of diagnostic plots showing both good and problematic patterns:
+
+```{r}
+#| label: fig-diagnostic-plots
+#| fig-cap: "Diagnostic plots for checking regression assumptions"
+#| fig-width: 10
+#| fig-height: 8
+
+set.seed(654)
+n <- 100
+
+# Good model - assumptions met
+good_data <- tibble(
+  x = runif(n, 10, 50),
+  y = 5 + 2*x + rnorm(n, 0, 5)
+)
+good_model <- lm(y ~ x, data = good_data)
+good_data$residuals <- residuals(good_model)
+good_data$fitted <- fitted(good_model)
+
+# Problematic model - non-constant variance (heteroscedasticity)
+bad_data <- tibble(
+  x = runif(n, 10, 50),
+  y = 5 + 2*x + rnorm(n, 0, sd = 0.2*x)  # variance increases with x
+)
+bad_model <- lm(y ~ x, data = bad_data)
+bad_data$residuals <- residuals(bad_model)
+bad_data$fitted <- fitted(bad_model)
+
+# Create diagnostic plots
+p1 <- ggplot(good_data, aes(x = fitted, y = residuals)) +
+  geom_point(colour = "#2c3e50", alpha = 0.6) +
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "#e74c3c") +
+  geom_smooth(se = FALSE, colour = "#3498db", linewidth = 0.8) +
+  labs(title = "(a) Good: residuals randomly scattered",
+       x = "Fitted values", y = "Residuals") +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(size = 10))
+
+p2 <- ggplot(bad_data, aes(x = fitted, y = residuals)) +
+  geom_point(colour = "#2c3e50", alpha = 0.6) +
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "#e74c3c") +
+  geom_smooth(se = FALSE, colour = "#3498db", linewidth = 0.8) +
+  labs(title = "(b) Problem: increasing spread (non-constant variance)",
+       x = "Fitted values", y = "Residuals") +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(size = 10))
+
+p3 <- ggplot(good_data, aes(sample = residuals)) +
+  stat_qq(colour = "#2c3e50", alpha = 0.6) +
+  stat_qq_line(colour = "#3498db", linewidth = 1) +
+  labs(title = "(c) Good: points follow diagonal line",
+       x = "Theoretical quantiles", y = "Sample quantiles") +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(size = 10))
+
+p4 <- ggplot(good_data, aes(x = residuals)) +
+  geom_histogram(bins = 20, fill = "#3498db", colour = "white", alpha = 0.7) +
+  labs(title = "(d) Histogram of residuals (should be approximately Normal)",
+       x = "Residuals", y = "Frequency") +
+  theme_minimal(base_size = 11) +
+  theme(plot.title = element_text(size = 10))
+
+(p1 + p2) / (p3 + p4)
+```
+
+::: {.callout-tip}
+## Interpreting Diagnostic Plots
+- **Residuals vs Fitted (top left)**: Look for random scatter around zero with no pattern. A funnel shape indicates non-constant variance.
+- **Residuals vs Fitted (top right)**: Shows problematic pattern where spread increases with fitted values.
+- **Q-Q plot (bottom left)**: Points should follow the diagonal line closely. Deviations suggest non-Normal residuals.
+- **Histogram (bottom right)**: Should show approximately bell-shaped, symmetric distribution.
+:::
+
+## Worked Example: CTV and PTV in Prostate Cancer
+
+The clinical target volume (cm³) (CTV) and planning target volume (PTV) were recorded for 29 patients receiving stereotactic radiotherapy for prostate cancer. The question of interest was what the relationship between PTV and CTV was, and could the average PTV be predicted when the CTV is known.
+
+```{r}
+#| label: fig-ctv-ptv
+#| fig-cap: "Relationship between CTV and PTV in prostate cancer patients"
+#| fig-width: 8
+#| fig-height: 6
+
+set.seed(321)
+n <- 29
+
+prostate_data <- tibble(
+  ctv = runif(n, 15, 75),
+  ptv = 16.96 + 1.58 * ctv + rnorm(n, 0, 8)
+)
+
+model_prostate <- lm(ptv ~ ctv, data = prostate_data)
+
+ggplot(prostate_data, aes(x = ctv, y = ptv)) +
+  geom_point(colour = "#2c3e50", size = 2) +
+  geom_smooth(method = "lm", se = TRUE, colour = "#3498db", fill = "#3498db", alpha = 0.2) +
+  labs(x = "CTV (cm³)", y = "PTV (cm³)") +
+  theme_minimal(base_size = 14)
+```
+
+```{r}
+#| label: tbl-regression-output
+#| tbl-cap: "Linear regression output for PTV vs CTV"
+
+tidy(model_prostate, conf.int = TRUE) |>
+  mutate(
+    term = c("Intercept", "CTV"),
+    across(where(is.numeric), ~round(., 3))
+  ) |>
+  select(Term = term, Estimate = estimate, `Std. Error` = std.error,
+         `95% CI Lower` = conf.low, `95% CI Upper` = conf.high, 
+         `P-value` = p.value) |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+The equation of the line is:
+
+$$\text{PTV} = 16.96 + 1.58 \times \text{CTV}$$
+
+This means that as the CTV increases by 1 cm³, the PTV increases by 1.58 cm³.
+
+The 95% confidence interval for the slope is (1.32, 1.84). In a wider population of similar prostate cancer patients, as the CTV increases by 1 cm³, the PTV is likely to increase by between 1.32 and 1.84 cm³.
+
+The R-squared for the model was 0.85. This means that **85% of the variation in PTV was explained by CTV alone**. 15% remains unexplained.
+
+## Multiple Linear Regression
+
+**Multiple linear regression** is an extension of simple linear regression. We would use multiple linear regression when we want to predict a response using several predictor variables. For example, we may wish to predict respiratory muscle strength from weight, age, height and sex.
+
+The assumptions of multiple linear regression are the same as those for simple linear regression.
+
+### Interpretation of Coefficients in Multiple Regression
+
+- The **intercept (a)** is the average value of the response when all the predictors have values equal to zero
+- If a predictor is **continuous**, its slope (b) indicates the average change in the response when all the other predictors are held constant
+- If a predictor is **binary** (for example indicating men and women), the slope (b) represents the average difference in the response between the groups when all other predictors are held constant
+
+When multivariable regression is used, a variation of the R-squared called the **adjusted R-squared** is employed to assess the fit of the model. The adjusted R-squared takes account of the number of predictors used in the model, but its interpretation is the same as for R-squared.
+
+## Summary
+
+| Concept | Description |
+|---------|-------------|
+| Correlation coefficient (r) | Measures strength of linear association (-1 to +1) |
+| Pearson's correlation | For Normally distributed data |
+| Spearman's correlation | Non-parametric alternative |
+| Linear regression | Predicts response from predictor variable |
+| Intercept (a) | Average response when predictor = 0 |
+| Slope (b) | Average change in response per unit increase in predictor |
+| R-squared | Proportion of variance explained by the model |
+| Residuals | Difference between observed and predicted values |

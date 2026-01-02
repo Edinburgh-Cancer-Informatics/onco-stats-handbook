@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(quarto render:*)",
+      "Bash(dir \"C:\\\\dev\\\\screenshots\")",
+      "Bash(cat:*)",
+      "Bash(for file in 03-populations-samples.qmd 04-types-of-data.qmd 05-presenting-data.qmd 06-descriptive-measures.qmd 07-normal-distribution.qmd 08-statistical-inference.qmd 09-correlation-regression.qmd 10-odds-ratios-logistic-regression.qmd 11-screening-diagnostic.qmd 12-survival-analysis.qmd 13-epidemiological-studies.qmd 14-clinical-trials.qmd)",
+      "Bash(do sed -i 's/^# \\\\\\(.*\\\\\\) {#sec-\\\\\\([^}]*\\\\\\)}$/# \\\\1 {#sec-\\\\2 .unnumbered}/' \"$file\")",
+      "Bash(done)",
+      "Bash(do sed -i '/^# .* {#sec-.* \\\\.unnumbered}$/d' \"$file\")",
+      "Bash(git add:*)"
+    ]
+  }
+}

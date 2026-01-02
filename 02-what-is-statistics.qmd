@@ -1,0 +1,173 @@
+---
+title: "What is Statistics?"
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "knitr"), ask = FALSE)
+
+library(tidyverse)
+library(knitr)
+```
+
+::: {.callout-note}
+## Definition
+"Statistics is the science of collecting, summarising, presenting and interpreting data, and of using them to estimate the magnitude of associations and test hypotheses."
+
+— Kirkwood and Sterne, *Essential Medical Statistics*
+:::
+
+## Descriptive Statistics
+
+**Descriptive statistics** is concerned with summarising and presenting data. It is an essential step before further analysis is conducted.
+
+It helps form subjective impressions of answers to research questions.
+
+To produce appropriate descriptive statistics requires knowledge of different data types. Broadly, data are either numerical or categorical.
+
+## Inferential Statistics
+
+**Inferential statistics** provides a framework to make subjective impressions more objective by quantifying uncertainty. Through estimation and testing it quantifies the magnitude of associations and indicates the strength of evidence that these are "real".
+
+Statistics is the core science of evidence-based medicine.
+
+## Types of Statistical Analysis
+
+Statistical analysis can be classified into three main types, each answering different research questions:
+
+### Descriptive Analysis
+
+**Descriptive analysis** answers the question: **"What happened?"**
+
+This involves summarising and characterising data to understand patterns and trends:
+
+- What is the average age of lung cancer patients in our clinic?
+- What proportion of breast cancer patients have Stage III disease?
+- How has cancer incidence changed over the past decade?
+
+Descriptive analysis does not make predictions or establish causation—it simply describes the data at hand.
+
+**Example:** "Among 500 prostate cancer patients, the median age at diagnosis was 68 years, and 45% had Gleason score ≥7."
+
+### Predictive Analysis
+
+**Predictive analysis** answers the question: **"What will happen?"**
+
+This uses patterns in historical data to make predictions about future or unknown outcomes:
+
+- Given a patient's age, tumour size, and grade, what is their probability of 5-year survival?
+- Which patients are most likely to respond to immunotherapy based on biomarkers?
+- Can we predict treatment toxicity from baseline characteristics?
+
+Predictive analysis focuses on **accuracy of prediction**, not on understanding why relationships exist. A predictive model may include variables that have no causal relationship with the outcome, as long as they improve prediction.
+
+**Example:** "A machine learning model using 20 clinical and genomic features predicts complete response to chemotherapy with 82% accuracy."
+
+::: {.callout-important}
+## Prediction vs Causation
+A predictive model can be highly accurate without any of the predictors being causally related to the outcome. For instance, ice cream sales predict drowning deaths (both increase in summer), but ice cream does not cause drowning.
+:::
+
+### Causal Analysis
+
+**Causal analysis** answers the question: **"What will happen if we intervene?"**
+
+This aims to understand **cause-and-effect relationships**—what happens when we actively change one variable:
+
+- Does radiotherapy cause improved survival in early-stage lung cancer?
+- Does smoking cause an increased risk of bladder cancer?
+- Would lowering blood pressure reduce the risk of stroke?
+
+Causal analysis requires more than just observing associations. It demands careful study design and analysis to rule out alternative explanations like confounding and reverse causation.
+
+**Example:** "In a randomised controlled trial, adding immunotherapy to chemotherapy caused a 35% reduction in the risk of death compared to chemotherapy alone (hazard ratio 0.65, 95% CI 0.52-0.81)."
+
+## Causal Inference
+
+**Causal inference** is the process of determining whether an observed association represents a true cause-and-effect relationship.
+
+### Association vs Causation
+
+A fundamental principle in statistics is that **correlation does not imply causation**. Two variables may be associated (correlated) for several reasons:
+
+1. **A causes B**: Smoking causes lung cancer
+2. **B causes A** (reverse causation): Lung cancer causes weight loss (not the other way around)
+3. **C causes both A and B** (confounding): Age causes both grey hair and increased cancer risk
+4. **Coincidence**: Ice cream sales and drowning deaths both increase in summer
+
+### Requirements for Causal Inference
+
+To establish causation, we need more than just an association. The **Bradford Hill criteria** provide a framework:
+
+| Criterion | Description |
+|-----------|-------------|
+| **Strength of association** | Stronger associations are more likely to be causal |
+| **Consistency** | The association is repeatedly observed in different populations and settings |
+| **Temporality** | The cause must precede the effect in time |
+| **Biological gradient** | Dose-response relationship (e.g., more smoking → higher cancer risk) |
+| **Plausibility** | There is a plausible biological mechanism |
+| **Experimental evidence** | Intervention studies (e.g., RCTs) demonstrate the effect |
+
+### Study Designs for Causal Inference
+
+Different study designs provide different levels of evidence for causation:
+
+**Randomised Controlled Trials (RCTs):**
+- **Gold standard** for causal inference
+- Random assignment breaks the link between confounders and treatment
+- Allows us to say treatment *caused* the outcome difference
+
+**Observational Studies:**
+- Case-control and cohort studies can suggest causation but cannot prove it
+- Require careful control for confounding variables
+- Multiple studies showing consistent associations strengthen causal claims
+
+::: {.callout-tip}
+## Clinical Application
+In oncology, RCTs establish that treatments *cause* improved outcomes (e.g., "chemotherapy causes a 20% reduction in mortality"). Observational studies may identify risk factors associated with cancer (e.g., "obesity is associated with increased breast cancer risk") but cannot always prove causation without supporting evidence from other sources.
+:::
+
+### Example: Causal vs Non-Causal Associations
+
+**Non-causal association:**
+- Observation: Patients who drink coffee have lower rates of liver cancer
+- This could be confounded by many factors (e.g., coffee drinkers may be healthier overall)
+- We cannot conclude coffee *causes* reduced liver cancer from observational data alone
+
+**Causal relationship (established through RCT):**
+- Question: Does radiotherapy cause improved survival in early-stage lung cancer?
+- RCT: Patients randomised to radiotherapy vs observation
+- Result: Radiotherapy group had 15% better 5-year survival
+- Conclusion: Radiotherapy *causes* improved survival (because randomisation eliminates confounding)
+
+::: {.callout-warning}
+## Common Pitfall
+Many research papers incorrectly use causal language ("X reduces Y", "X improves Y") when describing observational associations. Be cautious when interpreting such claims—unless the study is an RCT or provides strong evidence using causal inference methods, the relationship may not be causal.
+:::
+
+## Terminology: Probability
+
+In layman terms probability is often regarded as the degree of belief that an event will happen.
+
+For the most part when statisticians refer to probability (denoted as P or p), they are referring to the **long-term frequency** of an event occurring. This provides a measure of the chance that an event will happen, usually under a set of specific assumptions. The probability of the event not occurring is 1-p.
+
+By definition probability can take any value between 0 (the event will definitely not occur) and 1 (the event will definitely occur).
+
+Probability is sometimes expressed as a percentage 0-100%.
+
+## Summary
+
+| Concept | Description | Key Question |
+|---------|-------------|--------------|
+| **Statistics** | The science of collecting, summarising, presenting and interpreting data | — |
+| **Descriptive analysis** | Summarising and characterising observed data | "What happened?" |
+| **Predictive analysis** | Using patterns to forecast future outcomes | "What will happen?" |
+| **Causal analysis** | Understanding cause-and-effect relationships | "What if we intervene?" |
+| **Inferential statistics** | Quantifying uncertainty through estimation and testing | — |
+| **Causal inference** | Determining if associations represent true causation | — |
+| **Association** | Two variables are correlated (may or may not be causal) | — |
+| **Causation** | One variable directly causes changes in another | — |
+| **Probability** | The long-term frequency of an event occurring (0 to 1) | — |

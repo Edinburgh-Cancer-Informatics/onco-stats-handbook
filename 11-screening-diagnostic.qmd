@@ -1,0 +1,265 @@
+---
+title: "Screening and Diagnostic Tests"
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "knitr", "kableExtra"), ask = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Introduction
+
+In clinical practice it is desirable to have a simple test which, depending on the presence or absence of an indicator (for example, faecal occult blood), provides a good prediction to whether or not a patient has a particular condition (for example, colorectal cancer).
+
+To evaluate a potential diagnostic test, we apply the test to a group of individuals whose true disease status is known. We then draw up a **2 × 2 table** of frequencies.
+
+## The 2 × 2 Table
+
+```{r}
+#| label: tbl-2x2
+#| tbl-cap: "Structure of a 2 × 2 table for evaluating diagnostic tests"
+
+two_by_two <- tibble(
+  ` ` = c("Test positive", "Test negative", "**Total**"),
+  `Disease` = c("a (true positive)", "c (false negative)", "**a + c**"),
+  `No disease` = c("b (false positive)", "d (true negative)", "**b + d**"),
+  `Total` = c("a + b", "c + d", "**n = a + b + c + d**")
+)
+
+two_by_two |>
+  kable(escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover")) |>
+  add_header_above(c(" " = 1, "True Disease Status" = 2, " " = 1))
+```
+
+Of the **n** individuals studied:
+
+- **a + c** individuals have the disease
+- **b + d** do not have the disease
+
+## Sensitivity and Specificity
+
+**Sensitivity**, **specificity** and **predictive values** are measures for assessing the effectiveness of the test.
+
+### Sensitivity
+
+**Sensitivity** is the proportion of individuals **with the disease** who are correctly identified by the test.
+
+$$\text{Sensitivity} = \frac{a}{a + c}$$
+
+A highly sensitive test will detect most people with the disease (few false negatives).
+
+### Specificity
+
+**Specificity** is the proportion of individuals **without the disease** who are correctly identified by the test.
+
+$$\text{Specificity} = \frac{d}{b + d}$$
+
+A highly specific test will correctly identify most people without the disease (few false positives).
+
+::: {.callout-note}
+## Key Point
+Sensitivity and specificity quantify the **diagnostic ability** of the test. They are properties of the test itself and do not change with disease prevalence.
+:::
+
+## Predictive Values
+
+### Positive Predictive Value
+
+**Positive predictive value (PPV)** is the proportion of individuals with a positive test result who have the disease.
+
+$$\text{Positive predictive value} = \frac{a}{a + b}$$
+
+### Negative Predictive Value
+
+**Negative predictive value (NPV)** is the proportion of individuals with a negative test result who do not have the disease.
+
+$$\text{Negative predictive value} = \frac{d}{c + d}$$
+
+The predictive values indicate **how likely it is that the individual has or does not have the disease, given the test result**.
+
+### Effect of Prevalence
+
+::: {.callout-important}
+## Prevalence and Predictive Values
+Predictive values are **dependent on the prevalence** of the disease in the population being studied. Prevalence is the proportion of the population who have the disease.
+
+$$\text{Prevalence} = \frac{a + c}{n}$$
+
+In populations where the disease is **common**, the positive predictive value of a given test will be **higher** than in populations where the disease is **rare**.
+:::
+
+## Likelihood Ratios
+
+The **likelihood ratio (LR)** for a positive test result is the ratio of the probability of a positive result if the patient has the disease (sensitivity) to the probability of a positive result if the patient does not have the disease (1-specificity).
+
+$$\text{Likelihood ratio} = \frac{\text{Sensitivity}}{1 - \text{Specificity}}$$
+
+For example, a LR of 4 for a positive result indicates that a positive result is **four times as likely** to occur in an individual with the disease compared to one without it.
+
+## Cut-off Values
+
+Sometimes a diagnostic test needs to be performed on the basis of a continuous numerical measurement. Often there is no threshold above (or below) which the disease definitely occurs. In this situation, a **cut-off value** is identified at which it is believed an individual has a very high chance of having the disease.
+
+## ROC Curves
+
+The **receiver operating characteristic (ROC) curve** provides a way of assessing an optimal cut-off value for a test. A ROC curve plots sensitivity against (1 - specificity) at all potential cut-off points. It essentially compares the probabilities of a positive test result in those with and without disease.
+
+The overall accuracy can be assessed by the **area under the curve (AUC)**:
+
+- AUC = 0.5: No discrimination (test is no better than chance)
+- AUC = 1.0: Perfect discrimination
+- AUC > 0.7: Generally considered acceptable
+- AUC > 0.8: Good discrimination
+- AUC > 0.9: Excellent discrimination
+
+```{r}
+#| label: fig-roc
+#| fig-cap: "Example ROC curve showing trade-off between sensitivity and specificity"
+#| fig-width: 7
+#| fig-height: 6
+
+# Create example ROC curve data
+set.seed(123)
+roc_data <- tibble(
+  specificity = seq(1, 0, by = -0.01),
+  sensitivity = pbeta(1 - specificity, 2, 1)  # Creates a realistic ROC curve shape
+)
+
+# Calculate AUC (approximately)
+auc <- round(mean(roc_data$sensitivity), 2)
+
+ggplot(roc_data, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_line(colour = "#3498db", linewidth = 1.2) +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", colour = "grey50") +
+  geom_ribbon(aes(ymin = 1 - specificity, ymax = sensitivity), 
+              fill = "#3498db", alpha = 0.2) +
+  annotate("text", x = 0.6, y = 0.3, 
+           label = paste("AUC =", auc), size = 5) +
+  labs(x = "1 - Specificity (False Positive Rate)",
+       y = "Sensitivity (True Positive Rate)") +
+  coord_equal() +
+  theme_minimal(base_size = 14)
+```
+
+## Worked Example: PSA Testing for Prostate Cancer
+
+```{r}
+#| label: tbl-psa-example
+#| tbl-cap: "PSA test results for prostate cancer detection (threshold ≥2.1 ng/ml)"
+
+psa_table <- tibble(
+  ` ` = c("PSA ≥2.1 ng/ml (positive)", "PSA <2.1 ng/ml (negative)", "**Total**"),
+  `Prostate cancer` = c("167", "282", "**449**"),
+  `No prostate cancer` = c("508", "1993", "**2501**"),
+  `Total` = c("675", "2275", "**2950**")
+)
+
+psa_table |>
+  kable(escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover")) |>
+  add_header_above(c(" " = 1, "True Disease Status" = 2, " " = 1))
+```
+
+### Calculating the Measures
+
+```{r}
+#| label: psa-calculations
+
+# Values from the table
+a <- 167  # True positive
+b <- 508  # False positive
+c <- 282  # False negative
+d <- 1993 # True negative
+n <- a + b + c + d
+
+# Calculate measures
+sensitivity <- a / (a + c)
+specificity <- d / (b + d)
+ppv <- a / (a + b)
+npv <- d / (c + d)
+prevalence <- (a + c) / n
+lr <- sensitivity / (1 - specificity)
+```
+
+**Sensitivity:**
+
+$$\text{Sensitivity} = \frac{167}{167 + 282} = `r round(sensitivity, 2)`$$
+
+Using this test, if prostate cancer is present there is a **`r round(sensitivity * 100)`% chance of detecting it**.
+
+**Specificity:**
+
+$$\text{Specificity} = \frac{1993}{508 + 1993} = `r round(specificity, 2)`$$
+
+If there is no prostate cancer, there is an **`r round(specificity * 100)`% chance of a negative result**. `r round((1-specificity) * 100)`% of people will have a false positive result.
+
+**Positive Predictive Value:**
+
+$$\text{PPV} = \frac{167}{167 + 508} = `r round(ppv, 2)`$$
+
+There is a **`r round(ppv * 100)`% chance** that if the test is positive the patient actually has prostate cancer.
+
+**Negative Predictive Value:**
+
+$$\text{NPV} = \frac{1993}{282 + 1993} = `r round(npv, 2)`$$
+
+There is an **`r round(npv * 100)`% chance**, if the test is negative, that the patient does not have prostate cancer. This means there is a `r round((1-npv) * 100)`% chance of a false negative result.
+
+**Likelihood Ratio:**
+
+$$\text{LR} = \frac{`r round(sensitivity, 2)`}{1 - `r round(specificity, 2)`} = `r round(lr, 2)`$$
+
+If the test is positive, the patient is **`r round(lr, 2)` times** (almost twice) as likely to have prostate cancer as not have it.
+
+### Summary of Results
+
+```{r}
+#| label: tbl-psa-summary
+#| tbl-cap: "Summary of diagnostic test measures for PSA ≥2.1 ng/ml"
+
+summary_table <- tibble(
+  Measure = c("Sensitivity", "Specificity", "Positive Predictive Value", 
+              "Negative Predictive Value", "Prevalence", "Likelihood Ratio"),
+  Value = c(
+    paste0(round(sensitivity * 100, 1), "%"),
+    paste0(round(specificity * 100, 1), "%"),
+    paste0(round(ppv * 100, 1), "%"),
+    paste0(round(npv * 100, 1), "%"),
+    paste0(round(prevalence * 100, 1), "%"),
+    round(lr, 2)
+  ),
+  Interpretation = c(
+    "37% of cancers detected",
+    "80% of non-cancers correctly identified",
+    "25% of positive tests are true cancers",
+    "88% of negative tests are truly cancer-free",
+    "15% of population has prostate cancer",
+    "Positive test ~2× more likely in cancer"
+  )
+)
+
+summary_table |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Summary
+
+| Measure | Formula | Interpretation |
+|---------|---------|----------------|
+| Sensitivity | a / (a + c) | Proportion of diseased correctly identified |
+| Specificity | d / (b + d) | Proportion of non-diseased correctly identified |
+| PPV | a / (a + b) | Probability of disease given positive test |
+| NPV | d / (c + d) | Probability of no disease given negative test |
+| Prevalence | (a + c) / n | Proportion of population with disease |
+| Likelihood ratio | Sens / (1 - Spec) | How much more likely is positive test in disease |
+| AUC | Area under ROC | Overall discriminative ability of test |

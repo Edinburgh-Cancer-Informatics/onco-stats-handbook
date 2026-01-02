@@ -17,40 +17,42 @@ book:
     - index.qmd
     - part: "Foundations"
       chapters:
-        - 01-what-is-statistics.qmd
-        - 02-populations-samples.qmd
-        - 03-types-of-data.qmd
+        - 02-what-is-statistics.qmd
+        - 03-populations-samples.qmd
+        - 04-types-of-data.qmd
     - part: "Describing Data"
       chapters:
-        - 04-presenting-data.qmd
-        - 05-descriptive-measures.qmd
-        - 06-normal-distribution.qmd
+        - 05-presenting-data.qmd
+        - 06-descriptive-measures.qmd
+        - 07-normal-distribution.qmd
     - part: "Statistical Inference"
       chapters:
-        - 07-statistical-inference.qmd
-        - 08-correlation-regression.qmd
+        - 08-statistical-inference.qmd
+        - 09-correlation-regression.qmd
+        - 10-odds-ratios-logistic-regression.qmd
     - part: "Clinical Applications"
       chapters:
-        - 09-screening-diagnostic.qmd
-        - 10-survival-analysis.qmd
-        - 11-epidemiological-studies.qmd
-        - 12-clinical-trials.qmd
+        - 11-screening-diagnostic.qmd
+        - 12-survival-analysis.qmd
+        - 13-epidemiological-studies.qmd
+        - 14-clinical-trials.qmd
     - references.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: 
+    theme:
       light: flatly
       dark: darkly
-    toc: true
+    toc: false
     toc-depth: 3
     toc-location: left
     number-sections: true
+    number-depth: 2
     code-fold: true
-    code-summary: "Show R code"
-    code-tools: true
+    code-summary: "code"
+    code-tools: false
     highlight-style: github
     fig-width: 8
     fig-height: 5

@@ -1,0 +1,312 @@
+---
+title: "Clinical Trials"
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+
+if (!require("pak")) install.packages("pak")
+pak::pak(c("tidyverse", "knitr", "kableExtra"), ask = FALSE)
+
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Introduction
+
+A **clinical trial** is a planned experimental study on humans designed to evaluate new interventions (e.g. type or dose of drug, or surgical procedure) compared to a comparative treatment.
+
+## Phases of Clinical Trials
+
+There are several different stages of clinical trials:
+
+```{r}
+#| label: tbl-phases
+#| tbl-cap: "Phases of clinical trials"
+
+phases <- tibble(
+  Phase = c("Phase I", "Phase II", "Phase III", "Phase IV"),
+  Purpose = c(
+    "Establish dosage, side effects and delivery mechanisms",
+    "Investigate treatment effects and safety in small studies",
+    "Full evaluation of new treatment compared to comparator",
+    "Observe how treatment works in non-trial setting"
+  ),
+  `Sample Size` = c("Small (20-80)", "Moderate (100-300)", "Large (1000+)", "Very large"),
+  Focus = c(
+    "Safety, dose-finding",
+    "Efficacy, optimal dosing",
+    "Effectiveness vs standard care",
+    "Long-term effects, rare side effects"
+  )
+)
+
+phases |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+**Phase I & II trials** are pre-clinical or small studies which investigate treatment effects and safety. They establish dosage, side effects and delivery mechanisms.
+
+A **Phase III trial** is a full evaluation of the new treatment compared to a comparative treatment.
+
+After a treatment has been approved and licensed for general use, **Phase IV trials** observe how the treatment works in a non-trial setting, identify long-term effects and rare side effects.
+
+## Control Groups
+
+Phase III trials have at least one **treatment group** and **comparator group** (the control group).
+
+- If the condition under investigation has a **standard treatment**, then this is the treatment that the control group may receive
+- If standard care does not exist, then the control might be given a **placebo** (a treatment which does not consist of an active component) or no treatment if considered ethical
+
+The purpose of the control group is to quantify the effect of the treatment by comparing the outcome of interest in the control group to the outcome in the treatment group.
+
+## Treatment Allocation (Randomisation)
+
+Patients are usually **randomised** to treatment groups. This is to avoid systematic bias, and ensure that each patient has an equal chance of being allocated to each treatment.
+
+### Methods of Randomisation
+
+```{r}
+#| label: tbl-randomisation
+#| tbl-cap: "Methods of randomisation in clinical trials"
+
+randomisation <- tibble(
+  Method = c("Simple randomisation", "Block randomisation", 
+             "Stratified randomisation", "Cluster randomisation"),
+  Description = c(
+    "Each patient randomly allocated to treatment (like flipping a coin)",
+    "After every x patients, number on each treatment is equal",
+    "Block randomisation within important prognostic strata (e.g. age, stage)",
+    "Groups/clusters of individuals randomised rather than individuals"
+  ),
+  Advantage = c(
+    "Simple to implement",
+    "Ensures balanced numbers in each arm",
+    "Balances important prognostic factors",
+    "Practical when individual randomisation not possible"
+  )
+)
+
+randomisation |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Allocation Concealment (Blinding)
+
+Randomisation is not sufficient to ensure that a trial is unbiased. If outcome assessment is subjective or open to interpretation, systematic bias can be introduced by knowledge of the treatment received.
+
+**Masking** or **blinding** means that people are unaware of the treatment that someone received.
+
+### Levels of Blinding
+
+| Level | Description |
+|-------|-------------|
+| **Single blind** | The patient does not know which treatment they have been allocated |
+| **Double blind** | Neither patient nor doctor/evaluator knows which treatment has been allocated |
+| **Triple blind** | Neither the patient, nor the doctor, nor those reviewing the interim results know which treatment the patient has been allocated |
+
+## Designs for Randomised Trials
+
+### Parallel Groups
+
+The simplest form of randomised trial is a **parallel group trial**. Eligible patients are randomised to two or more groups, treated according to the assigned group, and assessed for their response to treatment.
+
+```{r}
+#| label: fig-parallel
+#| fig-cap: "Schematic of a parallel group trial design"
+#| fig-width: 8
+#| fig-height: 4
+
+# Simple diagram
+ggplot() +
+  # Population box
+  annotate("rect", xmin = 0, xmax = 2, ymin = 2, ymax = 3, 
+           fill = "#3498db", alpha = 0.3, colour = "#2980b9") +
+  annotate("text", x = 1, y = 2.5, label = "Eligible\nPatients", size = 4) +
+  
+  # Randomisation
+  annotate("text", x = 3, y = 2.5, label = "Randomise", size = 4, fontface = "bold") +
+  
+  # Treatment arm
+
+  annotate("rect", xmin = 4, xmax = 6, ymin = 3.2, ymax = 4.2, 
+           fill = "#27ae60", alpha = 0.3, colour = "#1e8449") +
+  annotate("text", x = 5, y = 3.7, label = "Treatment", size = 4) +
+  
+  # Control arm
+  annotate("rect", xmin = 4, xmax = 6, ymin = 0.8, ymax = 1.8, 
+           fill = "#e74c3c", alpha = 0.3, colour = "#c0392b") +
+  annotate("text", x = 5, y = 1.3, label = "Control", size = 4) +
+  
+  # Outcome boxes
+  annotate("rect", xmin = 7, xmax = 9, ymin = 3.2, ymax = 4.2, 
+           fill = "#27ae60", alpha = 0.2, colour = "#1e8449") +
+  annotate("text", x = 8, y = 3.7, label = "Assess\nOutcome", size = 3.5) +
+  
+  annotate("rect", xmin = 7, xmax = 9, ymin = 0.8, ymax = 1.8, 
+           fill = "#e74c3c", alpha = 0.2, colour = "#c0392b") +
+  annotate("text", x = 8, y = 1.3, label = "Assess\nOutcome", size = 3.5) +
+  
+  # Arrows
+  annotate("segment", x = 2, xend = 2.5, y = 2.5, yend = 2.5,
+           arrow = arrow(length = unit(0.2, "cm"))) +
+  annotate("segment", x = 3.5, xend = 4, y = 2.5, yend = 3.7,
+           arrow = arrow(length = unit(0.2, "cm"))) +
+  annotate("segment", x = 3.5, xend = 4, y = 2.5, yend = 1.3,
+           arrow = arrow(length = unit(0.2, "cm"))) +
+  annotate("segment", x = 6, xend = 7, y = 3.7, yend = 3.7,
+           arrow = arrow(length = unit(0.2, "cm"))) +
+  annotate("segment", x = 6, xend = 7, y = 1.3, yend = 1.3,
+           arrow = arrow(length = unit(0.2, "cm"))) +
+  
+  # Compare
+  annotate("segment", x = 9, xend = 10, y = 3.7, yend = 2.5,
+           arrow = arrow(length = unit(0.2, "cm"))) +
+  annotate("segment", x = 9, xend = 10, y = 1.3, yend = 2.5,
+           arrow = arrow(length = unit(0.2, "cm"))) +
+  annotate("text", x = 10.5, y = 2.5, label = "Compare\nOutcomes", size = 3.5) +
+  
+  theme_void() +
+  coord_cartesian(xlim = c(-0.5, 11.5), ylim = c(0, 5))
+```
+
+### Factorial Designs
+
+In a **factorial trial**, two (or more) intervention comparisons are carried out simultaneously.
+
+For example, in a trial for surgical patients with colorectal cancer, those who participate might be randomised to:
+
+- Receive peri-operative radiotherapy **or not**, AND
+- Receive local regional chemotherapy **or not**
+
+Most factorial trials have two 'factors', each of which has two levels. This is called a **2×2 factorial trial**, and gives 4 combinations of treatment:
+
+```{r}
+#| label: tbl-factorial
+#| tbl-cap: "Treatment combinations in a 2×2 factorial trial"
+
+factorial <- tibble(
+  ` ` = c("No chemotherapy", "Chemotherapy"),
+  `No radiotherapy` = c("Neither treatment", "Chemotherapy alone"),
+  `Radiotherapy` = c("Radiotherapy alone", "Both treatments")
+)
+
+factorial |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+**Potential problems:**
+
+- Treatment effects may not be additive (interaction)
+- Must be practical to combine treatments
+- Toxicity of combined treatment must be acceptable
+
+### Cross-over Trials
+
+In a **cross-over trial**, every patient receives all treatments under investigation, but the order in which they receive them is randomised.
+
+In the case of a two-treatment cross-over trial, eligible patients are randomised to receive either:
+
+- Treatment A followed by Treatment B, **OR**
+- Treatment B followed by Treatment A
+
+**Benefits:**
+
+- Each patient acts as their own control
+- Effectively leads to a smaller sample size - halving the number of patients when compared to a conventional parallel design
+
+**Potential problems:**
+
+- Drop-out after the first treatment (which may be related to treatment)
+- **Carry-over** of treatment effects from the first period which is not eliminated by a wash-out period
+- **Treatment-period interaction** – in which the effect of a treatment is substantially different in the two periods
+
+## Analysis of Clinical Trial Data
+
+### Intention-to-Treat Analysis
+
+Randomised controlled trials often suffer from **noncompliance**, **drop-outs** and **missing outcomes**.
+
+An analysis based only on those patients who completed the study without protocol violations (**per-protocol population**) can introduce bias and lead to an overestimation of effectiveness. This is because the reason why patients do not comply or drop out may be related to the treatment they received.
+
+One potential solution is called **intention-to-treat (ITT) analysis**. ITT analysis includes every subject who was randomised according to the randomised treatment assignment. It ignores noncompliance, protocol deviations, withdrawal, and anything that happens after randomisation.
+
+::: {.callout-note}
+## Key Point
+In ITT analysis, the estimate of treatment effect will generally be **more conservative** than that found with a per-protocol analysis.
+:::
+
+### Number Needed to Treat (NNT)
+
+The **NNT** is the number of patients that need to be treated for one patient to benefit from a treatment compared to a control treatment.
+
+$$NNT = \frac{1}{\text{Absolute Risk Reduction}}$$
+
+The **absolute risk reduction** is the risk in control group minus the risk in treatment group.
+
+| NNT | Interpretation |
+|-----|----------------|
+| **1** | Everyone improves with treatment and no one improves with control |
+| **Higher values** | Less effective treatment (more patients need to be treated for one to benefit) |
+
+## Outcome Measures in Oncology Trials
+
+```{r}
+#| label: tbl-endpoints
+#| tbl-cap: "Common outcome measures in oncology clinical trials"
+
+endpoints <- tibble(
+  Endpoint = c("Overall survival (OS)", "Progression-free survival (PFS)", 
+               "Disease-free survival (DFS)", "Objective response rate (ORR)",
+               "Tumour regression", "Quality of life", "Toxicity"),
+  Description = c(
+    "Time from randomisation to death from any cause",
+    "Time from randomisation to progression or death",
+    "Time from randomisation to recurrence or death (after curative treatment)",
+    "Proportion with complete or partial response",
+    "Reduction in tumour size",
+    "Patient-reported outcomes on wellbeing",
+    "Adverse events and side effects"
+  )
+)
+
+endpoints |>
+  kable() |>
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## CONSORT Statement
+
+**CONSORT** stands for **C**onsolidated **S**tandards **o**f **R**eporting **T**rials. The CONSORT statement is a set of recommendations for the standardised reporting of randomised trials. It is used to aid transparency, critical appraisal and interpretation.
+
+The CONSORT statement contains:
+
+- A **25-item checklist** ensuring information on trial design, participants, treatment allocation, analysis, interpretation and limitations is included
+- A **flow diagram** displaying for each group:
+  - Numbers of participants randomly assigned
+  - Numbers who received intended treatment
+  - Numbers analysed for the primary outcome
+  - Losses and exclusions after randomisation
+
+## Summary
+
+| Concept | Description |
+|---------|-------------|
+| Clinical trial | Planned experimental study to evaluate interventions |
+| Phase I/II | Safety and dose-finding studies |
+| Phase III | Full efficacy evaluation vs comparator |
+| Phase IV | Post-marketing surveillance |
+| Randomisation | Random allocation to ensure equal chance of treatment |
+| Blinding | Concealment of treatment allocation |
+| Parallel design | Patients randomised to one treatment only |
+| Cross-over design | Patients receive all treatments in random order |
+| Factorial design | Two or more interventions tested simultaneously |
+| ITT analysis | All randomised patients analysed as allocated |
+| NNT | Number needed to treat for one patient to benefit |
+| CONSORT | Standards for reporting randomised trials |
