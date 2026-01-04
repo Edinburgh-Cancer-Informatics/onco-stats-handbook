@@ -1,6 +1,6 @@
 # Statistics for Oncology Handbook
 
-This repository is the handbook that accompanies the course ***Statistics for Oncology - A Course for Scottish Trainees***
+This repository is the handbook that accompanies the course ***Statistics for Oncology - A Course for Scottish Trainees*** designed for:
 
 -   **Clinical Oncology trainees** preparing for the FRCR Part 1 examination
 -   **Medical Oncology trainees** preparing for the Specialty Certificate Examination (SCE)

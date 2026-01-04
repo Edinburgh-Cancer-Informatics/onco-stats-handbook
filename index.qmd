@@ -16,24 +16,25 @@ This handbook provides an introduction to medical statistics for oncology traine
 
 By the end of this course, you will be able to:
 
-- Understand and interpret common statistical measures
-- Read and critically appraise clinical research papers
-- Communicate statistical findings to patients and colleagues
-- Apply appropriate statistical thinking to clinical decisions
+-   Understand and interpret common statistical measures
+-   Read and critically appraise clinical research papers
+-   Communicate statistical findings to patients and colleagues
+-   Apply appropriate statistical thinking to clinical decisions
 
 ## How to Use This Handbook
 
 The content is organised into four parts:
 
 | Part | Topics | Focus |
-|------|--------|-------|
+|----|----|----|
 | **Foundations** | Statistics basics, populations, data types | Core concepts |
 | **Describing Data** | Graphs, summaries, distributions | Exploratory analysis |
 | **Statistical Inference** | Hypothesis testing, regression | Drawing conclusions |
 | **Clinical Applications** | Survival, trials, epidemiology | Real-world oncology |
 
-::: {.callout-tip}
+::: callout-tip
 ## Navigation
+
 Use the sidebar on the left to navigate between chapters. Each chapter builds on previous material, but you can jump to specific topics as needed.
 :::
 
