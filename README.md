@@ -22,7 +22,7 @@ Contributions, suggestions, and feedback are welcome! Please:
 -   Visit the Github repository: <https://github.com/Edinburgh-Cancer-Informatics/onco-stats> and either
     -   Open an issue for suggestions for improvement or
     -   Make the improvements yourself and submit them as a pull request
--   If you can't be bothered with github just contact us via the [main course page](edin.ac/oncology-statistics)
+-   If you can't be bothered with github just contact us via the [main course page](https://cancer-data.ecrc.ed.ac.uk/oncology-statistics/)
 
 ## License
 
