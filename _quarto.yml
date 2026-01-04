@@ -45,7 +45,7 @@ format:
     theme:
       light: flatly
       dark: darkly
-    toc: false
+    toc: true
     toc-depth: 3
     toc-location: left
     number-sections: true
