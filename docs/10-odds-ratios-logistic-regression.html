@@ -145,7 +145,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -480,11 +480,28 @@ window.Quarto = {
 </li>
     </ul>
     </div>
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#odds-vs-risk" id="toc-odds-vs-risk" class="nav-link active" data-scroll-target="#odds-vs-risk"><span class="header-section-number">10.1</span> Odds vs Risk</a></li>
+  <li><a href="#odds-ratios" id="toc-odds-ratios" class="nav-link" data-scroll-target="#odds-ratios"><span class="header-section-number">10.2</span> Odds Ratios</a>
+  <ul class="collapse">
+  <li><a href="#the-2-2-table-for-odds-ratios" id="toc-the-2-2-table-for-odds-ratios" class="nav-link" data-scroll-target="#the-2-2-table-for-odds-ratios">The 2 × 2 Table for Odds Ratios</a></li>
+  <li><a href="#worked-example-hpv-and-oropharyngeal-cancer" id="toc-worked-example-hpv-and-oropharyngeal-cancer" class="nav-link" data-scroll-target="#worked-example-hpv-and-oropharyngeal-cancer">Worked Example: HPV and Oropharyngeal Cancer</a></li>
+  </ul></li>
+  <li><a href="#logistic-regression" id="toc-logistic-regression" class="nav-link" data-scroll-target="#logistic-regression"><span class="header-section-number">10.3</span> Logistic Regression</a>
+  <ul class="collapse">
+  <li><a href="#worked-example-logistic-regression-for-treatment-response" id="toc-worked-example-logistic-regression-for-treatment-response" class="nav-link" data-scroll-target="#worked-example-logistic-regression-for-treatment-response">Worked Example: Logistic Regression for Treatment Response</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">10.4</span> Summary</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -535,8 +552,8 @@ Key Difference
 </section>
 <section id="odds-ratios" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="odds-ratios"><span class="header-section-number">10.2</span> Odds Ratios</h2>
-<p><strong>Odds ratios</strong> are calculated by dividing the odds in one group of patients (e.g.&nbsp;experimental group) with the odds in a comparison group of patients (control group).</p>
-<p>An odds ratio of 1 indicates no difference in risk between the groups, i.e.&nbsp;the odds in each group are the same.</p>
+<p><strong>Odds ratios</strong> are calculated by dividing the odds in one group of patients (e.g.&nbsp;cases) with the odds in a comparison group of patients (e.g.&nbsp;controls).</p>
+<p>An odds ratio of 1 indicates no difference between the groups, i.e.&nbsp;the odds in each group are the same.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -551,66 +568,168 @@ Key Difference
 </tr>
 <tr class="even">
 <td>&gt; 1</td>
-<td>Increased odds in the exposed/treatment group</td>
+<td>Increased odds of exposure in cases</td>
 </tr>
 <tr class="odd">
 <td>&lt; 1</td>
-<td>Reduced odds in the exposed/treatment group</td>
+<td>Reduced odds of exposure in cases</td>
 </tr>
 </tbody>
 </table>
 <p>Odds ratios are frequently given with 95% confidence intervals – if the confidence interval for an odds ratio does not include 1 (no difference in odds), it is statistically significant.</p>
-<section id="worked-example-calculating-odds-ratios" class="level3">
-<h3 class="anchored" data-anchor-id="worked-example-calculating-odds-ratios">Worked Example: Calculating Odds Ratios</h3>
-<p>A study investigated whether smoking was associated with developing lung cancer. The results from 200 patients are shown below:</p>
+<section id="the-2-2-table-for-odds-ratios" class="level3">
+<h3 class="anchored" data-anchor-id="the-2-2-table-for-odds-ratios">The 2 × 2 Table for Odds Ratios</h3>
+<p>In a case-control study, patients are selected on the basis of their disease status. We compare the odds of exposure between cases (those with disease) and controls (those without disease).</p>
 <div class="cell">
 <details class="code-fold">
 <summary>code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>smoking_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Smoking Status</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Smoker"</span>, <span class="st">"Non-smoker"</span>, <span class="st">"**Total**"</span>),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Lung Cancer</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"70"</span>, <span class="st">"20"</span>, <span class="st">"**90**"</span>),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">No Lung Cancer</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"45"</span>, <span class="st">"65"</span>, <span class="st">"**110**"</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Total</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"**115**"</span>, <span class="st">"**85**"</span>, <span class="st">"**200**"</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>or_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at"> </span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Exposed"</span>, <span class="st">"Unexposed"</span>, <span class="st">"**Total**"</span>, <span class="st">"Odds of exposure"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Case (Disease)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"c"</span>, <span class="st">"a + c"</span>, <span class="st">"a / c"</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Control (No Disease)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"b"</span>, <span class="st">"d"</span>, <span class="st">"b + d"</span>, <span class="st">"b / d"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Total</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"a + b"</span>, <span class="st">"c + d"</span>, <span class="st">"n"</span>, <span class="st">""</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>smoking_data <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>or_table <span class="sc">|&gt;</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Disease Status"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="tbl-smoking-lung-cancer" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-2x2-or" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-smoking-lung-cancer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10.1: Association between smoking and lung cancer
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-2x2-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10.1: Structure of a 2 × 2 table for calculating odds ratios
 </figcaption>
-<div aria-describedby="tbl-smoking-lung-cancer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-2x2-or-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="table table-striped table-hover do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Smoking Status</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Lung Cancer</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">No Lung Cancer</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Disease Status
+</div></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Case (Disease)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Control (No Disease)</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Total</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Smoker</td>
-<td style="text-align: left;">70</td>
-<td style="text-align: left;">45</td>
-<td style="text-align: left;">**115**</td>
+<td style="text-align: left;">Exposed</td>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">b</td>
+<td style="text-align: left;">a + b</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Non-smoker</td>
-<td style="text-align: left;">20</td>
-<td style="text-align: left;">65</td>
-<td style="text-align: left;">**85**</td>
+<td style="text-align: left;">Unexposed</td>
+<td style="text-align: left;">c</td>
+<td style="text-align: left;">d</td>
+<td style="text-align: left;">c + d</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">**Total**</td>
-<td style="text-align: left;">**90**</td>
-<td style="text-align: left;">**110**</td>
-<td style="text-align: left;">**200**</td>
+<td style="text-align: left;">a + c</td>
+<td style="text-align: left;">b + d</td>
+<td style="text-align: left;">n</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Odds of exposure</td>
+<td style="text-align: left;">a / c</td>
+<td style="text-align: left;">b / d</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>The <strong>odds ratio (OR)</strong> compares the odds of exposure in cases to the odds of exposure in controls:</p>
+<p><span class="math display">\[OR = \frac{\text{Odds of exposure in cases}}{\text{Odds of exposure in controls}} = \frac{a/c}{b/d} = \frac{ad}{bc}\]</span></p>
+</section>
+<section id="worked-example-hpv-and-oropharyngeal-cancer" class="level3">
+<h3 class="anchored" data-anchor-id="worked-example-hpv-and-oropharyngeal-cancer">Worked Example: HPV and Oropharyngeal Cancer</h3>
+<p>A case-control study investigated whether human papillomavirus (HPV) infection was associated with oropharyngeal squamous cell carcinoma. Researchers recruited 250 patients with newly diagnosed oropharyngeal cancer (cases) and 250 age- and sex-matched patients without cancer (controls). HPV status was determined by serology testing.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>hpv_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">HPV Status</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"HPV positive"</span>, <span class="st">"HPV negative"</span>, <span class="st">"**Total**"</span>, <span class="st">"Odds of exposure"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Case (Cancer)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"175 (a)"</span>, <span class="st">"75 (c)"</span>, <span class="st">"**250**"</span>, <span class="st">"175 / 75"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Control (No Cancer)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"50 (b)"</span>, <span class="st">"200 (d)"</span>, <span class="st">"**250**"</span>, <span class="st">"50 / 200"</span>),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Total</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"225"</span>, <span class="st">"275"</span>, <span class="st">"**500**"</span>, <span class="st">""</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>hpv_data <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Disease Status"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-hpv-oropharyngeal" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hpv-oropharyngeal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10.2: Case-control study of HPV infection and oropharyngeal cancer
+</figcaption>
+<div aria-describedby="tbl-hpv-oropharyngeal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-striped table-hover do-not-create-environment cell caption-top table-sm small" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Disease Status
+</div></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+</tr>
+<tr class="even">
+<th style="text-align: left;" data-quarto-table-cell-role="th">HPV Status</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Case (Cancer)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Control (No Cancer)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">HPV positive</td>
+<td style="text-align: left;">175 (a)</td>
+<td style="text-align: left;">50 (b)</td>
+<td style="text-align: left;">225</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HPV negative</td>
+<td style="text-align: left;">75 (c)</td>
+<td style="text-align: left;">200 (d)</td>
+<td style="text-align: left;">275</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">**Total**</td>
+<td style="text-align: left;">**250**</td>
+<td style="text-align: left;">**250**</td>
+<td style="text-align: left;">**500**</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Odds of exposure</td>
+<td style="text-align: left;">175 / 75</td>
+<td style="text-align: left;">50 / 200</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
@@ -623,24 +742,32 @@ Table&nbsp;10.1: Association between smoking and lung cancer
 <div class="cell">
 <details class="code-fold">
 <summary>code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">70</span>  <span class="co"># Smokers with lung cancer</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">45</span>  <span class="co"># Smokers without lung cancer</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">20</span>  <span class="co"># Non-smokers with lung cancer</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">65</span>  <span class="co"># Non-smokers without lung cancer</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds of lung cancer in smokers</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>odds_smokers <span class="ot">&lt;-</span> a <span class="sc">/</span> b</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds of lung cancer in non-smokers</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>odds_nonsmokers <span class="ot">&lt;-</span> c <span class="sc">/</span> d</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds ratio</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>or <span class="ot">&lt;-</span> odds_smokers <span class="sc">/</span> odds_nonsmokers</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternatively: or &lt;- (a * d) / (b * c)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Values from the 2×2 table</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">175</span>  <span class="co"># Exposed cases (HPV positive with cancer)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">50</span>   <span class="co"># Exposed controls (HPV positive without cancer)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="dv">75</span>   <span class="co"># Unexposed cases (HPV negative with cancer)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">200</span>  <span class="co"># Unexposed controls (HPV negative without cancer)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds of HPV exposure in cases</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>odds_cases <span class="ot">&lt;-</span> a <span class="sc">/</span> c</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds of HPV exposure in controls</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>odds_controls <span class="ot">&lt;-</span> b <span class="sc">/</span> d</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Odds ratio</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>or <span class="ot">&lt;-</span> odds_cases <span class="sc">/</span> odds_controls</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalently: or &lt;- (a * d) / (b * c)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p><span class="math display">\[\text{Odds ratio} = \frac{70/45}{20/65} = \frac{1.56}{0.31} = 5.06\]</span></p>
-<p><strong>Interpretation:</strong> The odds of developing lung cancer are <strong>5.06 times higher</strong> in smokers compared to non-smokers. This represents a <strong>406% increase</strong> in the odds of lung cancer among smokers.</p>
+<p><strong>Step 1:</strong> Calculate the odds of HPV exposure in cases (patients with cancer):</p>
+<p><span class="math display">\[\text{Odds in cases} = \frac{a}{c} = \frac{175}{75} = 2.33\]</span></p>
+<p><strong>Step 2:</strong> Calculate the odds of HPV exposure in controls (patients without cancer):</p>
+<p><span class="math display">\[\text{Odds in controls} = \frac{b}{d} = \frac{50}{200} = 0.25\]</span></p>
+<p><strong>Step 3:</strong> Calculate the odds ratio:</p>
+<p><span class="math display">\[OR = \frac{a/c}{b/d} = \frac{2.33}{0.25} = 9.3\]</span></p>
+<p>Or equivalently:</p>
+<p><span class="math display">\[OR = \frac{ad}{bc} = \frac{175 \times 200}{50 \times 75} = \frac{35000}{3750} = 9.3\]</span></p>
+<p><strong>Interpretation:</strong> The odds of HPV exposure are <strong>9.3 times higher</strong> in patients with oropharyngeal cancer compared to controls. This strong positive association suggests HPV infection is an important risk factor for this malignancy.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -651,7 +778,7 @@ Clinical Significance
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An odds ratio of 5.06 indicates a strong positive association between smoking and lung cancer. If the 95% confidence interval for this OR excludes 1.0, we would conclude the association is statistically significant.</p>
+<p>An odds ratio of 9.3 indicates a very strong association between HPV infection and oropharyngeal cancer. If the 95% confidence interval excludes 1.0, the association is statistically significant. This finding is consistent with published literature showing that HPV-positive oropharyngeal cancers have distinct biology and generally improved prognosis compared to HPV-negative tumours.</p>
 </div>
 </div>
 </section>
@@ -684,24 +811,24 @@ Practical Application
 <div class="cell">
 <details class="code-fold">
 <summary>code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create example logistic regression output</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>logistic_results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Predictor =</span> <span class="fu">c</span>(<span class="st">"Intercept"</span>, <span class="st">"Age (per year)"</span>, <span class="st">"Tumour size (per cm)"</span>, <span class="st">"Performance status (1 vs 0)"</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Coefficient (log OR)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">2.45</span>, <span class="sc">-</span><span class="fl">0.03</span>, <span class="sc">-</span><span class="fl">0.42</span>, <span class="sc">-</span><span class="fl">1.15</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Odds Ratio</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">11.59</span>, <span class="fl">0.97</span>, <span class="fl">0.66</span>, <span class="fl">0.32</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">95% CI Lower</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">3.21</span>, <span class="fl">0.95</span>, <span class="fl">0.51</span>, <span class="fl">0.15</span>),</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">95% CI Upper</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">41.85</span>, <span class="fl">0.99</span>, <span class="fl">0.85</span>, <span class="fl">0.67</span>),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">P-value</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"&lt;0.001"</span>, <span class="st">"0.041"</span>, <span class="st">"0.002"</span>, <span class="st">"0.003"</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>logistic_results <span class="sc">|&gt;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">|&gt;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create example logistic regression output</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>logistic_results <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Predictor =</span> <span class="fu">c</span>(<span class="st">"Intercept"</span>, <span class="st">"Age (per year)"</span>, <span class="st">"Tumour size (per cm)"</span>, <span class="st">"Performance status (1 vs 0)"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Coefficient (log OR)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">2.45</span>, <span class="sc">-</span><span class="fl">0.03</span>, <span class="sc">-</span><span class="fl">0.42</span>, <span class="sc">-</span><span class="fl">1.15</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Odds Ratio</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">11.59</span>, <span class="fl">0.97</span>, <span class="fl">0.66</span>, <span class="fl">0.32</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">95% CI Lower</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">3.21</span>, <span class="fl">0.95</span>, <span class="fl">0.51</span>, <span class="fl">0.15</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">95% CI Upper</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">41.85</span>, <span class="fl">0.99</span>, <span class="fl">0.85</span>, <span class="fl">0.67</span>),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">P-value</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"&lt;0.001"</span>, <span class="st">"0.041"</span>, <span class="st">"0.002"</span>, <span class="st">"0.003"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>logistic_results <span class="sc">|&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">|&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="tbl-logistic-output" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-logistic-output-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10.2: Logistic regression output for predicting complete response to chemotherapy
+Table&nbsp;10.3: Logistic regression output for predicting complete response to chemotherapy
 </figcaption>
 <div aria-describedby="tbl-logistic-output-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -817,8 +944,8 @@ Statistical Significance
 </tr>
 <tr class="odd">
 <td>Odds Ratio</td>
-<td>Odds₁ / Odds₂</td>
-<td>Compare odds between groups</td>
+<td>(a/c) / (b/d) = ad/bc</td>
+<td>Compare odds of exposure between cases and controls</td>
 </tr>
 <tr class="even">
 <td>Logistic Regression</td>
