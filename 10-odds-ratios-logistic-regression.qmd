@@ -37,66 +37,107 @@ While similar for rare events, odds and risk diverge as events become more commo
 
 ## Odds Ratios
 
-**Odds ratios** are calculated by dividing the odds in one group of patients (e.g. experimental group) with the odds in a comparison group of patients (control group).
+**Odds ratios** are calculated by dividing the odds in one group of patients (e.g. cases) with the odds in a comparison group of patients (e.g. controls).
 
-An odds ratio of 1 indicates no difference in risk between the groups, i.e. the odds in each group are the same.
+An odds ratio of 1 indicates no difference between the groups, i.e. the odds in each group are the same.
 
 | Odds Ratio | Interpretation |
 |------------|----------------|
 | = 1 | No difference in odds between groups |
-| > 1 | Increased odds in the exposed/treatment group |
-| < 1 | Reduced odds in the exposed/treatment group |
+| > 1 | Increased odds of exposure in cases |
+| < 1 | Reduced odds of exposure in cases |
 
 Odds ratios are frequently given with 95% confidence intervals – if the confidence interval for an odds ratio does not include 1 (no difference in odds), it is statistically significant.
 
-### Worked Example: Calculating Odds Ratios
+### The 2 × 2 Table for Odds Ratios
 
-A study investigated whether smoking was associated with developing lung cancer. The results from 200 patients are shown below:
+In a case-control study, patients are selected on the basis of their disease status. We compare the odds of exposure between cases (those with disease) and controls (those without disease).
 
 ```{r}
-#| label: tbl-smoking-lung-cancer
-#| tbl-cap: "Association between smoking and lung cancer"
+#| label: tbl-2x2-or
+#| tbl-cap: "Structure of a 2 × 2 table for calculating odds ratios"
 
-smoking_data <- tibble(
-  `Smoking Status` = c("Smoker", "Non-smoker", "**Total**"),
-  `Lung Cancer` = c("70", "20", "**90**"),
-  `No Lung Cancer` = c("45", "65", "**110**"),
-  `Total` = c("**115**", "**85**", "**200**")
+or_table <- tibble(
+  ` ` = c("Exposed", "Unexposed", "**Total**", "Odds of exposure"),
+  `Case (Disease)` = c("a", "c", "a + c", "a / c"),
+  `Control (No Disease)` = c("b", "d", "b + d", "b / d"),
+  `Total` = c("a + b", "c + d", "n", "")
 )
 
-smoking_data |>
+or_table |>
   kable(escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) |>
+  add_header_above(c(" " = 1, "Disease Status" = 2, " " = 1))
+```
+
+The **odds ratio (OR)** compares the odds of exposure in cases to the odds of exposure in controls:
+
+$$OR = \frac{\text{Odds of exposure in cases}}{\text{Odds of exposure in controls}} = \frac{a/c}{b/d} = \frac{ad}{bc}$$
+
+### Worked Example: HPV and Oropharyngeal Cancer
+
+A case-control study investigated whether human papillomavirus (HPV) infection was associated with oropharyngeal squamous cell carcinoma. Researchers recruited 250 patients with newly diagnosed oropharyngeal cancer (cases) and 250 age- and sex-matched patients without cancer (controls). HPV status was determined by serology testing.
+
+```{r}
+#| label: tbl-hpv-oropharyngeal
+#| tbl-cap: "Case-control study of HPV infection and oropharyngeal cancer"
+
+hpv_data <- tibble(
+  `HPV Status` = c("HPV positive", "HPV negative", "**Total**", "Odds of exposure"),
+  `Case (Cancer)` = c("175 (a)", "75 (c)", "**250**", "175 / 75"),
+  `Control (No Cancer)` = c("50 (b)", "200 (d)", "**250**", "50 / 200"),
+  `Total` = c("225", "275", "**500**", "")
+)
+
+hpv_data |>
+  kable(escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover")) |>
+  add_header_above(c(" " = 1, "Disease Status" = 2, " " = 1))
 ```
 
 **Calculating the odds ratio:**
 
 ```{r}
-#| label: or-smoking-calculation
+#| label: or-hpv-calculation
 
-a <- 70  # Smokers with lung cancer
-b <- 45  # Smokers without lung cancer
-c <- 20  # Non-smokers with lung cancer
-d <- 65  # Non-smokers without lung cancer
+# Values from the 2×2 table
+a <- 175  # Exposed cases (HPV positive with cancer)
+b <- 50   # Exposed controls (HPV positive without cancer)
+c <- 75   # Unexposed cases (HPV negative with cancer)
+d <- 200  # Unexposed controls (HPV negative without cancer)
 
-# Odds of lung cancer in smokers
-odds_smokers <- a / b
+# Odds of HPV exposure in cases
+odds_cases <- a / c
 
-# Odds of lung cancer in non-smokers
-odds_nonsmokers <- c / d
+# Odds of HPV exposure in controls
+odds_controls <- b / d
 
 # Odds ratio
-or <- odds_smokers / odds_nonsmokers
-# Alternatively: or <- (a * d) / (b * c)
+or <- odds_cases / odds_controls
+# Equivalently: or <- (a * d) / (b * c)
 ```
 
-$$\text{Odds ratio} = \frac{70/45}{20/65} = \frac{`r round(odds_smokers, 2)`}{`r round(odds_nonsmokers, 2)`} = `r round(or, 2)`$$
+**Step 1:** Calculate the odds of HPV exposure in cases (patients with cancer):
 
-**Interpretation:** The odds of developing lung cancer are **`r round(or, 2)` times higher** in smokers compared to non-smokers. This represents a **`r round((or-1)*100)`% increase** in the odds of lung cancer among smokers.
+$$\text{Odds in cases} = \frac{a}{c} = \frac{175}{75} = `r round(odds_cases, 2)`$$
+
+**Step 2:** Calculate the odds of HPV exposure in controls (patients without cancer):
+
+$$\text{Odds in controls} = \frac{b}{d} = \frac{50}{200} = `r round(odds_controls, 2)`$$
+
+**Step 3:** Calculate the odds ratio:
+
+$$OR = \frac{a/c}{b/d} = \frac{`r round(odds_cases, 2)`}{`r round(odds_controls, 2)`} = `r round(or, 1)`$$
+
+Or equivalently:
+
+$$OR = \frac{ad}{bc} = \frac{175 \times 200}{50 \times 75} = \frac{35000}{3750} = `r round(or, 1)`$$
+
+**Interpretation:** The odds of HPV exposure are **`r round(or, 1)` times higher** in patients with oropharyngeal cancer compared to controls. This strong positive association suggests HPV infection is an important risk factor for this malignancy.
 
 ::: {.callout-important}
 ## Clinical Significance
-An odds ratio of `r round(or, 2)` indicates a strong positive association between smoking and lung cancer. If the 95% confidence interval for this OR excludes 1.0, we would conclude the association is statistically significant.
+An odds ratio of `r round(or, 1)` indicates a very strong association between HPV infection and oropharyngeal cancer. If the 95% confidence interval excludes 1.0, the association is statistically significant. This finding is consistent with published literature showing that HPV-positive oropharyngeal cancers have distinct biology and generally improved prognosis compared to HPV-negative tumours.
 :::
 
 ## Logistic Regression
@@ -162,5 +203,5 @@ All three predictors are statistically significant (p < 0.05), and none of the 9
 |---------|---------|-----|
 | Odds | Events / Non-events | Alternative to probability |
 | Risk | Events / Total at risk | Probability of event |
-| Odds Ratio | Odds₁ / Odds₂ | Compare odds between groups |
+| Odds Ratio | (a/c) / (b/d) = ad/bc | Compare odds of exposure between cases and controls |
 | Logistic Regression | Binary outcome model | Predict and explain binary outcomes |
